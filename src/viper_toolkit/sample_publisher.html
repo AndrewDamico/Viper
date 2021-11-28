@@ -1,0 +1,1301 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3.4. Sample Publisher Nodes &#8212; Viper Vision Inference Processing Endogenous (Edge) Robot</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "https://github.com/AndrewDamico/viper");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="3.5. Sample Subscriber Nodes" href="sample_subscriber.html" />
+    <link rel="prev" title="3. Content with notebooks" href="../../notebooks.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Viper Vision Inference Processing Endogenous (Edge) Robot</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../readme.html">
+   1. The ROS VIPER Library
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../markdown.html">
+   2. Markdown Files
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../notebooks.html">
+   3. Content with notebooks
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.4. Sample Publisher Nodes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sample_subscriber.html">
+     3.5. Sample Subscriber Nodes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../docs/ros_structure.html">
+     3.7. Robot OS (ROS)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../docs/Hardware.html">
+     3.8. Hardware Configuration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://www.linux.com">
+     Linux Website
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Hardware
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://www.raspberrypi.com/">
+   Raspberry Pi
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Software
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Packages
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="readme.html">
+   4. Viper Toolkit
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="viper_toolkit_python_modules.html">
+     4.1. NameManager
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../augmented_vr_module/readme.html">
+   5. Augmented VR Module
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../image_server/readme.html">
+   6. Image Server
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../inland_ir_cam/readme.html">
+   7. Inland IR Camera
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../model_server/readme.html">
+   8. Model Server
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../pose_detection_module/readme.html">
+   9. Pose Detection Module
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../scene_segmentation_module/readme.html">
+   10. Scene Segmentation Module
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/src/viper_toolkit/sample_publisher.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/AndrewDamico/viper"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/AndrewDamico/viper/issues/new?title=Issue%20on%20page%20%2Fsrc/viper_toolkit/sample_publisher.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/AndrewDamico/viper/edit/main/https://andrewdamico.github.io/viper/src/viper_toolkit/sample_publisher.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/AndrewDamico/viper/main?urlpath=tree/https://andrewdamico.github.io/viper/src/viper_toolkit/sample_publisher.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#initialize-the-class-object">
+   3.4.1. 1. Initialize the Class Object
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup-ros">
+   3.4.2. 2. Setup ROS
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-up-the-publisher">
+   3.4.3. 3. Setting up the Publisher
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-action-loop">
+   3.4.4. 4. The Action Loop
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#main-loop">
+   3.4.5. 5. Main Loop
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#results">
+   3.4.6. Results
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="sample-publisher-nodes">
+<h1><span class="section-number">3.4. </span>Sample Publisher Nodes<a class="headerlink" href="#sample-publisher-nodes" title="Permalink to this headline">¶</a></h1>
+<p>We can look at a two very simply sample nodes to understand how ROS works.</p>
+<p>In the Viper Toolkit package, under the scripts/ folder there are two python files:
+* <a class="reference external" href="http://publisher.py">publisher.py</a>
+* <a class="reference external" href="http://subscriber.py">subscriber.py</a></p>
+<p>In ROS I find it easiest to set everything up as a class… In other notebooks I will try to dissect my classes, but for now lets take a look at these two nodes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">inspect</span>
+<span class="kn">import</span> <span class="nn">rospy</span>
+<span class="kn">import</span> <span class="nn">time</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">script</span> <span class="k">import</span> <span class="n">publisher</span>
+<span class="n">publisher_source</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">publisher</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">publisher_source</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#!/usr/bin/env python3
+
+import rospy
+from std_msgs.msg import String
+
+class PublisherNode(object):
+    def __init__(self):
+        self.setup_ros()
+        self.setup_publisher()
+        self.main_loop()
+        
+    def setup_ros(self):
+        rospy.init_node(&#39;sample_publisher&#39;)
+ 
+    def setup_publisher(self):
+        self.pub = rospy.Publisher(
+            name = &#39;topic&#39;,
+            data_class = String,
+            queue_size = 1)
+    
+    def action_loop(self):
+        time = rospy.get_time()
+        return  time
+    
+    def main_loop(self):
+        rate = rospy.Rate(10)
+        while not rospy.is_shutdown():
+            time = self.action_loop()
+            message = String(f&#39;The time is now {time}&#39;)
+            self.pub.publish(message)
+            rospy.loginfo(f&#39;I published: {message}&#39;)
+            rate.sleep()
+
+if __name__ == &#39;__main__&#39;:
+    PublisherNode()
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lets take a look at the different parts of this node!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">script.publisher</span> <span class="k">import</span> <span class="n">PublisherNode</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instance</span> <span class="o">=</span> <span class="n">PublisherNode</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dissect</span><span class="p">(</span><span class="n">method</span><span class="p">):</span>
+    <span class="n">class_</span> <span class="o">=</span> <span class="s1">&#39;PublisherNode&#39;</span>
+    <span class="n">instance_</span> <span class="o">=</span> <span class="s1">&#39;instance&#39;</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;</span><span class="si">{instance_}</span><span class="s1">.</span><span class="si">{method}</span><span class="s1">&#39;</span>
+    <span class="c1">#i = f&#39;instance.{method}&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;class </span><span class="si">{class_}</span><span class="s1">(object):&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="initialize-the-class-object">
+<h2><span class="section-number">3.4.1. </span>1. Initialize the Class Object<a class="headerlink" href="#initialize-the-class-object" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>init</strong> class function executes at the time that the class in instantiated. We are telling the interpreter to first run the setup_ros() function, then run the setup_publisher() function, and finally to execute the main_loop() function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dissect</span><span class="p">(</span><span class="s1">&#39;__init__&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>class PublisherNode(object):
+
+    def __init__(self):
+        self.setup_ros()
+        self.setup_publisher()
+        self.main_loop()
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="setup-ros">
+<h2><span class="section-number">3.4.2. </span>2. Setup ROS<a class="headerlink" href="#setup-ros" title="Permalink to this headline">¶</a></h2>
+<p>We need to tell ROS that we would like to bring this node online; we are registering this kernel as “sample_publisher”. While multiple nodes of the same class can run at once, each node must have a unique name. If a node comes online which has the same name, it will replace the current node and this kernel will be shut down.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dissect</span><span class="p">(</span><span class="s1">&#39;setup_ros&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>class PublisherNode(object):
+
+    def setup_ros(self):
+        rospy.init_node(&#39;sample_publisher&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="setting-up-the-publisher">
+<h2><span class="section-number">3.4.3. </span>3. Setting up the Publisher<a class="headerlink" href="#setting-up-the-publisher" title="Permalink to this headline">¶</a></h2>
+<p>Next we will setup the publisher API which allows a node to publish a “Topic”, or a broadcasted message. This node will be publishing the topic “topic” a  message type of “String.” It will only hold on to the last message (queue_size=1).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dissect</span><span class="p">(</span><span class="s1">&#39;setup_publisher&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>class PublisherNode(object):
+
+    def setup_publisher(self):
+        self.pub = rospy.Publisher(
+            name = &#39;topic&#39;,
+            data_class = String,
+            queue_size = 1)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can take a look at this message type. Messages of the same type need to be serialized so that a reciever is always receiving the same uniform format:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">std_msgs.msg</span> <span class="k">import</span> <span class="n">String</span>
+<span class="n">message</span> <span class="o">=</span> <span class="n">String</span><span class="p">()</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">f</span><span class="s2">&quot;The class structure of String() is:&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">message</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">f</span><span class="s2">&quot;The class type is: {type(message.data)}&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The class structure of String() is:
+data: &#39;&#39;
+
+The class type is: &lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>This tells us that the message type String contains a single variable, ‘data’, which is of the class “str”. ROS will attempt to convert classes between C++ and Python.</p>
+</div>
+<div class="section" id="the-action-loop">
+<h2><span class="section-number">3.4.4. </span>4. The Action Loop<a class="headerlink" href="#the-action-loop" title="Permalink to this headline">¶</a></h2>
+<p>The Action Loop is where the processing of the node occures. In many of my nodes you will see multiple loops chained together, depending on the desired action to be performed. In this example our action loop is getting the time from the rospy module.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dissect</span><span class="p">(</span><span class="s1">&#39;action_loop&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>class PublisherNode(object):
+
+    def action_loop(self):
+        time = rospy.get_time()
+        return  time
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="main-loop">
+<h2><span class="section-number">3.4.5. </span>5. Main Loop<a class="headerlink" href="#main-loop" title="Permalink to this headline">¶</a></h2>
+<p>The main loop is the loop which will continually run while the node is online. First, we set the rospy.rate() which is the minimum hz we wish the node to run. In this example, we are asking the node to retrieve the result of the action loop (the time), converting our desired message into the ‘String’ message format, and then publishing our message. After printing a log entry indicating that it published a message it will then wait wait for the Hz timer to finish before it performs this loop again.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dissect</span><span class="p">(</span><span class="s1">&#39;main_loop&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>class PublisherNode(object):
+
+    def main_loop(self):
+        rate = rospy.Rate(10)
+        while not rospy.is_shutdown():
+            time = self.action_loop()
+            message = String(f&#39;The time is now {time}&#39;)
+            self.pub.publish(message)
+            rospy.loginfo(f&#39;I published: {message}&#39;)
+            rate.sleep()
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="results">
+<h2><span class="section-number">3.4.6. </span>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
+<p>Our resulting output looks like this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">script</span> <span class="k">import</span> <span class="n">subscriber</span>
+<span class="n">subscriber_source</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">subscriber</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">subscriber_source</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#!/usr/bin/env python3
+
+import rospy
+from std_msgs.msg import String
+
+class SubscriberNode(object):
+    
+    def __init__(self):
+        self.setup_ros()
+        self.setup_subscriber()
+        self.main_loop()
+    
+    def setup_ros(self):
+        # Register our node
+        rospy.init_node(&#39;sample_subscriber&#39;)
+        
+        # Create our message container. This allows us to retrieve the
+        # previous message upon failure so that we do not disrupt 
+        # the system loop in the event of a dropped message.
+        self.message = String()
+        
+    def setup_subscriber(self):
+        # Setup a subscription to the topic &#39;topic.&#39; We will then receive
+        # any messages sent to this topic.
+        rospy.Subscriber(
+            name = &#39;topic&#39;, 
+            data_class = String, 
+            callback = self.callback,
+            queue_size = 1)
+        
+    def callback(self, msg):
+        # This tells the node what to do when it receives a new message.
+        # In this example we are asking it to save the message to the 
+        # container we instantiated earlier in the setup_ros() function.
+        self.message = msg
+        # Here, rather than perform our action in the main loop, which
+        # is activated by cycle, we will have our action originate from
+        # the callback, which is activated whenever a message is received
+        # and hence the callback is called.
+        self.action_loop()
+        
+    def action_loop(self):
+        # We will have this node take a message, and then make it all 
+        # capital letters. We first get the property we saved to 
+        # self.message... in messages of type &#39;String&#39; the message text 
+        # is saved in the &#39;data&#39; property.
+        text = self.message.data
+        # We then output the results to the log and the terminal
+        rospy.loginfo(f&#39;I heard {text}&#39;)
+        
+    def main_loop(self):
+
+        # spin() simply keeps python from exiting until this node is stopped
+        rospy.spin()
+
+if __name__ == &#39;__main__&#39;:
+    SubscriberNode()
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">PublisherNode</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137427.849688]: I published: data: &quot;The time is now 1638137427.8483615&quot;
+[INFO] [1638137427.950659]: I published: data: &quot;The time is now 1638137427.9491787&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137428.050151]: I published: data: &quot;The time is now 1638137428.0488617&quot;
+[INFO] [1638137428.154720]: I published: data: &quot;The time is now 1638137428.1498609&quot;
+[INFO] [1638137428.264501]: I published: data: &quot;The time is now 1638137428.2496908&quot;
+[INFO] [1638137428.351156]: I published: data: &quot;The time is now 1638137428.3488142&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137428.450021]: I published: data: &quot;The time is now 1638137428.4487562&quot;
+[INFO] [1638137428.553166]: I published: data: &quot;The time is now 1638137428.5495608&quot;
+[INFO] [1638137428.650181]: I published: data: &quot;The time is now 1638137428.648978&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137428.770050]: I published: data: &quot;The time is now 1638137428.749901&quot;
+[INFO] [1638137428.855240]: I published: data: &quot;The time is now 1638137428.8491843&quot;
+[INFO] [1638137428.963309]: I published: data: &quot;The time is now 1638137428.9502306&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137429.051498]: I published: data: &quot;The time is now 1638137429.0492651&quot;
+[INFO] [1638137429.150458]: I published: data: &quot;The time is now 1638137429.1488795&quot;
+[INFO] [1638137429.249720]: I published: data: &quot;The time is now 1638137429.2487247&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137429.351406]: I published: data: &quot;The time is now 1638137429.3503194&quot;
+[INFO] [1638137429.450045]: I published: data: &quot;The time is now 1638137429.4488237&quot;
+[INFO] [1638137429.550140]: I published: data: &quot;The time is now 1638137429.5487616&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137429.657587]: I published: data: &quot;The time is now 1638137429.6536546&quot;
+[INFO] [1638137429.766038]: I published: data: &quot;The time is now 1638137429.752542&quot;
+[INFO] [1638137429.849969]: I published: data: &quot;The time is now 1638137429.848764&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137429.952343]: I published: data: &quot;The time is now 1638137429.9490528&quot;
+[INFO] [1638137430.050059]: I published: data: &quot;The time is now 1638137430.0489337&quot;
+[INFO] [1638137430.150066]: I published: data: &quot;The time is now 1638137430.1488266&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137430.265719]: I published: data: &quot;The time is now 1638137430.2493966&quot;
+[INFO] [1638137430.350321]: I published: data: &quot;The time is now 1638137430.348755&quot;
+[INFO] [1638137430.450884]: I published: data: &quot;The time is now 1638137430.4487586&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137430.550179]: I published: data: &quot;The time is now 1638137430.548848&quot;
+[INFO] [1638137430.649979]: I published: data: &quot;The time is now 1638137430.648791&quot;
+[INFO] [1638137430.750412]: I published: data: &quot;The time is now 1638137430.7487354&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137430.850046]: I published: data: &quot;The time is now 1638137430.8487816&quot;
+[INFO] [1638137430.950124]: I published: data: &quot;The time is now 1638137430.948936&quot;
+[INFO] [1638137431.049718]: I published: data: &quot;The time is now 1638137431.0487227&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137431.153084]: I published: data: &quot;The time is now 1638137431.149002&quot;
+[INFO] [1638137431.249772]: I published: data: &quot;The time is now 1638137431.2487133&quot;
+[INFO] [1638137431.350012]: I published: data: &quot;The time is now 1638137431.3487358&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137431.450293]: I published: data: &quot;The time is now 1638137431.4488504&quot;
+[INFO] [1638137431.549950]: I published: data: &quot;The time is now 1638137431.5487971&quot;
+[INFO] [1638137431.654268]: I published: data: &quot;The time is now 1638137431.6493702&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137431.751582]: I published: data: &quot;The time is now 1638137431.7493815&quot;
+[INFO] [1638137431.850056]: I published: data: &quot;The time is now 1638137431.8487937&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137431.950536]: I published: data: &quot;The time is now 1638137431.9492848&quot;
+[INFO] [1638137432.049999]: I published: data: &quot;The time is now 1638137432.0487158&quot;
+[INFO] [1638137432.150295]: I published: data: &quot;The time is now 1638137432.1489246&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137432.251225]: I published: data: &quot;The time is now 1638137432.2489753&quot;
+[INFO] [1638137432.350650]: I published: data: &quot;The time is now 1638137432.3495715&quot;
+[INFO] [1638137432.450135]: I published: data: &quot;The time is now 1638137432.4489274&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137432.550199]: I published: data: &quot;The time is now 1638137432.549057&quot;
+[INFO] [1638137432.650841]: I published: data: &quot;The time is now 1638137432.6496525&quot;
+[INFO] [1638137432.750219]: I published: data: &quot;The time is now 1638137432.748765&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137432.849872]: I published: data: &quot;The time is now 1638137432.848743&quot;
+[INFO] [1638137432.949757]: I published: data: &quot;The time is now 1638137432.9486983&quot;
+[INFO] [1638137433.050207]: I published: data: &quot;The time is now 1638137433.049133&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137433.149774]: I published: data: &quot;The time is now 1638137433.1487172&quot;
+[INFO] [1638137433.252004]: I published: data: &quot;The time is now 1638137433.248975&quot;
+[INFO] [1638137433.350060]: I published: data: &quot;The time is now 1638137433.3487647&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137433.449963]: I published: data: &quot;The time is now 1638137433.4487152&quot;
+[INFO] [1638137433.549820]: I published: data: &quot;The time is now 1638137433.54872&quot;
+[INFO] [1638137433.650066]: I published: data: &quot;The time is now 1638137433.6487966&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137433.750106]: I published: data: &quot;The time is now 1638137433.7488194&quot;
+[INFO] [1638137433.849928]: I published: data: &quot;The time is now 1638137433.8487659&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137433.951049]: I published: data: &quot;The time is now 1638137433.9489613&quot;
+[INFO] [1638137434.050006]: I published: data: &quot;The time is now 1638137434.0487359&quot;
+[INFO] [1638137434.150306]: I published: data: &quot;The time is now 1638137434.149104&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137434.250395]: I published: data: &quot;The time is now 1638137434.248973&quot;
+[INFO] [1638137434.350029]: I published: data: &quot;The time is now 1638137434.3487527&quot;
+[INFO] [1638137434.449990]: I published: data: &quot;The time is now 1638137434.44878&quot;
+[INFO] [1638137434.550085]: I published: data: &quot;The time is now 1638137434.5487368&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137434.651849]: I published: data: &quot;The time is now 1638137434.6490626&quot;
+[INFO] [1638137434.750246]: I published: data: &quot;The time is now 1638137434.7487912&quot;
+[INFO] [1638137434.850195]: I published: data: &quot;The time is now 1638137434.8490632&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137434.951241]: I published: data: &quot;The time is now 1638137434.9489872&quot;
+[INFO] [1638137435.051387]: I published: data: &quot;The time is now 1638137435.0490835&quot;
+[INFO] [1638137435.150960]: I published: data: &quot;The time is now 1638137435.1489577&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137435.250370]: I published: data: &quot;The time is now 1638137435.24877&quot;
+[INFO] [1638137435.350569]: I published: data: &quot;The time is now 1638137435.34901&quot;
+[INFO] [1638137435.451550]: I published: data: &quot;The time is now 1638137435.4495482&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137435.551097]: I published: data: &quot;The time is now 1638137435.5490844&quot;
+[INFO] [1638137435.657671]: I published: data: &quot;The time is now 1638137435.6491838&quot;
+[INFO] [1638137435.750057]: I published: data: &quot;The time is now 1638137435.7487488&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137435.851077]: I published: data: &quot;The time is now 1638137435.8500044&quot;
+[INFO] [1638137435.956328]: I published: data: &quot;The time is now 1638137435.9511023&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137436.064537]: I published: data: &quot;The time is now 1638137436.062039&quot;
+[INFO] [1638137436.153518]: I published: data: &quot;The time is now 1638137436.1491826&quot;
+[INFO] [1638137436.254740]: I published: data: &quot;The time is now 1638137436.2508876&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137436.363107]: I published: data: &quot;The time is now 1638137436.3588083&quot;
+[INFO] [1638137436.463696]: I published: data: &quot;The time is now 1638137436.4492834&quot;
+[INFO] [1638137436.549932]: I published: data: &quot;The time is now 1638137436.5488772&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137436.650151]: I published: data: &quot;The time is now 1638137436.6488159&quot;
+[INFO] [1638137436.749871]: I published: data: &quot;The time is now 1638137436.7487204&quot;
+[INFO] [1638137436.850126]: I published: data: &quot;The time is now 1638137436.8488574&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137436.950102]: I published: data: &quot;The time is now 1638137436.9488635&quot;
+[INFO] [1638137437.049937]: I published: data: &quot;The time is now 1638137437.0487454&quot;
+[INFO] [1638137437.149922]: I published: data: &quot;The time is now 1638137437.1487844&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137437.251463]: I published: data: &quot;The time is now 1638137437.248951&quot;
+[INFO] [1638137437.349952]: I published: data: &quot;The time is now 1638137437.3486958&quot;
+[INFO] [1638137437.452215]: I published: data: &quot;The time is now 1638137437.4489753&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137437.551062]: I published: data: &quot;The time is now 1638137437.548986&quot;
+[INFO] [1638137437.674733]: I published: data: &quot;The time is now 1638137437.6632478&quot;
+[INFO] [1638137437.749877]: I published: data: &quot;The time is now 1638137437.748729&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137437.853689]: I published: data: &quot;The time is now 1638137437.8491564&quot;
+[INFO] [1638137437.956040]: I published: data: &quot;The time is now 1638137437.952498&quot;
+[INFO] [1638137438.053247]: I published: data: &quot;The time is now 1638137438.0497777&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137438.154808]: I published: data: &quot;The time is now 1638137438.1512797&quot;
+[INFO] [1638137438.250246]: I published: data: &quot;The time is now 1638137438.2487543&quot;
+[INFO] [1638137438.350212]: I published: data: &quot;The time is now 1638137438.348814&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137438.449927]: I published: data: &quot;The time is now 1638137438.4487238&quot;
+[INFO] [1638137438.551275]: I published: data: &quot;The time is now 1638137438.5492334&quot;
+[INFO] [1638137438.649769]: I published: data: &quot;The time is now 1638137438.6487207&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137438.750024]: I published: data: &quot;The time is now 1638137438.7489426&quot;
+[INFO] [1638137438.849921]: I published: data: &quot;The time is now 1638137438.8487618&quot;
+[INFO] [1638137438.950448]: I published: data: &quot;The time is now 1638137438.9488633&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137439.050472]: I published: data: &quot;The time is now 1638137439.0489655&quot;
+[INFO] [1638137439.150012]: I published: data: &quot;The time is now 1638137439.1487095&quot;
+[INFO] [1638137439.249801]: I published: data: &quot;The time is now 1638137439.2487252&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137439.349796]: I published: data: &quot;The time is now 1638137439.34873&quot;
+[INFO] [1638137439.451077]: I published: data: &quot;The time is now 1638137439.4490604&quot;
+[INFO] [1638137439.550409]: I published: data: &quot;The time is now 1638137439.5488892&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137439.650056]: I published: data: &quot;The time is now 1638137439.6487174&quot;
+[INFO] [1638137439.750258]: I published: data: &quot;The time is now 1638137439.7489684&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137439.853551]: I published: data: &quot;The time is now 1638137439.8490806&quot;
+[INFO] [1638137439.950309]: I published: data: &quot;The time is now 1638137439.9490442&quot;
+[INFO] [1638137440.051286]: I published: data: &quot;The time is now 1638137440.0488956&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137440.163427]: I published: data: &quot;The time is now 1638137440.1542354&quot;
+[INFO] [1638137440.249912]: I published: data: &quot;The time is now 1638137440.248801&quot;
+[INFO] [1638137440.354965]: I published: data: &quot;The time is now 1638137440.3523407&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137440.450029]: I published: data: &quot;The time is now 1638137440.44885&quot;
+[INFO] [1638137440.551050]: I published: data: &quot;The time is now 1638137440.5488715&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137440.653822]: I published: data: &quot;The time is now 1638137440.6493285&quot;
+[INFO] [1638137440.784651]: I published: data: &quot;The time is now 1638137440.755254&quot;
+[INFO] [1638137440.851203]: I published: data: &quot;The time is now 1638137440.8489227&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137440.950007]: I published: data: &quot;The time is now 1638137440.9489272&quot;
+[INFO] [1638137441.050328]: I published: data: &quot;The time is now 1638137441.0491123&quot;
+[INFO] [1638137441.149923]: I published: data: &quot;The time is now 1638137441.1488173&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137441.250157]: I published: data: &quot;The time is now 1638137441.2487304&quot;
+[INFO] [1638137441.350003]: I published: data: &quot;The time is now 1638137441.3487535&quot;
+[INFO] [1638137441.450061]: I published: data: &quot;The time is now 1638137441.4487917&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137441.551105]: I published: data: &quot;The time is now 1638137441.548985&quot;
+[INFO] [1638137441.650027]: I published: data: &quot;The time is now 1638137441.6487975&quot;
+[INFO] [1638137441.749951]: I published: data: &quot;The time is now 1638137441.7488358&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137441.849878]: I published: data: &quot;The time is now 1638137441.8487308&quot;
+[INFO] [1638137441.952014]: I published: data: &quot;The time is now 1638137441.9506295&quot;
+[INFO] [1638137442.050043]: I published: data: &quot;The time is now 1638137442.0487547&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137442.152482]: I published: data: &quot;The time is now 1638137442.1499767&quot;
+[INFO] [1638137442.250202]: I published: data: &quot;The time is now 1638137442.248927&quot;
+[INFO] [1638137442.349760]: I published: data: &quot;The time is now 1638137442.3487601&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137442.449863]: I published: data: &quot;The time is now 1638137442.4487257&quot;
+[INFO] [1638137442.549921]: I published: data: &quot;The time is now 1638137442.5487611&quot;
+[INFO] [1638137442.651006]: I published: data: &quot;The time is now 1638137442.6490242&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137442.751938]: I published: data: &quot;The time is now 1638137442.7494373&quot;
+[INFO] [1638137442.850035]: I published: data: &quot;The time is now 1638137442.8487248&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137442.950321]: I published: data: &quot;The time is now 1638137442.9492466&quot;
+[INFO] [1638137443.052970]: I published: data: &quot;The time is now 1638137443.0489562&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137443.152049]: I published: data: &quot;The time is now 1638137443.1491327&quot;
+[INFO] [1638137443.249926]: I published: data: &quot;The time is now 1638137443.248793&quot;
+[INFO] [1638137443.349875]: I published: data: &quot;The time is now 1638137443.3487432&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137443.457987]: I published: data: &quot;The time is now 1638137443.4501503&quot;
+[INFO] [1638137443.550139]: I published: data: &quot;The time is now 1638137443.5488095&quot;
+[INFO] [1638137443.649831]: I published: data: &quot;The time is now 1638137443.648734&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137443.755814]: I published: data: &quot;The time is now 1638137443.7490098&quot;
+[INFO] [1638137443.859923]: I published: data: &quot;The time is now 1638137443.8510356&quot;
+[INFO] [1638137443.954105]: I published: data: &quot;The time is now 1638137443.9494295&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137444.050906]: I published: data: &quot;The time is now 1638137444.04969&quot;
+[INFO] [1638137444.150214]: I published: data: &quot;The time is now 1638137444.149011&quot;
+[INFO] [1638137444.250091]: I published: data: &quot;The time is now 1638137444.2489297&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137444.349969]: I published: data: &quot;The time is now 1638137444.348776&quot;
+[INFO] [1638137444.450086]: I published: data: &quot;The time is now 1638137444.44874&quot;
+[INFO] [1638137444.550627]: I published: data: &quot;The time is now 1638137444.5487478&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137444.650222]: I published: data: &quot;The time is now 1638137444.6488214&quot;
+[INFO] [1638137444.754703]: I published: data: &quot;The time is now 1638137444.7500455&quot;
+[INFO] [1638137444.849930]: I published: data: &quot;The time is now 1638137444.8489218&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137444.952187]: I published: data: &quot;The time is now 1638137444.9510818&quot;
+[INFO] [1638137445.049891]: I published: data: &quot;The time is now 1638137445.048782&quot;
+[INFO] [1638137445.150145]: I published: data: &quot;The time is now 1638137445.1488063&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137445.250040]: I published: data: &quot;The time is now 1638137445.248828&quot;
+[INFO] [1638137445.350193]: I published: data: &quot;The time is now 1638137445.3489938&quot;
+[INFO] [1638137445.449947]: I published: data: &quot;The time is now 1638137445.4487233&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137445.549932]: I published: data: &quot;The time is now 1638137445.5487304&quot;
+[INFO] [1638137445.651638]: I published: data: &quot;The time is now 1638137445.649108&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137445.753348]: I published: data: &quot;The time is now 1638137445.7490852&quot;
+[INFO] [1638137445.854175]: I published: data: &quot;The time is now 1638137445.8497646&quot;
+[INFO] [1638137445.954555]: I published: data: &quot;The time is now 1638137445.9507098&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137446.052809]: I published: data: &quot;The time is now 1638137446.0489843&quot;
+[INFO] [1638137446.152422]: I published: data: &quot;The time is now 1638137446.1499894&quot;
+[INFO] [1638137446.250423]: I published: data: &quot;The time is now 1638137446.2491906&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137446.349826]: I published: data: &quot;The time is now 1638137446.3487756&quot;
+[INFO] [1638137446.451282]: I published: data: &quot;The time is now 1638137446.4490714&quot;
+[INFO] [1638137446.550164]: I published: data: &quot;The time is now 1638137446.5488894&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137446.650735]: I published: data: &quot;The time is now 1638137446.6488636&quot;
+[INFO] [1638137446.750439]: I published: data: &quot;The time is now 1638137446.7487411&quot;
+[INFO] [1638137446.849997]: I published: data: &quot;The time is now 1638137446.8487203&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137446.950118]: I published: data: &quot;The time is now 1638137446.9487572&quot;
+[INFO] [1638137447.051149]: I published: data: &quot;The time is now 1638137447.04916&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137447.151585]: I published: data: &quot;The time is now 1638137447.1489127&quot;
+[INFO] [1638137447.249996]: I published: data: &quot;The time is now 1638137447.2487836&quot;
+[INFO] [1638137447.351503]: I published: data: &quot;The time is now 1638137447.348965&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137447.450222]: I published: data: &quot;The time is now 1638137447.4487178&quot;
+[INFO] [1638137447.550975]: I published: data: &quot;The time is now 1638137447.5489988&quot;
+[INFO] [1638137447.650027]: I published: data: &quot;The time is now 1638137447.6486945&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137447.749832]: I published: data: &quot;The time is now 1638137447.7487998&quot;
+[INFO] [1638137447.849748]: I published: data: &quot;The time is now 1638137447.8487008&quot;
+[INFO] [1638137447.950000]: I published: data: &quot;The time is now 1638137447.9488108&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137448.049773]: I published: data: &quot;The time is now 1638137448.0487254&quot;
+[INFO] [1638137448.150032]: I published: data: &quot;The time is now 1638137448.1489167&quot;
+[INFO] [1638137448.249730]: I published: data: &quot;The time is now 1638137448.248718&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137448.349927]: I published: data: &quot;The time is now 1638137448.348702&quot;
+[INFO] [1638137448.449898]: I published: data: &quot;The time is now 1638137448.4488173&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137448.555475]: I published: data: &quot;The time is now 1638137448.5514066&quot;
+[INFO] [1638137448.655526]: I published: data: &quot;The time is now 1638137448.6540723&quot;
+[INFO] [1638137448.749970]: I published: data: &quot;The time is now 1638137448.748705&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137448.850186]: I published: data: &quot;The time is now 1638137448.848872&quot;
+[INFO] [1638137448.952405]: I published: data: &quot;The time is now 1638137448.9510303&quot;
+[INFO] [1638137449.049947]: I published: data: &quot;The time is now 1638137449.048723&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137449.149828]: I published: data: &quot;The time is now 1638137449.1487353&quot;
+[INFO] [1638137449.251539]: I published: data: &quot;The time is now 1638137449.2489877&quot;
+[INFO] [1638137449.349961]: I published: data: &quot;The time is now 1638137449.3488932&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137449.465755]: I published: data: &quot;The time is now 1638137449.4582148&quot;
+[INFO] [1638137449.549769]: I published: data: &quot;The time is now 1638137449.5487146&quot;
+[INFO] [1638137449.650409]: I published: data: &quot;The time is now 1638137449.649068&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137449.750149]: I published: data: &quot;The time is now 1638137449.749089&quot;
+[INFO] [1638137449.853310]: I published: data: &quot;The time is now 1638137449.8490577&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137449.953135]: I published: data: &quot;The time is now 1638137449.9498816&quot;
+[INFO] [1638137450.049769]: I published: data: &quot;The time is now 1638137450.0487745&quot;
+[INFO] [1638137450.151680]: I published: data: &quot;The time is now 1638137450.1494362&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137450.273934]: I published: data: &quot;The time is now 1638137450.2639878&quot;
+[INFO] [1638137450.353678]: I published: data: &quot;The time is now 1638137450.3499928&quot;
+[INFO] [1638137450.449950]: I published: data: &quot;The time is now 1638137450.448893&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137450.549957]: I published: data: &quot;The time is now 1638137450.5487347&quot;
+[INFO] [1638137450.650877]: I published: data: &quot;The time is now 1638137450.6496608&quot;
+[INFO] [1638137450.750140]: I published: data: &quot;The time is now 1638137450.7489352&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137450.850028]: I published: data: &quot;The time is now 1638137450.8487506&quot;
+[INFO] [1638137450.955841]: I published: data: &quot;The time is now 1638137450.9490175&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137451.052114]: I published: data: &quot;The time is now 1638137451.0489774&quot;
+[INFO] [1638137451.149791]: I published: data: &quot;The time is now 1638137451.1487124&quot;
+[INFO] [1638137451.249864]: I published: data: &quot;The time is now 1638137451.2487216&quot;
+[INFO] [1638137451.350019]: I published: data: &quot;The time is now 1638137451.3487132&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137451.449692]: I published: data: &quot;The time is now 1638137451.448692&quot;
+[INFO] [1638137451.550245]: I published: data: &quot;The time is now 1638137451.5489008&quot;
+[INFO] [1638137451.649840]: I published: data: &quot;The time is now 1638137451.6487145&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137451.749714]: I published: data: &quot;The time is now 1638137451.7486868&quot;
+[INFO] [1638137451.849794]: I published: data: &quot;The time is now 1638137451.84872&quot;
+[INFO] [1638137451.949853]: I published: data: &quot;The time is now 1638137451.9487042&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137452.050465]: I published: data: &quot;The time is now 1638137452.0489743&quot;
+[INFO] [1638137452.149771]: I published: data: &quot;The time is now 1638137452.1487062&quot;
+[INFO] [1638137452.250133]: I published: data: &quot;The time is now 1638137452.248834&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137452.351250]: I published: data: &quot;The time is now 1638137452.349002&quot;
+[INFO] [1638137452.451222]: I published: data: &quot;The time is now 1638137452.4489322&quot;
+[INFO] [1638137452.550089]: I published: data: &quot;The time is now 1638137452.5488145&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137452.651477]: I published: data: &quot;The time is now 1638137452.6501245&quot;
+[INFO] [1638137452.750072]: I published: data: &quot;The time is now 1638137452.7488687&quot;
+[INFO] [1638137452.850379]: I published: data: &quot;The time is now 1638137452.8492475&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137452.954196]: I published: data: &quot;The time is now 1638137452.9493496&quot;
+[INFO] [1638137453.054227]: I published: data: &quot;The time is now 1638137453.0530927&quot;
+[INFO] [1638137453.151641]: I published: data: &quot;The time is now 1638137453.1504176&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137453.249895]: I published: data: &quot;The time is now 1638137453.2488184&quot;
+[INFO] [1638137453.349753]: I published: data: &quot;The time is now 1638137453.3486507&quot;
+[INFO] [1638137453.450029]: I published: data: &quot;The time is now 1638137453.4487305&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137453.550092]: I published: data: &quot;The time is now 1638137453.5488923&quot;
+[INFO] [1638137453.650447]: I published: data: &quot;The time is now 1638137453.648964&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137453.752975]: I published: data: &quot;The time is now 1638137453.748923&quot;
+[INFO] [1638137453.852420]: I published: data: &quot;The time is now 1638137453.8498845&quot;
+[INFO] [1638137453.950057]: I published: data: &quot;The time is now 1638137453.9487634&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137454.050669]: I published: data: &quot;The time is now 1638137454.0490053&quot;
+[INFO] [1638137454.150016]: I published: data: &quot;The time is now 1638137454.1487997&quot;
+[INFO] [1638137454.250032]: I published: data: &quot;The time is now 1638137454.2488782&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137454.350101]: I published: data: &quot;The time is now 1638137454.3489165&quot;
+[INFO] [1638137454.449731]: I published: data: &quot;The time is now 1638137454.4487302&quot;
+[INFO] [1638137454.550134]: I published: data: &quot;The time is now 1638137454.548837&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137454.650074]: I published: data: &quot;The time is now 1638137454.6488147&quot;
+[INFO] [1638137454.750320]: I published: data: &quot;The time is now 1638137454.7489667&quot;
+[INFO] [1638137454.850034]: I published: data: &quot;The time is now 1638137454.84888&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137454.951403]: I published: data: &quot;The time is now 1638137454.9490004&quot;
+[INFO] [1638137455.050005]: I published: data: &quot;The time is now 1638137455.0487592&quot;
+[INFO] [1638137455.149951]: I published: data: &quot;The time is now 1638137455.1487143&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137455.259536]: I published: data: &quot;The time is now 1638137455.2497623&quot;
+[INFO] [1638137455.350379]: I published: data: &quot;The time is now 1638137455.3493106&quot;
+[INFO] [1638137455.450086]: I published: data: &quot;The time is now 1638137455.4487853&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137455.550410]: I published: data: &quot;The time is now 1638137455.5489564&quot;
+[INFO] [1638137455.651066]: I published: data: &quot;The time is now 1638137455.6488621&quot;
+[INFO] [1638137455.749779]: I published: data: &quot;The time is now 1638137455.7486944&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137455.850126]: I published: data: &quot;The time is now 1638137455.848982&quot;
+[INFO] [1638137455.949969]: I published: data: &quot;The time is now 1638137455.9489152&quot;
+[INFO] [1638137456.049848]: I published: data: &quot;The time is now 1638137456.0487502&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137456.150390]: I published: data: &quot;The time is now 1638137456.1490703&quot;
+[INFO] [1638137456.249964]: I published: data: &quot;The time is now 1638137456.2487006&quot;
+[INFO] [1638137456.350066]: I published: data: &quot;The time is now 1638137456.3487706&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137456.459292]: I published: data: &quot;The time is now 1638137456.450876&quot;
+[INFO] [1638137456.569896]: I published: data: &quot;The time is now 1638137456.5491328&quot;
+[INFO] [1638137456.658024]: I published: data: &quot;The time is now 1638137456.6514134&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137456.754432]: I published: data: &quot;The time is now 1638137456.7532248&quot;
+[INFO] [1638137456.849985]: I published: data: &quot;The time is now 1638137456.8487065&quot;
+[INFO] [1638137456.952749]: I published: data: &quot;The time is now 1638137456.949168&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137457.050367]: I published: data: &quot;The time is now 1638137457.0490575&quot;
+[INFO] [1638137457.150417]: I published: data: &quot;The time is now 1638137457.148867&quot;
+[INFO] [1638137457.251380]: I published: data: &quot;The time is now 1638137457.2489078&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] [1638137457.350105]: I published: data: &quot;The time is now 1638137457.3489888&quot;
+[INFO] [1638137457.462150]: I published: data: &quot;The time is now 1638137457.452404&quot;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./src/viper_toolkit"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../../notebooks.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">3. </span>Content with notebooks</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="sample_subscriber.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3.5. </span>Sample Subscriber Nodes</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Andrew Damico<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

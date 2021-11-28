@@ -3,9 +3,28 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: another_folder/somemore
-- file: another_folder/chapter3
-- file: ../src/viper_toolkit/readme
+options:
+  numbered: true
+parts:
+- caption: Introduction
+  numbered: True
+  chapters:
+  - file: readme
+  - file: markdown
+  - file: notebooks
+    sections:
+    - file: docs/ros_structure
+    - file: docs/Hardware
+    - url: https://www.linux.com
+      title: Linux Website
+  - caption: Packages
+  numbered: True
+  chapters:
+  - file: src/viper_toolkit/readme
+  - file: src/augmented_vr_module/readme
+  - file: src/image_server/readme
+  - file: src/inland_ir_cam/readme
+  - file: src/model_server/readme
+  - file: src/pose_detection_module/readme
+  - file: src/scene_segmentation_module/readme
+  - glob: devel/*

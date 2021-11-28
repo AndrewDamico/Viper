@@ -165,7 +165,7 @@ class Parameter(object):
             self._value = var
 
 
-class Parameters(object):
+class ParameterManager(object):
     def __init__(self, 
                 name_manager: NameManager = None, 
                 logger: Logger = None):

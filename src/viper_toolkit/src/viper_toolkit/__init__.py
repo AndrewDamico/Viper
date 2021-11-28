@@ -6,13 +6,13 @@ __author__ = 'Andrew Damico'
 from .name_manager import NameManager
 from .logger import Logger
 from .process_timer import ProcessTimer
-from .parameter_manager import Parameter, Parameters
+from .parameter_manager import Parameter, ParameterManager
 
 __all__ = [
     'NameManager',
     'Logger',
     'ProcessTimer',
     'Parameter',
-    'Parameters'
+    'ParameterManager'
 ]
 

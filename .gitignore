@@ -1,0 +1,5 @@
+*.log
+viper.sh
+*.helper
+*.backup
+*.tar.gz

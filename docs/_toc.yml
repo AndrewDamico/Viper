@@ -7,4 +7,5 @@ chapters:
 - file: markdown
 - file: notebooks
 - file: /another_folder/somemore
+- file: another_folder/chapter3
 - file: ../src/viper_toolkit/readme

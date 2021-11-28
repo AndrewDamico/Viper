@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; Viper Vision Inference Processing Endogenous (Edge) Robot</title>
+    <title>Model Server &#8212; Viper Vision Inference Processing Endogenous (Edge) Robot</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -85,8 +85,6 @@ commentsRunWhenDOMLoaded(addUtterances);
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="9. Pose Detection Module" href="../pose_detection_module/readme.html" />
-    <link rel="prev" title="8. Model Server" href="readme.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -308,7 +306,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/src/model_server/model_server_modules.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/src/model_server/Model Server Python Scripts.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -328,10 +326,10 @@ commentsRunWhenDOMLoaded(addUtterances);
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/AndrewDamico/viper/issues/new?title=Issue%20on%20page%20%2Fsrc/model_server/model_server_modules.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/AndrewDamico/viper/issues/new?title=Issue%20on%20page%20%2Fsrc/model_server/Model Server Python Scripts.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/AndrewDamico/viper/edit/main/https://andrewdamico.github.io/viper/src/model_server/model_server_modules.ipynb"><button
+        <a class="edit-button" href="https://github.com/AndrewDamico/viper/edit/main/https://andrewdamico.github.io/viper/src/model_server/Model Server Python Scripts.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -351,7 +349,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/AndrewDamico/viper/main?urlpath=tree/https://andrewdamico.github.io/viper/src/model_server/model_server_modules.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/AndrewDamico/viper/main?urlpath=tree/https://andrewdamico.github.io/viper/src/model_server/Model Server Python Scripts.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -368,14 +366,6 @@ commentsRunWhenDOMLoaded(addUtterances);
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -384,7 +374,9 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <div class="cell docutils container">
+  <div class="tex2jax_ignore mathjax_ignore section" id="model-server">
+<h1>Model Server<a class="headerlink" href="#model-server" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">inspect</span>
 </pre></div>
@@ -402,7 +394,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_90378</span><span class="o">/</span><span class="mf">2092780140.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_90361</span><span class="o">/</span><span class="mf">2092780140.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">model_server.msg</span> <span class="kn">import</span> <span class="n">InferenceResults</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">lines</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">InferenceResults</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">print</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
@@ -913,6 +905,7 @@ float32[]   inferences
 </div>
 </div>
 </div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -938,21 +931,7 @@ float32[]   inferences
               
         
             <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="readme.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">8. </span>Model Server</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="../pose_detection_module/readme.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">9. </span>Pose Detection Module</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+<div class='prev-next-area'>
 </div>
         
         </div>

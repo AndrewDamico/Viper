@@ -3,3 +3,6 @@ viper.sh
 *.helper
 *.backup
 *.tar.gz
+*.ipynb_checkpoints
+__pycache__
+__pycache__/*

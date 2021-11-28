@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; Viper Vision Inference Processing Endogenous (Edge) Robot</title>
+    <title>Inland IR Camera &#8212; Viper Vision Inference Processing Endogenous (Edge) Robot</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -40,6 +40,40 @@
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "andrewdamico.github.io/viper");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -94,25 +128,40 @@
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../markdown.html">
-   Markdown Files
+  <a class="reference internal" href="../viper_toolkit/readme.html">
+   1. Viper Toolkit
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../notebooks.html">
-   Content with notebooks
+  <a class="reference internal" href="../augmented_vr_module/readme.html">
+   2. Augmented VR Module
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../another_folder/somemore.html">
-   Another File
+  <a class="reference internal" href="../image_server/readme.html">
+   3. Image Server
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../another_folder/chapter3.html">
-   Chapter 3
+  <a class="reference internal" href="../model_server/readme.html">
+   4. Model Server
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pose_detection_module/readme.html">
+   5. Pose Detection Module
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../scene_segmentation_module/readme.html">
+   6. Scene Segmentation Module
   </a>
  </li>
 </ul>
@@ -172,14 +221,16 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://andrewdamico.github.io/viper"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fsrc/inland_ir_cam/README.html&body=Your%20issue%20content%20here."><button
+            href="https://andrewdamico.github.io/viper/issues/new?title=Issue%20on%20page%20%2Fsrc/inland_ir_cam/README.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
+        <a class="edit-button" href="https://github.com/andrewdamico.github.io/viper/edit/main//src/inland_ir_cam/README.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
 </div>
 
@@ -197,14 +248,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -213,8 +256,11 @@
         
               <div>
                 
-  <p>This module is based on a fork the Raspicam Node.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="inland-ir-camera">
+<h1>Inland IR Camera<a class="headerlink" href="#inland-ir-camera" title="Permalink to this headline">¶</a></h1>
+<p>This module is based on a fork the Raspicam Node.</p>
 <p>Improvements include updates to accomidate non raspberrian cameras using 64bit MMLA services on Ubuntu 20.04 64bit</p>
+</div>
 
     <script type="text/x-thebe-config">
     {

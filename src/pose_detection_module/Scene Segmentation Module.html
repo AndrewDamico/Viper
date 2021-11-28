@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>9. Pose Detection Module &#8212; Viper Vision Inference Processing Endogenous (Edge) Robot</title>
+    <title>Scene Segmentation &#8212; Viper Vision Inference Processing Endogenous (Edge) Robot</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -85,8 +85,6 @@ commentsRunWhenDOMLoaded(addUtterances);
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="10. Scene Segmentation Module" href="../scene_segmentation_module/readme.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="../model_server/model_server_modules.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -198,7 +196,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   Packages
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../viper_toolkit/readme.html">
    4. Viper Toolkit
@@ -243,11 +241,11 @@ commentsRunWhenDOMLoaded(addUtterances);
   <ul class="simple">
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="readme.html">
    9. Pose Detection Module
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
@@ -308,9 +306,9 @@ commentsRunWhenDOMLoaded(addUtterances);
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/src/pose_detection_module/readme.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/src/pose_detection_module/Scene Segmentation Module.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -328,10 +326,10 @@ commentsRunWhenDOMLoaded(addUtterances);
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/AndrewDamico/viper/issues/new?title=Issue%20on%20page%20%2Fsrc/pose_detection_module/readme.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/AndrewDamico/viper/issues/new?title=Issue%20on%20page%20%2Fsrc/pose_detection_module/Scene Segmentation Module.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/AndrewDamico/viper/edit/main/https://andrewdamico.github.io/viper/src/pose_detection_module/readme.md"><button
+        <a class="edit-button" href="https://github.com/AndrewDamico/viper/edit/main/https://andrewdamico.github.io/viper/src/pose_detection_module/Scene Segmentation Module.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -346,6 +344,23 @@ commentsRunWhenDOMLoaded(addUtterances);
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/AndrewDamico/viper/main?urlpath=tree/https://andrewdamico.github.io/viper/src/pose_detection_module/Scene Segmentation Module.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
@@ -359,17 +374,35 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="pose-detection-module">
-<h1><span class="section-number">9. </span>Pose Detection Module<a class="headerlink" href="#pose-detection-module" title="Permalink to this headline">¶</a></h1>
-<p>The Viper Toolkit includes several modules created to aid with the management
-of the log outputs, node names, timing functions, and parameters.</p>
-<ul class="simple">
-<li><p>Name Manager()</p></li>
-<li><p>Logger()</p></li>
-<li><p>ProcessTimer()</p></li>
-<li><p>ParameterManager() and Parameters()</p></li>
-</ul>
-<div class="toctree-wrapper compound">
+  <div class="tex2jax_ignore mathjax_ignore section" id="scene-segmentation">
+<h1>Scene Segmentation<a class="headerlink" href="#scene-segmentation" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">inspect</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scene_segmentation_module</span> <span class="k">import</span> <span class="n">SceneSegmentationModel</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">SceneSegmentationModel</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_90395</span><span class="o">/</span><span class="mf">1243320780.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">scene_segmentation_module</span> <span class="kn">import</span> <span class="n">SceneSegmentationModel</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">lines</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">SceneSegmentationModel</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">print</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;scene_segmentation_module&#39;
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
@@ -397,21 +430,7 @@ of the log outputs, node names, timing functions, and parameters.</p>
               
         
             <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../model_server/model_server_modules.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">&lt;no title&gt;</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="../scene_segmentation_module/readme.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">10. </span>Scene Segmentation Module</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+<div class='prev-next-area'>
 </div>
         
         </div>

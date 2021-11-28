@@ -85,7 +85,7 @@ commentsRunWhenDOMLoaded(addUtterances);
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3.7. Robot OS (ROS)" href="../../docs/ros_structure.html" />
+    <link rel="next" title="3.6. Robot OS (ROS)" href="../../docs/ros_structure.html" />
     <link rel="prev" title="3.4. Sample Publisher Nodes" href="sample_publisher.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -168,12 +168,12 @@ commentsRunWhenDOMLoaded(addUtterances);
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../docs/ros_structure.html">
-     3.7. Robot OS (ROS)
+     3.6. Robot OS (ROS)
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../docs/Hardware.html">
-     3.8. Hardware Configuration
+     3.7. Hardware Configuration
     </a>
    </li>
    <li class="toctree-l2">
@@ -383,52 +383,52 @@ commentsRunWhenDOMLoaded(addUtterances);
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   3.5. Sample Subscriber Nodes
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-example-subscriber-node-and-class-definition">
+   3.5.1. The Example Subscriber Node and Class Definition
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-example-subscriber-node-and-class-definition">
-   3.6. The Example Subscriber Node and Class Definition
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#detailed-look-at-class-attributes-properties-and-methods">
+   3.5.2. Detailed Look at Class Attributes, Properties, and Methods
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#initialize-the-class-object">
-     3.6.1. 1. Initialize the Class Object
+     3.5.2.1. Initialize the Class Object
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#setup-ros">
-     3.6.2. 2. Setup ROS
+     3.5.2.2. Setup ROS
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#setting-up-the-publisher">
-     3.6.3. 3. Setting up the Publisher
+     3.5.2.3. Setting up the Publisher
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-callback-function">
-     3.6.4. 4. The Callback Function
+     3.5.2.4. The Callback Function
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-action-loop">
-     3.6.5. 4. The Action Loop
+     3.5.2.5. The Action Loop
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#main-loop">
-     3.6.6. 5. Main Loop
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#results">
-     3.6.7. Results
+     3.5.2.6. Main Loop
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#final-output">
+   3.5.3. Final Output
+  </a>
  </li>
 </ul>
 
@@ -455,9 +455,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 </div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="the-example-subscriber-node-and-class-definition">
-<h1><span class="section-number">3.6. </span>The Example Subscriber Node and Class Definition<a class="headerlink" href="#the-example-subscriber-node-and-class-definition" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="the-example-subscriber-node-and-class-definition">
+<h2><span class="section-number">3.5.1. </span>The Example Subscriber Node and Class Definition<a class="headerlink" href="#the-example-subscriber-node-and-class-definition" title="Permalink to this headline">¶</a></h2>
 <p>In each package, located in the “viper/src” director of my git repository, there is a ‘script’ folder. Within this folder are the various nodes for that package (which usually are also a class definition of that node). We can take a look at the sample subscriber node I built within the “viper_toolkit” package.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -510,6 +509,9 @@ if __name__ == &#39;__main__&#39;:
 </div>
 <p>Each of my class definitions will look similar, although will greatly vary in complexity.</p>
 <p>Lets take a look at the different parts of this node.</p>
+</div>
+<div class="section" id="detailed-look-at-class-attributes-properties-and-methods">
+<h2><span class="section-number">3.5.2. </span>Detailed Look at Class Attributes, Properties, and Methods<a class="headerlink" href="#detailed-look-at-class-attributes-properties-and-methods" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">script.subscriber</span> <span class="k">import</span> <span class="n">SubscriberNode</span>
@@ -540,8 +542,46 @@ if __name__ == &#39;__main__&#39;:
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dissect</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="n">SubscriberNode</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Dissect() takes a method and a class, and returns the contents of the function.</span>
+<span class="sd">    </span>
+<span class="sd">    Keyword Arguments:</span>
+<span class="sd">    </span>
+<span class="sd">    method -- the name of the method being invoked</span>
+<span class="sd">    class_ -- the name of the class object dissected</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">instance_</span> <span class="o">=</span> <span class="n">class_</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;instance_.</span><span class="si">{method}</span><span class="s1">&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;class </span><span class="si">{SubscriberNode.__name__}</span><span class="s1">(object):&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dissect</span><span class="p">(</span><span class="s1">&#39;__init__&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>class SubscriberNode(object):
+
+    def __init__(self):
+        self.setup_ros()
+        self.setup_subscriber()
+        self.main_loop()
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="initialize-the-class-object">
-<h2><span class="section-number">3.6.1. </span>1. Initialize the Class Object<a class="headerlink" href="#initialize-the-class-object" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">3.5.2.1. </span>Initialize the Class Object<a class="headerlink" href="#initialize-the-class-object" title="Permalink to this headline">¶</a></h3>
 <p>The <strong>init</strong> class function executes at the time that the class in instantiated. We are telling the interpreter to first run the setup_ros() function, then run the setup_publisher() function, and finally to execute the main_loop() function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -562,7 +602,7 @@ if __name__ == &#39;__main__&#39;:
 </div>
 </div>
 <div class="section" id="setup-ros">
-<h2><span class="section-number">3.6.2. </span>2. Setup ROS<a class="headerlink" href="#setup-ros" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">3.5.2.2. </span>Setup ROS<a class="headerlink" href="#setup-ros" title="Permalink to this headline">¶</a></h3>
 <p>We need to tell ROS that we would like to bring this node online; we are registering this kernel as “sample_subscriber”.</p>
 <p>During this step we will also set the class “message” attribute using the class String.This allows us to retrieve the previous message upon failure so that we do not disrupt the system loop in the event of a dropped message. Note that the message types between the subscribers and the publishers must be the same.</p>
 <div class="cell docutils container">
@@ -583,7 +623,7 @@ if __name__ == &#39;__main__&#39;:
 </div>
 </div>
 <div class="section" id="setting-up-the-publisher">
-<h2><span class="section-number">3.6.3. </span>3. Setting up the Publisher<a class="headerlink" href="#setting-up-the-publisher" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">3.5.2.3. </span>Setting up the Publisher<a class="headerlink" href="#setting-up-the-publisher" title="Permalink to this headline">¶</a></h3>
 <p>Next we will setup the subscriber API which allows a node to subscribe to a “Topic.” This node will be receive all messages of the topic “topic”, but will only hold on to the last message (queue_size=1).</p>
 <p>When it receives a new message it will execute its class callback() function</p>
 <div class="cell docutils container">
@@ -607,7 +647,7 @@ if __name__ == &#39;__main__&#39;:
 </div>
 </div>
 <div class="section" id="the-callback-function">
-<h2><span class="section-number">3.6.4. </span>4. The Callback Function<a class="headerlink" href="#the-callback-function" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">3.5.2.4. </span>The Callback Function<a class="headerlink" href="#the-callback-function" title="Permalink to this headline">¶</a></h3>
 <p>The callback() function tells the node what to do once it receives a message. In this example we are asking the node to save the incoming message to the container we set up earlier. Rather than perform an action in the main loop, which is activated cyclically, we will have our action originate from this callback.</p>
 <p>Thoughout my modules I use a variety of types of messages and callbacks to not only pass on data such as images and inference results, but to also publish “flags” or indicators that a node wants something.</p>
 <div class="cell docutils container">
@@ -643,7 +683,7 @@ data: &quot;The time is now 1638136508.7424648&quot;
 </div>
 </div>
 <div class="section" id="the-action-loop">
-<h2><span class="section-number">3.6.5. </span>4. The Action Loop<a class="headerlink" href="#the-action-loop" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">3.5.2.5. </span>The Action Loop<a class="headerlink" href="#the-action-loop" title="Permalink to this headline">¶</a></h3>
 <p>In our example action loop we will take the most recent message and transform its case into capital letters. We access the data in the message through it message.data class property. We then output the results to the terminal, as well as return the results when this function is called.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -663,7 +703,7 @@ data: &quot;The time is now 1638136508.7424648&quot;
 </div>
 </div>
 <div class="section" id="main-loop">
-<h2><span class="section-number">3.6.6. </span>5. Main Loop<a class="headerlink" href="#main-loop" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">3.5.2.6. </span>Main Loop<a class="headerlink" href="#main-loop" title="Permalink to this headline">¶</a></h3>
 <p>Like the publisher node, the main loop is the loop which will continually run while the node is online. Since all of our actions are occuring within the callback loop we do not have much in our main loop, other than the rospy.spin() function which keeps the kernal alive in the case that it is not actively processing data (but still waiting for messages).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -681,8 +721,9 @@ data: &quot;The time is now 1638136508.7424648&quot;
 </div>
 </div>
 </div>
-<div class="section" id="results">
-<h2><span class="section-number">3.6.7. </span>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="final-output">
+<h2><span class="section-number">3.5.3. </span>Final Output<a class="headerlink" href="#final-output" title="Permalink to this headline">¶</a></h2>
 <p>Our resulting output looks like this.</p>
 </div>
 </div>
@@ -722,7 +763,7 @@ data: &quot;The time is now 1638136508.7424648&quot;
     <a class='right-next' id="next-link" href="../../docs/ros_structure.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.7. </span>Robot OS (ROS)</p>
+        <p class="prev-next-title"><span class="section-number">3.6. </span>Robot OS (ROS)</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

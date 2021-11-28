@@ -12,7 +12,7 @@
 ############################# STD MODULES ##############################
 
 from viper_toolkit import ProcessTimer, NameManager
-from viper_toolkit import Parameter, Parameters
+from viper_toolkit import Parameter, ParameterManager
 from viper_toolkit import Logger
 
 ######################### MODEL SERVER MODULES #########################

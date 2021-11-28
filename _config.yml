@@ -21,8 +21,8 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://andrewdamico.github.io/viper  # Online location of your book
-  path_to_book: /  # Optional path to your book, relative to the repository root
+  url: 'https://github.com/AndrewDamico/viper'  # Online location of your book
+  path_to_book: 'https://andrewdamico.github.io/viper'  # Optional path to your book, relative to the repository root
   branch: main  # Which branch of the repository should be used when creating links (optional)
 
 # Add GitHub buttons to your book
@@ -33,7 +33,7 @@ html:
   use_edit_page_button: true
   comments:
     utterances:
-      repo: "andrewdamico.github.io/viper"
+      repo: "https://github.com/AndrewDamico/viper"
 
 sphinx:
   extra_extensions:

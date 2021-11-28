@@ -12,7 +12,7 @@
 ############################# ROS MODULES ##############################
 import rospy
 from viper_toolkit import NameManager, ProcessTimer
-from viper_toolkit import Parameters, Parameter
+from viper_toolkit import ParameterManager, Parameter
 from viper_toolkit import Logger
 
 ############################# STD MODULES ##############################

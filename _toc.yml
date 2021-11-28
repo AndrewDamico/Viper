@@ -17,14 +17,22 @@ parts:
     - file: docs/Hardware
     - url: https://www.linux.com
       title: Linux Website
-  - caption: Packages
+- caption: Packages
   numbered: True
   chapters:
   - file: src/viper_toolkit/readme
+    sections:
+    - file: src/viper_toolkit/viper_toolkit_python_modules
   - file: src/augmented_vr_module/readme
   - file: src/image_server/readme
   - file: src/inland_ir_cam/readme
   - file: src/model_server/readme
+    sections:
+    - file: src/model_server_modules
   - file: src/pose_detection_module/readme
+    sections:
+    - file: src/pose_detection_module/pose_detecton_modules
   - file: src/scene_segmentation_module/readme
+    sections:
+    - file: src/scene_segmentation_modules/scene_segmentation_modules
   - glob: devel/*

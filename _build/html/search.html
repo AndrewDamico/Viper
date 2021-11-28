@@ -61,7 +61,7 @@ var addUtterances = () => {
     script.src = "https://utteranc.es/client.js";
     script.async = "async";
 
-    script.setAttribute("repo", "andrewdamico.github.io/viper");
+    script.setAttribute("repo", "https://github.com/AndrewDamico/viper");
     script.setAttribute("issue-term", "pathname");
     script.setAttribute("theme", "github-light");
     script.setAttribute("label", "💬 comment");
@@ -134,39 +134,116 @@ commentsRunWhenDOMLoaded(addUtterances);
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="src/viper_toolkit/readme.html">
-   1. Viper Toolkit
+  <a class="reference internal" href="readme.html">
+   1. The ROS VIPER Library
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="markdown.html">
+   2. Markdown Files
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="notebooks.html">
+   3. Content with notebooks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="docs/ros_structure.html">
+     3.4. Robot OS (ROS)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="docs/Hardware.html">
+     3.5. Hardware Configuration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://www.linux.com">
+     Linux Website
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Packages
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="src/viper_toolkit/readme.html">
+   4. Viper Toolkit
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="src/viper_toolkit/viper_toolkit_python_modules.html">
+     4.1. NameManager
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="src/augmented_vr_module/readme.html">
-   2. Augmented VR Module
+   5. Augmented VR Module
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="src/image_server/readme.html">
-   3. Image Server
+   6. Image Server
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="src/inland_ir_cam/readme.html">
-   4. Inland IR Camera
+   7. Inland IR Camera
   </a>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="src/model_server/readme.html">
-   5. Model Server
+   8. Model Server
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="src/pose_detection_module/readme.html">
-   6. Pose Detection Module
+   9. Pose Detection Module
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="src/scene_segmentation_module/readme.html">
-   7. Scene Segmentation Module
+   10. Scene Segmentation Module
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
  </li>
 </ul>
 
@@ -208,11 +285,11 @@ commentsRunWhenDOMLoaded(addUtterances);
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://andrewdamico.github.io/viper"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/AndrewDamico/viper"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://andrewdamico.github.io/viper/issues/new?title=Issue%20on%20page%20%2Fsearch.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/AndrewDamico/viper/issues/new?title=Issue%20on%20page%20%2Fsearch.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         

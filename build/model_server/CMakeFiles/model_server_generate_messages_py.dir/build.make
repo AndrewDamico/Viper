@@ -67,16 +67,16 @@ model_server/CMakeFiles/model_server_generate_messages_py: /home/andrew/viper/de
 
 /home/andrew/viper/devel/lib/python3/dist-packages/model_server/srv/_ImageRequest.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
 /home/andrew/viper/devel/lib/python3/dist-packages/model_server/srv/_ImageRequest.py: /home/andrew/viper/src/model_server/srv/ImageRequest.srv
-/home/andrew/viper/devel/lib/python3/dist-packages/model_server/srv/_ImageRequest.py: /opt/ros/noetic/share/std_msgs/msg/Bool.msg
 /home/andrew/viper/devel/lib/python3/dist-packages/model_server/srv/_ImageRequest.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/andrew/viper/devel/lib/python3/dist-packages/model_server/srv/_ImageRequest.py: /opt/ros/noetic/share/sensor_msgs/msg/Image.msg
+/home/andrew/viper/devel/lib/python3/dist-packages/model_server/srv/_ImageRequest.py: /opt/ros/noetic/share/std_msgs/msg/Bool.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrew/viper/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python code from SRV model_server/ImageRequest"
 	cd /home/andrew/viper/build/model_server && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/andrew/viper/src/model_server/srv/ImageRequest.srv -Imodel_server:/home/andrew/viper/src/model_server/msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p model_server -o /home/andrew/viper/devel/lib/python3/dist-packages/model_server/srv
 
 /home/andrew/viper/devel/lib/python3/dist-packages/model_server/srv/_ModelRequest.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
 /home/andrew/viper/devel/lib/python3/dist-packages/model_server/srv/_ModelRequest.py: /home/andrew/viper/src/model_server/srv/ModelRequest.srv
-/home/andrew/viper/devel/lib/python3/dist-packages/model_server/srv/_ModelRequest.py: /home/andrew/viper/src/model_server/msg/InferenceResults.msg
 /home/andrew/viper/devel/lib/python3/dist-packages/model_server/srv/_ModelRequest.py: /opt/ros/noetic/share/std_msgs/msg/String.msg
+/home/andrew/viper/devel/lib/python3/dist-packages/model_server/srv/_ModelRequest.py: /home/andrew/viper/src/model_server/msg/InferenceResults.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrew/viper/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python code from SRV model_server/ModelRequest"
 	cd /home/andrew/viper/build/model_server && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/andrew/viper/src/model_server/srv/ModelRequest.srv -Imodel_server:/home/andrew/viper/src/model_server/msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p model_server -o /home/andrew/viper/devel/lib/python3/dist-packages/model_server/srv
 

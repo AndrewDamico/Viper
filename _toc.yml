@@ -13,6 +13,8 @@ parts:
   - file: markdown
   - file: notebooks
     sections:
+    - file: src/viper_toolkit/sample_publisher
+    - file: src/viper_toolkit/sample_subscriber
     - file: docs/ros_structure
     - file: docs/Hardware
     - url: https://www.linux.com

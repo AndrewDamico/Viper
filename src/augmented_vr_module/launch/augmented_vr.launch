@@ -1,0 +1,15 @@
+<launch>
+    <arg name="ABV" default="AVR"/>
+    <arg name="name" default="augmented_vr"/>
+    <arg name="dynamic" default="True"/>
+    <arg name="image_output" default="True"/>
+    <arg name="rate" default="25"/>
+    
+    <node name="$(arg name)" type="augmented_vr" pkg="augmented_vr_module">
+    
+    <param name="ABV" value="$(arg ABV)"/>
+    <param name="dynamic" value="$(arg dynamic)"/>
+    <param name="image_output" value="$(arg image_output)"/>
+    <param name="rate" value="$(arg rate)"/>
+
+</launch>

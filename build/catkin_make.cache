@@ -1,0 +1,2 @@
+augmented_vr_module:image_server:inland_ir_cam:model_server:pose_detection_module:scene_segmentation_module:viper_toolkit
+-DCATKIN_DEVEL_PREFIX=/home/andrew/viper/devel -DCMAKE_INSTALL_PREFIX=/home/andrew/viper/install -G Unix Makefiles

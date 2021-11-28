@@ -1,0 +1,8 @@
+prefix=/home/andrew/viper/install
+
+Name: inland_ir_cam
+Description: Description of inland_ir_cam
+Version: 0.1.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: message_runtime std_msgs

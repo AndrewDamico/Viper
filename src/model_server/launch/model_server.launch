@@ -1,0 +1,9 @@
+<launch>
+    <arg name="abv" default="MOD"/>
+    <arg name="name" default="model_server"/>
+
+    <node name="$(arg name)" type="model_server" pkg="model_server">
+        <param name="abv" value="$(arg abv)"/>
+    </node>
+
+</launch>

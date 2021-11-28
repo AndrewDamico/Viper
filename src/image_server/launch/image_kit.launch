@@ -1,0 +1,27 @@
+<launch>
+
+    <arg name="abv"     default="IMG"/>
+    <arg name="name"    default="image_server"/>
+    
+    <arg name="framerate"         default="20"/>
+    <arg name="width"             default="1024"/>
+    <arg name="height"            default="768"/>
+    <arg name="quality"           default="60"/>
+    
+
+    <node name="image_server" type="image_server" pkg="image_server">
+    
+        <param name="abv"   value="$(arg abv)"/>
+        
+    </node>
+    
+    <include file="$(find inland_ir_cam)/launch/ircam.launch">
+    
+        <arg name="width"         value="$(arg width)"/>
+        <arg name="height"        value="$(arg height)"/>
+        <arg name="framerate"     value="$(arg framerate)"/>
+        <arg name="quality"       value="$(arg quality)"/>    
+        
+    </include>
+
+</launch>

@@ -1,0 +1,17 @@
+<launch>
+    <arg name="rate" default="50"/>
+    <arg name="abv" default="PDM"/>
+    <arg name="name" default="pose_detection_model"/>
+    <arg name="threshold" default="0.1"/>
+    <arg name="posedetection" default="True"/>
+    <arg name="dynamic" default="True"/>
+
+  <node name="$(arg name)" type="pose_detection_module" pkg="pose_detection_module"/>
+    <param name="posedetection" value="$(arg posedetection)"/>
+    <param name="rate" value="$(arg rate)"/>
+    <param name="abv" value="$(arg abv)"/>
+    <<param name="threshold" value="$(arg threshold)"/>
+    <param name="dynamic" value="$(arg dynamic)"/>
+
+</launch>
+

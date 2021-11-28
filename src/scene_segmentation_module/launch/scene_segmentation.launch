@@ -1,0 +1,18 @@
+<launch>
+    <arg name="rate" default="50"/>
+    <arg name="ABV" default="SEG"/>
+    <arg name="name" default="scene_segmentation_model"/>
+    <arg name="alpha" default="0.4"/>
+    <arg name="segmentation" default="True"/>
+    <arg name="dynamic" default="True"/>
+    
+
+  <node name="$(arg name)" type="scene_segmentation_module" pkg="scene_segmentation_module"/>
+    <param name="rate" value="$(arg rate)"/>
+    <param name="ABV" value="$(arg ABV)"/>
+    <param name="alpha" value="$(arg alpha)"/>
+    <param name="segmentation" value="$(arg segmentation)"/>
+    <param name="dynamic" value="$(arg dynamic)"/>
+
+</launch>
+

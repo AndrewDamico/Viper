@@ -6,3 +6,5 @@ root: intro
 chapters:
 - file: markdown
 - file: notebooks
+- file: /anotherfolder/somemore.md
+- file: ../src/viper_toolkit/readme.md

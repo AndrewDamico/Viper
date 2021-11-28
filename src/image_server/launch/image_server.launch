@@ -1,0 +1,10 @@
+<launch>
+
+    <arg name="abv"     default="IMG"/>
+    <arg name="name"    default="image_server"/>
+
+    <node name="image_server" type="image_server" pkg="image_server">
+        <param name="abv"   value="$(arg abv)"/>
+    
+    </node>
+</launch>

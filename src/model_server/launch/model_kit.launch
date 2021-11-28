@@ -1,0 +1,8 @@
+<launch>
+    
+    <include file="$(find model_server)/launch/model_server.launch"/>
+    <include file="$(find augmented_vr_module)/launch/augmented_vr.launch"/>
+    <include file="$(find scene_segmentation_module)/launch/scene_segmentation_module.launch"/>
+    <include file="$(find pose_detection_module)/launch/pose_detection_module.launch"/>
+
+</launch>

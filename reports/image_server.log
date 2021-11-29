@@ -17,32 +17,20 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-def dissect(method, class_=SubscriberNode):
-    '''
-    Dissect() takes a method and a class, and returns the contents of the function.
-    
-    Keyword Arguments:
-    
-    method -- the name of the method being invoked
-    class_ -- the name of the class object dissected
-    '''
-    instance_ = class_
-    i = f'instance_.{method}'
-    print(f'class {SubscriberNode.__name__}(object):')
-    print("")
-    e = eval(i)
-    print(inspect.getsource(e))
+from scripts import image_server
+from image_server import ImageServer
+source = inspect.getsource(image_server)
+print (source)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m/tmp/ipykernel_105466/2435067016.py[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0;32mdef[0m [0mdissect[0m[0;34m([0m[0mmethod[0m[0;34m,[0m [0mclass_[0m[0;34m=[0m[0mSubscriberNode[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      2[0m     '''
-[1;32m      3[0m     [0mDissect[0m[0;34m([0m[0;34m)[0m [0mtakes[0m [0ma[0m [0mmethod[0m [0;32mand[0m [0ma[0m [0;32mclass[0m[0;34m,[0m [0;32mand[0m [0mreturns[0m [0mthe[0m [0mcontents[0m [0mof[0m [0mthe[0m [0mfunction[0m[0;34m.[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      4[0m [0;34m[0m[0m
-[1;32m      5[0m     [0mKeyword[0m [0mArguments[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;31mImportError[0m                               Traceback (most recent call last)
+[0;32m/tmp/ipykernel_105180/1246208776.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0;32mfrom[0m [0mscripts[0m [0;32mimport[0m [0mimage_server[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 2[0;31m [0;32mfrom[0m [0mimage_server[0m [0;32mimport[0m [0mImageServer[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      3[0m [0msource[0m [0;34m=[0m [0minspect[0m[0;34m.[0m[0mgetsource[0m[0;34m([0m[0mimage_server[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      4[0m [0mprint[0m [0;34m([0m[0msource[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mNameError[0m: name 'SubscriberNode' is not defined
-NameError: name 'SubscriberNode' is not defined
+[0;31mImportError[0m: cannot import name 'ImageServer' from 'image_server' (/home/andrew/viper/devel/lib/python3/dist-packages/image_server/__init__.py)
+ImportError: cannot import name 'ImageServer' from 'image_server' (/home/andrew/viper/devel/lib/python3/dist-packages/image_server/__init__.py)
 

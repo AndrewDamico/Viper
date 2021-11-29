@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pose Detection Module &#8212; Viper Vision Inference Processing Endogenous (Edge) Robot</title>
+    <title>7.3. Pose Detection Example &#8212; Viper Vision Inference Processing Endogenous (Edge) Robot</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -85,6 +85,8 @@ commentsRunWhenDOMLoaded(addUtterances);
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="8. Augmented VR Module" href="../augmented_vr_module/readme.html" />
+    <link rel="prev" title="7.2. Pose Detection Model" href="pose_detection_model.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -206,7 +208,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   Packages
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../model_server/readme.html">
    4. Model Server
@@ -273,24 +275,29 @@ commentsRunWhenDOMLoaded(addUtterances);
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="readme.html">
    7. Pose Detection Module
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="pose_detection_model.html">
-     7.1. Pose Detection Model
+    <a class="reference internal" href="pose_detection_module.html">
+     7.1. Pose Detection Module
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="example.html">
-     7.2. Pose Detection Example
+    <a class="reference internal" href="pose_detection_model.html">
+     7.2. Pose Detection Model
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     7.3. Pose Detection Example
     </a>
    </li>
   </ul>
@@ -390,7 +397,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/src/pose_detection_module/pose_detection_modules.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/src/pose_detection_module/example.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -410,10 +417,10 @@ commentsRunWhenDOMLoaded(addUtterances);
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/AndrewDamico/viper/issues/new?title=Issue%20on%20page%20%2Fsrc/pose_detection_module/pose_detection_modules.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/AndrewDamico/viper/issues/new?title=Issue%20on%20page%20%2Fsrc/pose_detection_module/example.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/AndrewDamico/viper/edit/main/https://andrewdamico.github.io/viper/src/pose_detection_module/pose_detection_modules.ipynb"><button
+        <a class="edit-button" href="https://github.com/AndrewDamico/viper/edit/main/https://andrewdamico.github.io/viper/src/pose_detection_module/example.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -433,7 +440,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/AndrewDamico/viper/main?urlpath=tree/https://andrewdamico.github.io/viper/src/pose_detection_module/pose_detection_modules.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/AndrewDamico/viper/main?urlpath=tree/https://andrewdamico.github.io/viper/src/pose_detection_module/example.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -458,146 +465,8 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="pose-detection-module">
-<h1>Pose Detection Module<a class="headerlink" href="#pose-detection-module" title="Permalink to this headline">¶</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">inspect</span>
-<span class="kn">from</span> <span class="nn">viper_toolkit</span> <span class="k">import</span> <span class="n">Dissect</span>
-<span class="kn">from</span> <span class="nn">scripts</span> <span class="k">import</span> <span class="n">pose_detection_module</span>
-<span class="kn">from</span> <span class="nn">scripts.pose_detection_module</span> <span class="k">import</span> <span class="n">PoseDetectionModule</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lines</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">PoseDetectionModule</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>class PoseDetectionModule(object):
-
-    def __init__(self):
-        self.name = NameManager()
-        self.logger = Logger(name = self.name)
-        self.pose_estimations = InferenceResults()
-        self.setup_ros()
-        self.loop()
-        
-    def setup_parameters(self):
-        self.parameters = ParameterManager()
-        
-        self.parameters.add(
-            Parameter(
-                name=&quot;rate&quot;, 
-                target=f&quot;{self.name.name}/rate&quot;, 
-                default=50, 
-                dynamic=True))
-                
-        self.parameters.add(
-            Parameter(
-                name=&quot;updates&quot;, 
-                target=f&quot;{self.name.name}/dynamic&quot;, 
-                default=True, 
-                dynamic=True))
-
-
-    def setup_ros(self):
-        
-        rospy.init_node(&#39;pose_detection_model&#39;, log_level=rospy.DEBUG)
-        
-        self.setup_parameters()
-        
-        self.model_request = rospy.ServiceProxy(
-            &#39;model_server/modeling_service&#39;,
-            ModelRequest
-            )
-
-        self.pub = rospy.Publisher(
-            &#39;model_output/pose_articulator/human_graph_nodes&#39;,
-            InferenceResults,
-            queue_size=1
-            )
-
-        self.setup_image_server()
-
-    def setup_image_server(self):
-        self.image_server = ImageServerClient(self.name.abv)
-
-    def action_loop(self):
-        self.timer.lap(&quot;Wait for Service&quot;)
-        rospy.wait_for_service(&#39;model_server/modeling_service&#39;)
-        self.timer.time(&quot;Wait for Service&quot;)
-        
-        try:
-            self.timer.lap(&quot;Modeling Server&quot;)
-            req = String()
-            req.data = &quot;POS&quot; #self.name.abv
-            print (req)
-            response = self.model_request(req)
-            print(response)
-            self.timer.time(&quot;Modeling Server&quot;)
-            self.inference = response.results
-            self.logger.i(
-                f&quot;Mask shape received: {self.inference.structure}&quot;)
-            print(self.inference)
-            return self.inference
-
-        except rospy.ServiceException as e:
-            self.logger.e(f&quot;Service call failed: {e}&quot;)
-            #return self.inference
-
-    def loop(self):
-        
-        rate = rospy.Rate(self.parameters.rate)
-        
-        while not rospy.is_shutdown():
-            
-            if self.parameters.updates == True:
-                self.parameters.update()
-
-            self.timer = ProcessTimer(logger = self.logger)
-            
-            # Check to see if the server has released a new image and 
-            # if so, start new modeling request
-            
-            status = self.image_server.status(&quot;server&quot;)
-            
-            self.logger.i(f&quot;Remote Image Server Status is: {status}&quot;)
-            
-            if status == True: 
-                
-                # Takes down image request flag while performing 
-                # inference since inference time is not negligable
-                self.image_server.update(False)
-                
-                my_status = self.image_server.status(&quot;me&quot;)
-                self.logger.i(f&quot;Waiting Status: {my_status}&quot;)
-                # Retrieve the pose estimations
-                try:
-                    estimates = self.action_loop()
-                    
-                    # Publish the estimations
-                    self.pub.publish(estimates)
-                    rospy.logdebug(f&quot;[{self.name.abv}] Mask Published&quot;)
-                except:
-                    pass
-            # (re)Publishes tag indicating that we (still) want new
-            # images from the image server, either because we were 
-            # successful, or because we are still waiting.
-            self.image_server.update(True)
-            
-            self.logger.i(
-                f&quot;Waiting Status: {self.image_server.status(&#39;me&#39;)}&quot;)
-            self.timer.time(&quot;total_runtime&quot;)
-            rate.sleep()
-</pre></div>
-</div>
-</div>
-</div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="pose-detection-example">
+<h1><span class="section-number">7.3. </span>Pose Detection Example<a class="headerlink" href="#pose-detection-example" title="Permalink to this headline">¶</a></h1>
 </div>
 
     <script type="text/x-thebe-config">
@@ -624,7 +493,21 @@ commentsRunWhenDOMLoaded(addUtterances);
               
         
             <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="pose_detection_model.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">7.2. </span>Pose Detection Model</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../augmented_vr_module/readme.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>Augmented VR Module</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>

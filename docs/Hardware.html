@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3.7. Hardware Configuration &#8212; Viper Vision Inference Processing Endogenous (Edge) Robot</title>
+    <title>Hardware Configuration &#8212; Viper Vision Inference Processing Endogenous (Edge) Robot</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -85,8 +85,8 @@ commentsRunWhenDOMLoaded(addUtterances);
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4. Viper Toolkit" href="../src/viper_toolkit/readme.html" />
-    <link rel="prev" title="3.6. Robot OS (ROS)" href="ros_structure.html" />
+    <link rel="next" title="Content with notebooks" href="../mate_desktop.html" />
+    <link rel="prev" title="8.8. Process Timer" href="../src/viper_toolkit/process_timer.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -126,7 +126,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   Welcome to your Jupyter Book
+   Vision Inference Processing Endogenous Robot
   </a>
  </li>
 </ul>
@@ -135,50 +135,189 @@ commentsRunWhenDOMLoaded(addUtterances);
   Introduction
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../readme.html">
    1. The ROS VIPER Library
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../markdown.html">
-   2. Markdown Files
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../objective.html">
+   2. VIPER Objective
   </a>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../notebooks.html">
-   3. Content with notebooks
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ros_structure.html">
+     2.3. Robot OS (ROS)
+    </a>
+   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../src/viper_toolkit/sample_publisher.html">
-     3.4. Sample Publisher Nodes
+     2.4. Sample Publisher Nodes
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../src/viper_toolkit/sample_subscriber.html">
-     3.5. Sample Subscriber Nodes
+     2.5. Sample Subscriber Nodes
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Packages
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../src/model_server/readme.html">
+   3. Model Server
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../src/model_server/model_server.html">
+     3.1. Model Server
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="ros_structure.html">
-     3.6. Robot OS (ROS)
+    <a class="reference internal" href="../src/model_server/neural_network_loader.html">
+     3.2. Neural Network Loader
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     3.7. Hardware Configuration
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../src/image_server/readme.html">
+   4. Image Server
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../src/image_server/image_server.html">
+     4.1. Image Server
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../src/scene_segmentation_module/readme.html">
+   5. Scene Segmentation Module
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../src/scene_segmentation_module/scene_segmentation_module.html">
+     5.5. Scene Segmentation Module Process
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference external" href="https://www.linux.com">
-     Linux Website
+    <a class="reference internal" href="../src/scene_segmentation_module/scene_segmentation_model.html">
+     5.6. Scene Segmentation Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../src/scene_segmentation_module/example.html">
+     5.7. Scene Segmentation Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../src/pose_detection_module/readme.html">
+   6. Pose Detection Module
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../src/pose_detection_module/pose_detection_module.html">
+     6.1. Pose Detection Module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../src/pose_detection_module/pose_detection_model.html">
+     6.2. Pose Detection Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../src/pose_detection_module/example.html">
+     6.3. Pose Detection Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../src/augmented_vr_module/readme.html">
+   7. Augmented VR Module
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../src/augmented_vr_module/augmented_vr_module.html">
+     7.1. Augmented VR Module
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../src/viper_toolkit/readme.html">
+   8. Viper Toolkit
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../src/viper_toolkit/viper_toolkit_python_modules.html">
+     8.1. NameManager
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../src/viper_toolkit/logger.html">
+     8.5. Logger Module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../src/viper_toolkit/name_manager.html">
+     8.6. Name Manager
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../src/viper_toolkit/parameter_manager.html">
+     8.7. Parameter Manager
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../src/viper_toolkit/process_timer.html">
+     8.8. Process Timer
     </a>
    </li>
   </ul>
@@ -189,7 +328,12 @@ commentsRunWhenDOMLoaded(addUtterances);
   Hardware
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Hardware Configuration
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference external" href="https://www.raspberrypi.com/">
    Raspberry Pi
@@ -202,80 +346,15 @@ commentsRunWhenDOMLoaded(addUtterances);
  </span>
 </p>
 <ul class="nav bd-sidenav">
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Packages
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../src/viper_toolkit/readme.html">
-   4. Viper Toolkit
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../src/viper_toolkit/viper_toolkit_python_modules.html">
-     4.1. NameManager
-    </a>
-   </li>
-  </ul>
- </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../src/augmented_vr_module/readme.html">
-   5. Augmented VR Module
+  <a class="reference internal" href="../mate_desktop.html">
+   Content with notebooks
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../src/image_server/readme.html">
-   6. Image Server
+  <a class="reference external" href="https://www.linux.com">
+   Linux Website
   </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../src/inland_ir_cam/readme.html">
-   7. Inland IR Camera
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../src/model_server/readme.html">
-   8. Model Server
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="simple">
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../src/pose_detection_module/readme.html">
-   9. Pose Detection Module
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="simple">
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../src/scene_segmentation_module/readme.html">
-   10. Scene Segmentation Module
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="simple">
-  </ul>
  </li>
 </ul>
 
@@ -368,32 +447,32 @@ commentsRunWhenDOMLoaded(addUtterances);
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-is-myst">
-   3.7.1. What is MyST?
+   What is MyST?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-are-roles-and-directives">
-   3.7.2. What are roles and directives?
+   What are roles and directives?
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#using-a-directive">
-     3.7.2.1. Using a directive
+     Using a directive
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#using-a-role">
-     3.7.2.2. Using a role
+     Using a role
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#adding-a-citation">
-     3.7.2.3. Adding a citation
+     Adding a citation
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#executing-code-in-your-markdown-files">
-     3.7.2.4. Executing code in your markdown files
+     Executing code in your markdown files
     </a>
    </li>
   </ul>
@@ -410,19 +489,19 @@ commentsRunWhenDOMLoaded(addUtterances);
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="hardware-configuration">
-<h1><span class="section-number">3.7. </span>Hardware Configuration<a class="headerlink" href="#hardware-configuration" title="Permalink to this headline">¶</a></h1>
+<h1>Hardware Configuration<a class="headerlink" href="#hardware-configuration" title="Permalink to this headline">¶</a></h1>
 <p>Whether you write your book’s content in Jupyter Notebooks (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) or
 in regular markdown files (<code class="docutils literal notranslate"><span class="pre">.md</span></code>), you’ll write in the same flavor of markdown
 called <strong>MyST Markdown</strong>.</p>
 <div class="section" id="what-is-myst">
-<h2><span class="section-number">3.7.1. </span>What is MyST?<a class="headerlink" href="#what-is-myst" title="Permalink to this headline">¶</a></h2>
+<h2>What is MyST?<a class="headerlink" href="#what-is-myst" title="Permalink to this headline">¶</a></h2>
 <p>MyST stands for “Markedly Structured Text”. It
 is a slight variation on a flavor of markdown called “CommonMark” markdown,
 with small syntax extensions to allow you to write <strong>roles</strong> and <strong>directives</strong>
 in the Sphinx ecosystem.</p>
 </div>
 <div class="section" id="what-are-roles-and-directives">
-<h2><span class="section-number">3.7.2. </span>What are roles and directives?<a class="headerlink" href="#what-are-roles-and-directives" title="Permalink to this headline">¶</a></h2>
+<h2>What are roles and directives?<a class="headerlink" href="#what-are-roles-and-directives" title="Permalink to this headline">¶</a></h2>
 <p>Roles and directives are two of the most powerful tools in Jupyter Book. They
 are kind of like functions, but written in a markup language. They both
 serve a similar purpose, but <strong>roles are written in one line</strong>, whereas
@@ -430,7 +509,7 @@ serve a similar purpose, but <strong>roles are written in one line</strong>, whe
 and what they do with those inputs depends on the specific role or directive
 that is being called.</p>
 <div class="section" id="using-a-directive">
-<h3><span class="section-number">3.7.2.1. </span>Using a directive<a class="headerlink" href="#using-a-directive" title="Permalink to this headline">¶</a></h3>
+<h3>Using a directive<a class="headerlink" href="#using-a-directive" title="Permalink to this headline">¶</a></h3>
 <p>At its simplest, you can insert a directive into your book’s content like so:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{mydirectivename}
 My directive content
@@ -456,7 +535,7 @@ Here is a note
 <a class="reference external" href="https://myst-parser.readthedocs.io/">MyST documentation</a>.</p>
 </div>
 <div class="section" id="using-a-role">
-<h3><span class="section-number">3.7.2.2. </span>Using a role<a class="headerlink" href="#using-a-role" title="Permalink to this headline">¶</a></h3>
+<h3>Using a role<a class="headerlink" href="#using-a-role" title="Permalink to this headline">¶</a></h3>
 <p>Roles are very similar to directives, but they are less-complex and written
 entirely on one line. You can insert a role into your book’s content with
 this pattern:</p>
@@ -471,10 +550,10 @@ role syntax <code class="docutils literal notranslate"><span class="pre">{doc}`i
 <a class="reference external" href="https://myst-parser.readthedocs.io/">MyST documentation</a>.</p>
 </div>
 <div class="section" id="adding-a-citation">
-<h3><span class="section-number">3.7.2.3. </span>Adding a citation<a class="headerlink" href="#adding-a-citation" title="Permalink to this headline">¶</a></h3>
+<h3>Adding a citation<a class="headerlink" href="#adding-a-citation" title="Permalink to this headline">¶</a></h3>
 <p>You can also cite references that are stored in a <code class="docutils literal notranslate"><span class="pre">bibtex</span></code> file. For example,
 the following syntax: <code class="docutils literal notranslate"><span class="pre">{cite}`holdgraf_evidence_2014`</span></code> will render like
-this: <span id="id1">[<a class="reference internal" href="../markdown.html#id3">HdHPK14</a>]</span>.</p>
+this: <span id="id1">[<a class="reference internal" href="../objective.html#id3">HdHPK14</a>]</span>.</p>
 <p>Moreover, you can insert a bibliography into your page with this syntax:
 The <code class="docutils literal notranslate"><span class="pre">{bibliography}</span></code> directive must be used for all the <code class="docutils literal notranslate"><span class="pre">{cite}</span></code> roles to
 render properly.
@@ -493,7 +572,7 @@ then the bibliography is inserted with:</p>
 </p>
 </div>
 <div class="section" id="executing-code-in-your-markdown-files">
-<h3><span class="section-number">3.7.2.4. </span>Executing code in your markdown files<a class="headerlink" href="#executing-code-in-your-markdown-files" title="Permalink to this headline">¶</a></h3>
+<h3>Executing code in your markdown files<a class="headerlink" href="#executing-code-in-your-markdown-files" title="Permalink to this headline">¶</a></h3>
 <p>If you’d like to include computational content inside these markdown files,
 you can use MyST Markdown to define cells that will be executed when your
 book is built. Jupyter Book uses <em>jupytext</em> to do this.</p>
@@ -543,17 +622,17 @@ see <a class="reference external" href="https://myst-nb.readthedocs.io/">The MyS
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="ros_structure.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../src/viper_toolkit/process_timer.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">3.6. </span>Robot OS (ROS)</p>
+            <p class="prev-next-title"><span class="section-number">8.8. </span>Process Timer</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../src/viper_toolkit/readme.html" title="next page">
+    <a class='right-next' id="next-link" href="../mate_desktop.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Viper Toolkit</p>
+        <p class="prev-next-title">Content with notebooks</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

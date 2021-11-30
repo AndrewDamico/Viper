@@ -143,7 +143,7 @@ commentsRunWhenDOMLoaded(addUtterances);
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../objective.html">
-   2. Objective
+   2. VIPER Objective
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -167,40 +167,6 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
    </li>
   </ul>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Hardware
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../docs/Hardware.html">
-   3.7. Hardware Configuration
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://www.raspberrypi.com/">
-   Raspberry Pi
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Software
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../mate_desktop.html">
-   Content with notebooks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://www.linux.com">
-   Linux Website
-  </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
@@ -355,6 +321,40 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
    </li>
   </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Hardware
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../docs/Hardware.html">
+   Hardware Configuration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://www.raspberrypi.com/">
+   Raspberry Pi
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Software
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../mate_desktop.html">
+   Content with notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://www.linux.com">
+   Linux Website
+  </a>
  </li>
 </ul>
 
@@ -622,7 +622,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         self.timer = ProcessTimer(logger=self.logger)
         
         # Creates a parameter manager
-        self.NeuralNetworkParams = Parameters(logger=self.logger)
+        self.NeuralNetworkParams = ParameterManager(logger=self.logger)
         
     def setup_inference_engine(self, ie: IECore, viper_model: ViperModel, device: str):
 
@@ -768,8 +768,7 @@ commentsRunWhenDOMLoaded(addUtterances);
             #self.logger.e(f&quot;Cannot resize image to shape ({self.w}, {self.h})&quot;) 
             #return
             
-        if self.export_state: 
-            self.export_parameters(resized_shape = input_img.shape)
+       # if self.export_state: self.export_parameters(resized_shape = input_img.shape)
 
         # We need to wrangle the image from into the NCHW format.
         #try:    
@@ -782,14 +781,13 @@ commentsRunWhenDOMLoaded(addUtterances);
         #    self.logger.e(&quot;Error converting to NCHW format&quot;)
         #    return
         
-        if self.export_state: 
-                self.export_parameters(transposed_shape=transposed_img.shape)
+        #if self.export_state: self.export_parameters(transposed_shape=transposed_img.shape)
         
 
         # We will now perform inference on the input object using the
         # inference engine we loaded to the Visual Processing Unit
         results = self._exec_net.infer(
-            inputs = {self._input_layer: transposed_img}
+            inputs = {self._input_key: transposed_img}
             )
         rospy.loginfo(&quot;infered&quot;)
         # Extract the inference blob from the results array
@@ -803,10 +801,9 @@ commentsRunWhenDOMLoaded(addUtterances);
             axis=1)
         
         # We export the successful shape and then turn off exporting.
-        if self.export_state:
-            self.export_parameters(mask_shape=mask.shape, export_state=False)
+        #if self.export_state:self.export_parameters(mask_shape=mask.shape, export_state=False)
             
-        self.logger.i(f&quot;Returning shape: {mask.shape}&quot;)
+        #self.logger.i(f&quot;Returning shape: {mask.shape}&quot;)
 
         return mask
 </pre></div>

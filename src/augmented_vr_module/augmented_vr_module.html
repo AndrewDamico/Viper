@@ -143,7 +143,7 @@ commentsRunWhenDOMLoaded(addUtterances);
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../objective.html">
-   2. Objective
+   2. VIPER Objective
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -167,40 +167,6 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
    </li>
   </ul>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Hardware
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../docs/Hardware.html">
-   3.7. Hardware Configuration
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://www.raspberrypi.com/">
-   Raspberry Pi
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Software
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../mate_desktop.html">
-   Content with notebooks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://www.linux.com">
-   Linux Website
-  </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
@@ -355,6 +321,40 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
    </li>
   </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Hardware
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../docs/Hardware.html">
+   Hardware Configuration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://www.raspberrypi.com/">
+   Raspberry Pi
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Software
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../mate_desktop.html">
+   Content with notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://www.linux.com">
+   Linux Website
+  </a>
  </li>
 </ul>
 
@@ -625,6 +625,7 @@ commentsRunWhenDOMLoaded(addUtterances);
     def scene_segmentation_callback(self, msg):
         self.mask = msg
         self.new_mask = True
+        print (self.mask)
         rospy.loginfo(&quot;[SEG] New Masks Received&quot;)
    
     def image_callback(self, msg):
@@ -671,51 +672,54 @@ commentsRunWhenDOMLoaded(addUtterances);
     # This function tasks a message file (self.mask) and decodes it into
     # the original array, outputing the &quot;segmentation graph&quot;. Note that
     # this output can be used on its own as an image.
-    
-        self.timer.lap(&quot;Segmentation Process&quot;)
-        try:
-            inference_array = self.decode_inference_results(
+        print (self.mask)
+        #self.timer.lap(&quot;Segmentation Process&quot;)
+        #try:
+        inference_array = self.decode_inference_results(
                 self.mask, 
                 model=&quot;SEG&quot;
                 )
-        except:
-            #rospy.logerr(f&quot;[SEG] Cannot decode results&quot;)
-            return
+        #rospy.loginfo(f&#39;inference_array is: {type(inference_array)} {inference_array.shape}&#39;)
+        #except:
+        #    rospy.logerr(f&quot;[SEG] Cannot decode results&quot;)
+        #    return
         
-        try:
+        #try:
             #self.timer.lap(&quot;Segmentation Model&quot;)
             #rospy.logdebug(f&quot;[{self.name.abv}] Conversion Shape: %s&quot;,inference_array.shape)
-            mask = segmentation_map_to_image(inference_array, self.colormap)
+        print(type(inference_array))
+        mask = segmentation_map_to_image(inference_array, self.colormap)
             #rospy.logdebug(f&quot;[{self.name.abv}] Resizing Mask&quot;)
-            self.segmentation_graph = cv2.resize(inference_array, (self.image.width, self.image.height))
+        self.segmentation_graph = cv2.resize(inference_array, (self.image.width, self.image.height))
+        self.logdebug(f&#39;seg graph shape {self.segmentation_graph.shape}&#39;)
             #rospy.logdebug(f&quot;[{self.name.abv}] Masking Image&quot;)
             #self.timer.time(&quot;Segmentation Model&quot;, name=&quot;SEG&quot;)
             #self.timer.time(&quot;Segmentation Process&quot;, name=&quot;SEG&quot;)
-            return
-        except:
-            #rospy.logerr(f&quot;[SEG] Cannot resize mask&quot;)
+        return
+        #except:
+        #    rospy.logerr(f&quot;[SEG] Cannot resize mask at point A&quot;)
             #self.timer.time(&quot;Segmentation Model&quot;, name=&quot;SEG&quot;)
             #self.timer.time(&quot;Segmentation Process&quot;, name=&quot;SEG&quot;)
-            return
+        #    return
 
     def combine_segmentation_image(self):
         # This function combines the current segmentation_graph 
         # and the current converted image, and saves it as the 
         # current output (canvas)
-        
+        alpha = 0.3
         self.timer.lap(&quot;Image Overlay&quot;)
-        try:
-            self.canvas = cv2.addWeighted(
-                self.segmentation_graph, 
-                self.parameters.alpha, 
-                self.img, 
-                1 - self.parameters.alpha, 
-                0)
-        except:
-            rospy.logerr(f&quot;[SEG] Cannot combine mask and image&quot;)
+        #try:
+        self.canvas = cv2.addWeighted(
+            self.segmentation_graph, 
+            alpha, #self.parameters.alpha, 
+            self.img, 
+            1 - alpha, 
+            0)
+        #except:
+        #    rospy.logerr(f&quot;[SEG] Cannot combine mask and image at B&quot;)
             
         # Regardless of success we will update our timer.
-        self.timer.time(&quot;Image Overlay&quot;, name = &quot;SEG&quot;)
+        #self.timer.time(&quot;Image Overlay&quot;, name = &quot;SEG&quot;)
         return 
 
     def calculate_pose_graph(self):
@@ -725,7 +729,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         # to the current nodes and edges (self.graph)
 
         # Convert the message arrays
-        self.timer.lap(&quot;Graph Nodes Edges&quot;)
+        #self.timer.lap(&quot;Graph Nodes Edges&quot;)
         rospy.logdebug(&quot;Decoding Pose Graph Results&quot;)
         #try:
         self.graph = self.decode_inference_results(
@@ -736,7 +740,7 @@ commentsRunWhenDOMLoaded(addUtterances);
             # If this fails there is nothing to return.
         #    rospy.logerr(f&quot;[POS] Cannot decode results&quot;)
             
-        self.timer.time(&quot;Graph Nodes Edges&quot;)
+        #self.timer.time(&quot;Graph Nodes Edges&quot;)
 
     def draw_graph(self):
         # Draw the Poses on the provided image &#39;image&#39; and return
@@ -772,9 +776,9 @@ commentsRunWhenDOMLoaded(addUtterances);
         # If we are combining the segmentation and the images, then we
         # first need to mask the new images, but we only need to do
         # this if we need to combine the images and the inferences.
-
-        if self.parameters.image_output == True:
-            if self.new_image == True:
+        temp = True
+        if temp: #self.parameters.image_output:
+            if self.new_image:
                 try:
                     # Convert the camera image to ROS
                     self.img = self.bridge.imgmsg_to_cv2(
@@ -787,14 +791,14 @@ commentsRunWhenDOMLoaded(addUtterances);
                     rospy.logerr(&quot;[IMG] Error converting ROS msg to image.&quot;)
                     print(e)
                     
-            if self.parameters.segmentationmodel == True:
+            if temp: #self.parameters.segmentationmodel:
                 try:
                     # We can now combine them on the &#39;self.canvas&#39; layer.
                     self.combine_segmentation_image()
                 except:
                     rospy.logerr(&quot;[SEG] Error proccessing scene&quot;)
         else:
-            if self.parameters.segmentation_model == True:
+            if self.parameters.segmentation_model:
             # If we are not using the camera image output then we
             # will just replace the self.image with the segmentation
             # graph image.
@@ -866,7 +870,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2920</span><span class="o">/</span><span class="mf">2617685411.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_13520</span><span class="o">/</span><span class="mf">2617685411.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">Dissect</span><span class="p">(</span><span class="s2">&quot;__init__&quot;</span><span class="p">,</span> <span class="n">SceneSegmentationModule</span><span class="p">)</span>
 
 <span class="ne">NameError</span>: name &#39;SceneSegmentationModule&#39; is not defined

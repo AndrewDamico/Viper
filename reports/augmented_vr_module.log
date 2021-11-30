@@ -22,7 +22,7 @@ Dissect("__init__", SceneSegmentationModule)
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m/tmp/ipykernel_2920/2617685411.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/tmp/ipykernel_13520/2617685411.py[0m in [0;36m<module>[0;34m[0m
 [0;32m----> 1[0;31m [0mDissect[0m[0;34m([0m[0;34m"__init__"[0m[0;34m,[0m [0mSceneSegmentationModule[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m
 [0;31mNameError[0m: name 'SceneSegmentationModule' is not defined

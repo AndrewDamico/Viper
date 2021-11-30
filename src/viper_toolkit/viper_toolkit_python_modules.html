@@ -143,7 +143,7 @@ commentsRunWhenDOMLoaded(addUtterances);
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../objective.html">
-   2. Objective
+   2. VIPER Objective
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -167,40 +167,6 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
    </li>
   </ul>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Hardware
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../docs/Hardware.html">
-   3.7. Hardware Configuration
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://www.raspberrypi.com/">
-   Raspberry Pi
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Software
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../mate_desktop.html">
-   Content with notebooks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://www.linux.com">
-   Linux Website
-  </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
@@ -355,6 +321,40 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
    </li>
   </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Hardware
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../docs/Hardware.html">
+   Hardware Configuration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://www.raspberrypi.com/">
+   Raspberry Pi
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Software
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../mate_desktop.html">
+   Content with notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://www.linux.com">
+   Linux Website
+  </a>
  </li>
 </ul>
 
@@ -531,14 +531,60 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_90048</span><span class="o">/</span><span class="mf">1849542711.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">viper_toolkit</span> <span class="kn">import</span> <span class="n">NameManager</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">lines</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">NameManager</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">print</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;viper_toolkit&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>class NameManager(object):
+    &quot;&quot;&quot;Creates a NameManager class object which is used to standardize
+    the names for a node or a process, and is linked to other 
+    Viper toolkit modules, such as the logger. It includes rules for 
+    automatically setting the name if a name isn&#39;t provided in order
+    to standardize log messages, parameters, etc.
+    
+    Keyword arguments:
+    abv -- the abreviated name for the object
+    name -- the full name for the object
+    &quot;&quot;&quot;
+    def __init__(self, name: str = None, abv: str = None):
+        # Sets the name of this module for the sake of logging.
+        self._code = &quot;NMG&quot;
+        # Retrieves the name of the module and sets to self._pkg_name
+        self._name = name
+        self._abv = abv
+    @property
+    def name(self):
+        return self._name
+    @name.setter
+    def name(self, name: str = None):
+        if name == None:
+            try:
+                self._name = f&#39;{rospy.get_name()}&#39;[1:]
+            except:
+                self._name = &quot;ERROR&quot;
+        else:
+            self._name = name
+        rospy.logdebug(f&#39;[{self._code}] Name set to %s&#39;, self.name)
+        #setattr(self, name, self._name)
+    @property
+    def abv(self):
+        return self._abv
+    @abv.setter
+    def abv(self, code = None):
+        if code == None:
+            self._abv = self._autoabv()
+        else:
+            self._abv = self.codeformatter(code)
+        rospy.set_param(f&#39;/{self.name}/abv&#39;, self.abv)
+        rospy.logdebug(f&#39;[{self._code}] ABV set&#39;)
+    @classmethod
+    def codeformatter(self, code: str):
+        abv = code[:3].upper()
+        abv = abv.ljust(3)
+        return abv
+    @classmethod
+    def _autoabv(self):
+        if rospy.has_param(f&#39;{self.name}/abv&#39;):
+            abv = rospy.get_param(f&#39;/{self.name}/abv&#39;)
+            return self.codeformatter(abv)
+        else:
+            return self.codeformatter(f&#39;{self.name}&#39;)
 </pre></div>
 </div>
 </div>
@@ -639,6 +685,9 @@ commentsRunWhenDOMLoaded(addUtterances);
             itag_o = NameManager.codeformatter(f&#39;{itag}&#39;)
         m = f&quot;[{itag_o}] {message}&quot;
         return m
+
+    if __name__ == &quot;__main__&quot;:
+        Logger()
 </pre></div>
 </div>
 </div>

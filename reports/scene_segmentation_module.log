@@ -17,18 +17,18 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-from viper_toolkit import NameManager
-lines = inspect.getsource(NameManager)
-print(lines)
+import inspect
+from viper_toolkit import Dissect
+from scripts.scene_segmentation_module import SceneSegmentationModule
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m/tmp/ipykernel_90446/1849542711.py[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0;32mfrom[0m [0mviper_toolkit[0m [0;32mimport[0m [0mNameManager[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      2[0m [0mlines[0m [0;34m=[0m [0minspect[0m[0;34m.[0m[0mgetsource[0m[0;34m([0m[0mNameManager[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      3[0m [0mprint[0m[0;34m([0m[0mlines[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-
-[0;31mModuleNotFoundError[0m: No module named 'viper_toolkit'
-ModuleNotFoundError: No module named 'viper_toolkit'
+[0;32m/tmp/ipykernel_13810/1769777889.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0;32mimport[0m [0minspect[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      2[0m [0;32mfrom[0m [0mviper_toolkit[0m [0;32mimport[0m [0mDissect[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 3[0;31m [0;32mfrom[0m [0mscripts[0m[0;34m.[0m[0mscene_segmentation_module[0m [0;32mimport[0m [0mSceneSegmentationModule[0m[0;34m[0m[0;34m[0m[0m
+[0m
+[0;31mModuleNotFoundError[0m: No module named 'scripts.scene_segmentation_module'
+ModuleNotFoundError: No module named 'scripts.scene_segmentation_module'
 

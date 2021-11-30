@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>5.1. Model Server &#8212; Viper Vision Inference Processing Endogenous (Edge) Robot</title>
+    <title>5. Model Server &#8212; Viper Vision Inference Processing Endogenous (Edge) Robot</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -86,7 +86,7 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="5.2. Neural Network Loader" href="neural_network_loader.html" />
-    <link rel="prev" title="5. Model Server" href="readme.html" />
+    <link rel="prev" title="4.3. Sample Subscriber Nodes" href="../viper_toolkit/sample_subscriber.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -181,7 +181,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="readme.html">
+  <a class="current reference internal" href="#">
    5. Model Server
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -189,12 +189,7 @@ commentsRunWhenDOMLoaded(addUtterances);
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     5.1. Model Server
-    </a>
-   </li>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="neural_network_loader.html">
      5.2. Neural Network Loader
@@ -352,8 +347,18 @@ commentsRunWhenDOMLoaded(addUtterances);
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference external" href="https://www.linux.com">
-   Linux Website
+  <a class="reference external" href="https://mate-desktop.org/">
+   Mate Desktop
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://www.ubuntu.com">
+   Ubuntu
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://www.intel.com/content/www/us/en/developer/tools/neural-compute-stick/overview.html">
+   Intel Neural Compute Stick 2
   </a>
  </li>
 </ul>
@@ -464,7 +469,7 @@ commentsRunWhenDOMLoaded(addUtterances);
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-model-server-module">
-   5.1.1. The Model Server Module
+   5.1. The Model Server Module
   </a>
  </li>
 </ul>
@@ -479,7 +484,7 @@ commentsRunWhenDOMLoaded(addUtterances);
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="model-server">
-<h1><span class="section-number">5.1. </span>Model Server<a class="headerlink" href="#model-server" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5. </span>Model Server<a class="headerlink" href="#model-server" title="Permalink to this headline">¶</a></h1>
 <p>The Intel Neural Compute Stick 2 is a compact and yet powerful Vision Processing Unit (VPU) which is optimized to perform the complex matrix calculations required for convolutional neural networks. Similar to a GPU, the VPU is engineered specifically for computer vision inference on images and videos.</p>
 <p>The VPU is initalized with the network structure of the neural networks as well as the weights; these networks are then allocated space on the device. Total time to initialize a network is approximately 30 seconds, however once it has been initalized successive inference on a loaded model is processed in milliseconds.</p>
 <p>In order for multiple modules to make use of the VPU, it is therefor desirable for the device to be initialized once with multiple models.</p>
@@ -494,7 +499,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 <div class="section" id="the-model-server-module">
-<h2><span class="section-number">5.1.1. </span>The Model Server Module<a class="headerlink" href="#the-model-server-module" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.1. </span>The Model Server Module<a class="headerlink" href="#the-model-server-module" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scripts</span> <span class="k">import</span> <span class="n">model_server</span>
@@ -507,7 +512,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_24770</span><span class="o">/</span><span class="mf">79211271.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_25728</span><span class="o">/</span><span class="mf">79211271.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">scripts</span> <span class="kn">import</span> <span class="n">model_server</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">model_server</span> <span class="kn">import</span> <span class="n">ModelServer</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">source</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">ModelServer</span><span class="p">)</span>
@@ -767,6 +772,8 @@ Inferences Datatype: &lt;class &#39;list&#39;&gt;
 </div>
 </div>
 </div>
+<div class="toctree-wrapper compound">
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -794,11 +801,11 @@ Inferences Datatype: &lt;class &#39;list&#39;&gt;
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="readme.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../viper_toolkit/sample_subscriber.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">5. </span>Model Server</p>
+            <p class="prev-next-title"><span class="section-number">4.3. </span>Sample Subscriber Nodes</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="neural_network_loader.html" title="next page">

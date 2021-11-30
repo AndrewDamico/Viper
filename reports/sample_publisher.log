@@ -36,7 +36,7 @@ def dissect(method, class_=SubscriberNode):
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m/tmp/ipykernel_20881/2435067016.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/tmp/ipykernel_25008/2435067016.py[0m in [0;36m<module>[0;34m[0m
 [0;32m----> 1[0;31m [0;32mdef[0m [0mdissect[0m[0;34m([0m[0mmethod[0m[0;34m,[0m [0mclass_[0m[0;34m=[0m[0mSubscriberNode[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m      2[0m     '''
 [1;32m      3[0m     [0mDissect[0m[0;34m([0m[0;34m)[0m [0mtakes[0m [0ma[0m [0mmethod[0m [0;32mand[0m [0ma[0m [0;32mclass[0m[0;34m,[0m [0;32mand[0m [0mreturns[0m [0mthe[0m [0mcontents[0m [0mof[0m [0mthe[0m [0mfunction[0m[0;34m.[0m[0;34m[0m[0;34m[0m[0m

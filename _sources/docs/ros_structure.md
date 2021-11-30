@@ -39,3 +39,4 @@ information of all active nodes and their addresses on the XML-RPC server
 * **ROS Actions** are special kinds of Asyncronous services which do not 
   occupy the requesting node. Actions are given an objective to be perfomed 
   and which can be modified; they also provide incrementatl status on actions.
+git c

@@ -125,7 +125,7 @@ commentsRunWhenDOMLoaded(addUtterances);
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../intro.html">
+  <a class="reference internal" href="../../introduction.html">
    Vision Inference Processing Endogenous Robot
   </a>
  </li>
@@ -463,14 +463,21 @@ commentsRunWhenDOMLoaded(addUtterances);
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#instantiating-the-class-neuralnetworkloader">
-   7.6.1. Instantiating the class NeuralNetworkLoader
+  <a class="reference internal nav-link" href="#scene-segmentation-class">
+   7.6.1. Scene Segmentation Class
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   7.6.2. Scene Segmentation Model
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#instantiating-the-class-neuralnetworkloader">
+     7.6.1.1. Instantiating the class NeuralNetworkLoader
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     7.6.1.2. Scene Segmentation Model
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -495,6 +502,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 </div>
+<div class="section" id="scene-segmentation-class">
+<h2><span class="section-number">7.6.1. </span>Scene Segmentation Class<a class="headerlink" href="#scene-segmentation-class" title="Permalink to this headline">¶</a></h2>
 <p>The Scene Segmentation Model is a class of NeuralNetworkLoader models which performs scene segmentation on the image classifying the pixels in four classes:</p>
 <ul class="simple">
 <li><p>Roadway</p></li>
@@ -536,7 +545,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 <div class="section" id="instantiating-the-class-neuralnetworkloader">
-<h2><span class="section-number">7.6.1. </span>Instantiating the class NeuralNetworkLoader<a class="headerlink" href="#instantiating-the-class-neuralnetworkloader" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">7.6.1.1. </span>Instantiating the class NeuralNetworkLoader<a class="headerlink" href="#instantiating-the-class-neuralnetworkloader" title="Permalink to this headline">¶</a></h3>
 <p>When the VPU is initialized, the Model Server will provide the location of these parameters to the inference engine, as well as create a class object for this module called which I call a NeuralNetworkLoader. This object allows the model to be initialized at the time of the VPU instantiation, which is asyncronous to the instantiation of this module:</p>
 <p><em><strong>(Note: While I am providing the class definition here, the NeuralNetworkLoader Class is shared amongst all Model Nodes; I will break this down how this works in more detail on #TBA page)</strong></em></p>
 <div class="cell docutils container">
@@ -706,7 +715,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>In effect, the class object that was initiated prior to this modules initialization can then be “passed on” to this module as if it were this module which had instantiated this class.</p>
 </div>
 <div class="section" id="id1">
-<h2><span class="section-number">7.6.2. </span>Scene Segmentation Model<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">7.6.1.2. </span>Scene Segmentation Model<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>The SceneSegmentationModel is a class object of type NeuralNetworkLoader, and contains the methods particular to the performance of Scene Segmentation. It contains two class methods:</p>
 <ul class="simple">
 <li><p>export_parameters() which exports the shape of the model specificly needed by this model</p></li>
@@ -807,6 +816,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 
         return mask
 </pre></div>
+</div>
 </div>
 </div>
 </div>

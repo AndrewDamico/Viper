@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2.4. Sample Publisher Nodes &#8212; Viper Vision Inference Processing Endogenous (Edge) Robot</title>
+    <title>2.2. Sample Publisher Nodes &#8212; Viper Vision Inference Processing Endogenous (Edge) Robot</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -85,8 +85,8 @@ commentsRunWhenDOMLoaded(addUtterances);
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2.5. Sample Subscriber Nodes" href="sample_subscriber.html" />
-    <link rel="prev" title="2.3. Robot OS (ROS)" href="../../docs/ros_structure.html" />
+    <link rel="next" title="2.3. Sample Subscriber Nodes" href="sample_subscriber.html" />
+    <link rel="prev" title="2. Robot OS (ROS)" href="../../docs/ros_structure.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -142,8 +142,8 @@ commentsRunWhenDOMLoaded(addUtterances);
   </a>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../../objective.html">
-   2. VIPER Objective
+  <a class="reference internal" href="../../docs/ros_structure.html">
+   2. Robot OS (ROS)
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -151,19 +151,14 @@ commentsRunWhenDOMLoaded(addUtterances);
    </i>
   </label>
   <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../docs/ros_structure.html">
-     2.3. Robot OS (ROS)
-    </a>
-   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2.4. Sample Publisher Nodes
+     2.2. Sample Publisher Nodes
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="sample_subscriber.html">
-     2.5. Sample Subscriber Nodes
+     2.3. Sample Subscriber Nodes
     </a>
    </li>
   </ul>
@@ -464,44 +459,44 @@ commentsRunWhenDOMLoaded(addUtterances);
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-example-subscriber-node-and-class-definition">
-   2.4.1. The Example Subscriber Node and Class Definition
+   2.2.1. The Example Subscriber Node and Class Definition
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#detailed-look-at-class-attributes-properties-and-methods">
-   2.4.2. Detailed Look at Class Attributes, Properties, and Methods
+   2.2.2. Detailed Look at Class Attributes, Properties, and Methods
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#initialize-the-class-object">
-     2.4.2.1. Initialize the Class Object
+     2.2.2.1. Initialize the Class Object
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#setup-ros">
-     2.4.2.2. 2. Setup ROS
+     2.2.2.2. 2. Setup ROS
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#setting-up-the-publisher">
-     2.4.2.3. 3. Setting up the Publisher
+     2.2.2.3. 3. Setting up the Publisher
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-action-loop">
-     2.4.2.4. 4. The Action Loop
+     2.2.2.4. 4. The Action Loop
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#main-loop">
-     2.4.2.5. 5. Main Loop
+     2.2.2.5. 5. Main Loop
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#final-output">
-   2.4.3. Final Output
+   2.2.3. Final Output
   </a>
  </li>
 </ul>
@@ -516,7 +511,7 @@ commentsRunWhenDOMLoaded(addUtterances);
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="sample-publisher-nodes">
-<h1><span class="section-number">2.4. </span>Sample Publisher Nodes<a class="headerlink" href="#sample-publisher-nodes" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2.2. </span>Sample Publisher Nodes<a class="headerlink" href="#sample-publisher-nodes" title="Permalink to this headline">¶</a></h1>
 <p>We can look at a two very simply sample nodes to understand how ROS works.</p>
 <p>In the Viper Toolkit package, under the scripts/ folder there are two python files:
 * <a class="reference external" href="http://publisher.py">publisher.py</a>
@@ -531,7 +526,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 <div class="section" id="the-example-subscriber-node-and-class-definition">
-<h2><span class="section-number">2.4.1. </span>The Example Subscriber Node and Class Definition<a class="headerlink" href="#the-example-subscriber-node-and-class-definition" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2.1. </span>The Example Subscriber Node and Class Definition<a class="headerlink" href="#the-example-subscriber-node-and-class-definition" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scripts</span> <span class="k">import</span> <span class="n">publisher</span>
@@ -583,7 +578,7 @@ if __name__ == &#39;__main__&#39;:
 <p>Lets take a look at the different parts of this node!</p>
 </div>
 <div class="section" id="detailed-look-at-class-attributes-properties-and-methods">
-<h2><span class="section-number">2.4.2. </span>Detailed Look at Class Attributes, Properties, and Methods<a class="headerlink" href="#detailed-look-at-class-attributes-properties-and-methods" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2.2. </span>Detailed Look at Class Attributes, Properties, and Methods<a class="headerlink" href="#detailed-look-at-class-attributes-properties-and-methods" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scripts.publisher</span> <span class="k">import</span> <span class="n">PublisherNode</span>
@@ -634,7 +629,7 @@ if __name__ == &#39;__main__&#39;:
 </div>
 </div>
 <div class="section" id="initialize-the-class-object">
-<h3><span class="section-number">2.4.2.1. </span>Initialize the Class Object<a class="headerlink" href="#initialize-the-class-object" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.2.2.1. </span>Initialize the Class Object<a class="headerlink" href="#initialize-the-class-object" title="Permalink to this headline">¶</a></h3>
 <p>The <strong>init</strong> class function executes at the time that the class in instantiated. We are telling the interpreter to first run the setup_ros() function, then run the setup_publisher() function, and finally to execute the main_loop() function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -655,7 +650,7 @@ if __name__ == &#39;__main__&#39;:
 </div>
 </div>
 <div class="section" id="setup-ros">
-<h3><span class="section-number">2.4.2.2. </span>2. Setup ROS<a class="headerlink" href="#setup-ros" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.2.2.2. </span>2. Setup ROS<a class="headerlink" href="#setup-ros" title="Permalink to this headline">¶</a></h3>
 <p>We need to tell ROS that we would like to bring this node online; we are registering this kernel as “sample_publisher”. While multiple nodes of the same class can run at once, each node must have a unique name. If a node comes online which has the same name, it will replace the current node and this kernel will be shut down.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -674,7 +669,7 @@ if __name__ == &#39;__main__&#39;:
 </div>
 </div>
 <div class="section" id="setting-up-the-publisher">
-<h3><span class="section-number">2.4.2.3. </span>3. Setting up the Publisher<a class="headerlink" href="#setting-up-the-publisher" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.2.2.3. </span>3. Setting up the Publisher<a class="headerlink" href="#setting-up-the-publisher" title="Permalink to this headline">¶</a></h3>
 <p>Next we will setup the publisher API which allows a node to publish a “Topic”, or a broadcasted message. This node will be publishing the topic “topic” a  message type of “String.” It will only hold on to the last message (queue_size=1).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -718,7 +713,7 @@ The class type is: &lt;class &#39;str&#39;&gt;
 <p>This tells us that the message type String contains a single variable, ‘data’, which is of the class “str”. ROS will attempt to convert classes between C++ and Python.</p>
 </div>
 <div class="section" id="the-action-loop">
-<h3><span class="section-number">2.4.2.4. </span>4. The Action Loop<a class="headerlink" href="#the-action-loop" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.2.2.4. </span>4. The Action Loop<a class="headerlink" href="#the-action-loop" title="Permalink to this headline">¶</a></h3>
 <p>The Action Loop is where the processing of the node occures. In many of my nodes you will see multiple loops chained together, depending on the desired action to be performed. In this example our action loop is getting the time from the rospy module.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -738,7 +733,7 @@ The class type is: &lt;class &#39;str&#39;&gt;
 </div>
 </div>
 <div class="section" id="main-loop">
-<h3><span class="section-number">2.4.2.5. </span>5. Main Loop<a class="headerlink" href="#main-loop" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.2.2.5. </span>5. Main Loop<a class="headerlink" href="#main-loop" title="Permalink to this headline">¶</a></h3>
 <p>The main loop is the loop which will continually run while the node is online. First, we set the rospy.rate() which is the minimum hz we wish the node to run. In this example, we are asking the node to retrieve the result of the action loop (the time), converting our desired message into the ‘String’ message format, and then publishing our message. After printing a log entry indicating that it published a message it will then wait wait for the Hz timer to finish before it performs this loop again.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -764,7 +759,7 @@ The class type is: &lt;class &#39;str&#39;&gt;
 </div>
 </div>
 <div class="section" id="final-output">
-<h2><span class="section-number">2.4.3. </span>Final Output<a class="headerlink" href="#final-output" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2.3. </span>Final Output<a class="headerlink" href="#final-output" title="Permalink to this headline">¶</a></h2>
 <p>Our resulting output looks like this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -824,13 +819,13 @@ The class type is: &lt;class &#39;str&#39;&gt;
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2.3. </span>Robot OS (ROS)</p>
+            <p class="prev-next-title"><span class="section-number">2. </span>Robot OS (ROS)</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="sample_subscriber.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.5. </span>Sample Subscriber Nodes</p>
+        <p class="prev-next-title"><span class="section-number">2.3. </span>Sample Subscriber Nodes</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2.3. Robot OS (ROS) &#8212; Viper Vision Inference Processing Endogenous (Edge) Robot</title>
+    <title>2. Robot OS (ROS) &#8212; Viper Vision Inference Processing Endogenous (Edge) Robot</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -85,8 +85,8 @@ commentsRunWhenDOMLoaded(addUtterances);
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.4. Sample Publisher Nodes" href="../src/viper_toolkit/sample_publisher.html" />
-    <link rel="prev" title="2. VIPER Objective" href="../objective.html" />
+    <link rel="next" title="2.2. Sample Publisher Nodes" href="../src/viper_toolkit/sample_publisher.html" />
+    <link rel="prev" title="1. The ROS VIPER Library" href="../readme.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -142,28 +142,23 @@ commentsRunWhenDOMLoaded(addUtterances);
   </a>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../objective.html">
-   2. VIPER Objective
+  <a class="current reference internal" href="#">
+   2. Robot OS (ROS)
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     2.3. Robot OS (ROS)
-    </a>
-   </li>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../src/viper_toolkit/sample_publisher.html">
-     2.4. Sample Publisher Nodes
+     2.2. Sample Publisher Nodes
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../src/viper_toolkit/sample_subscriber.html">
-     2.5. Sample Subscriber Nodes
+     2.3. Sample Subscriber Nodes
     </a>
    </li>
   </ul>
@@ -447,22 +442,22 @@ commentsRunWhenDOMLoaded(addUtterances);
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ros-basics">
-   2.3.1. ROS basics
+   2.1. ROS basics
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ros-infrastructure">
-     2.3.1.1. ROS Infrastructure
+     2.1.1. ROS Infrastructure
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ros-messages-and-topics">
-     2.3.1.2. ROS Messages and Topics:
+     2.1.2. ROS Messages and Topics:
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ros-services-and-actions">
-     2.3.1.3. ROS Services and Actions
+     2.1.3. ROS Services and Actions
     </a>
    </li>
   </ul>
@@ -479,16 +474,16 @@ commentsRunWhenDOMLoaded(addUtterances);
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="robot-os-ros">
-<h1><span class="section-number">2.3. </span>Robot OS (ROS)<a class="headerlink" href="#robot-os-ros" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2. </span>Robot OS (ROS)<a class="headerlink" href="#robot-os-ros" title="Permalink to this headline">¶</a></h1>
 <p>Robot OS (ROS) is an open source set of C++ and Python libraries which
 facilitate the delivery of messages, actions, and services for creating robotic and
 autonomous process flows.</p>
 <div class="section" id="ros-basics">
-<h2><span class="section-number">2.3.1. </span>ROS basics<a class="headerlink" href="#ros-basics" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1. </span>ROS basics<a class="headerlink" href="#ros-basics" title="Permalink to this headline">¶</a></h2>
 <p>The ROS set of tools provides the basic foundation for creating autonomous
 systems.</p>
 <div class="section" id="ros-infrastructure">
-<h3><span class="section-number">2.3.1.1. </span>ROS Infrastructure<a class="headerlink" href="#ros-infrastructure" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.1. </span>ROS Infrastructure<a class="headerlink" href="#ros-infrastructure" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>The <strong>ROS Core</strong> or ROS Master is a server node which keeps the registration
 information of all active nodes and their addresses on the XML-RPC server
@@ -501,7 +496,7 @@ receive messages, perform actions, and execute commands on the ROS network.</p><
 </ul>
 </div>
 <div class="section" id="ros-messages-and-topics">
-<h3><span class="section-number">2.3.1.2. </span>ROS Messages and Topics:<a class="headerlink" href="#ros-messages-and-topics" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.2. </span>ROS Messages and Topics:<a class="headerlink" href="#ros-messages-and-topics" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>ROS Messages</strong> are a specific predefined format for messages exchanged
 between nodes. Messages are serialized, and need to be compatible with
@@ -517,7 +512,7 @@ many.</em></p></li>
 </ul>
 </div>
 <div class="section" id="ros-services-and-actions">
-<h3><span class="section-number">2.3.1.3. </span>ROS Services and Actions<a class="headerlink" href="#ros-services-and-actions" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.3. </span>ROS Services and Actions<a class="headerlink" href="#ros-services-and-actions" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>ROS Services</strong> are special synconous APIs which allow for a node to
 request an
@@ -529,6 +524,8 @@ occupy the requesting node. Actions are given an objective to be perfomed
 and which can be modified; they also provide incrementatl status on actions.</p></li>
 </ul>
 </div>
+</div>
+<div class="toctree-wrapper compound">
 </div>
 </div>
 
@@ -557,17 +554,17 @@ and which can be modified; they also provide incrementatl status on actions.</p>
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../objective.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../readme.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2. </span>VIPER Objective</p>
+            <p class="prev-next-title"><span class="section-number">1. </span>The ROS VIPER Library</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../src/viper_toolkit/sample_publisher.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.4. </span>Sample Publisher Nodes</p>
+        <p class="prev-next-title"><span class="section-number">2.2. </span>Sample Publisher Nodes</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

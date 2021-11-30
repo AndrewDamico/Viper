@@ -34,7 +34,12 @@ html:
   comments:
     utterances:
       repo: "https://github.com/AndrewDamico/viper"
-
+parse:
+  myst_enable_extensions:
+    # don't forget to list any other extensions you want enabled,
+    # including those that are enabled by default!
+    - html_image
+    
 sphinx:
   extra_extensions:
   - 'sphinx.ext.autodoc'

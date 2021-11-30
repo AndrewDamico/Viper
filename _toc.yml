@@ -10,9 +10,10 @@ parts:
   numbered: True
   chapters:
   - file: readme
-  - file: objective
+  - file: docs/communication_diagram
+  - file: docs/process_diagram
+  - file: docs/ros_structure
     sections:
-    - file: docs/ros_structure
     - file: src/viper_toolkit/sample_publisher
     - file: src/viper_toolkit/sample_subscriber
 - caption: Packages

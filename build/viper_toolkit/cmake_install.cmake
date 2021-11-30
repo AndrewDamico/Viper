@@ -56,3 +56,11 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/viper_toolkit" TYPE FILE FILES "/home/andrew/viper/src/viper_toolkit/package.xml")
 endif()
 
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/viper_toolkit" TYPE PROGRAM FILES "/home/andrew/viper/build/viper_toolkit/catkin_generated/installspace/subscriber.py")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/viper_toolkit" TYPE PROGRAM FILES "/home/andrew/viper/build/viper_toolkit/catkin_generated/installspace/publisher.py")
+endif()
+

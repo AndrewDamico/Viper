@@ -95,5 +95,5 @@ class Logger(object):
         m = f"[{itag_o}] {message}"
         return m
 
-if __name__ == "__main__":
-    Logger()
+    if __name__ == "__main__":
+        Logger()

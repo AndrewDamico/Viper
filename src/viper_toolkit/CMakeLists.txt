@@ -17,6 +17,12 @@ catkin_package(
    std_msgs 
 )
 
+catkin_install_python(PROGRAMS
+   script/subscriber.py
+   script/publisher.py
+   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+ )
+
 include_directories(include
   ${catkin_INCLUDE_DIRS}
 )

@@ -66,16 +66,16 @@ model_server/CMakeFiles/model_server_generate_messages_eus: /home/andrew/viper/d
 
 /home/andrew/viper/devel/share/roseus/ros/model_server/srv/ImageRequest.l: /opt/ros/noetic/lib/geneus/gen_eus.py
 /home/andrew/viper/devel/share/roseus/ros/model_server/srv/ImageRequest.l: /home/andrew/viper/src/model_server/srv/ImageRequest.srv
-/home/andrew/viper/devel/share/roseus/ros/model_server/srv/ImageRequest.l: /opt/ros/noetic/share/std_msgs/msg/Bool.msg
 /home/andrew/viper/devel/share/roseus/ros/model_server/srv/ImageRequest.l: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/andrew/viper/devel/share/roseus/ros/model_server/srv/ImageRequest.l: /opt/ros/noetic/share/sensor_msgs/msg/Image.msg
+/home/andrew/viper/devel/share/roseus/ros/model_server/srv/ImageRequest.l: /opt/ros/noetic/share/std_msgs/msg/Bool.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrew/viper/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from model_server/ImageRequest.srv"
 	cd /home/andrew/viper/build/model_server && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/andrew/viper/src/model_server/srv/ImageRequest.srv -Imodel_server:/home/andrew/viper/src/model_server/msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p model_server -o /home/andrew/viper/devel/share/roseus/ros/model_server/srv
 
 /home/andrew/viper/devel/share/roseus/ros/model_server/srv/ModelRequest.l: /opt/ros/noetic/lib/geneus/gen_eus.py
 /home/andrew/viper/devel/share/roseus/ros/model_server/srv/ModelRequest.l: /home/andrew/viper/src/model_server/srv/ModelRequest.srv
-/home/andrew/viper/devel/share/roseus/ros/model_server/srv/ModelRequest.l: /home/andrew/viper/src/model_server/msg/InferenceResults.msg
 /home/andrew/viper/devel/share/roseus/ros/model_server/srv/ModelRequest.l: /opt/ros/noetic/share/std_msgs/msg/String.msg
+/home/andrew/viper/devel/share/roseus/ros/model_server/srv/ModelRequest.l: /home/andrew/viper/src/model_server/msg/InferenceResults.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrew/viper/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp code from model_server/ModelRequest.srv"
 	cd /home/andrew/viper/build/model_server && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/andrew/viper/src/model_server/srv/ModelRequest.srv -Imodel_server:/home/andrew/viper/src/model_server/msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p model_server -o /home/andrew/viper/devel/share/roseus/ros/model_server/srv
 

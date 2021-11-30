@@ -352,8 +352,18 @@ commentsRunWhenDOMLoaded(addUtterances);
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference external" href="https://www.linux.com">
-   Linux Website
+  <a class="reference external" href="https://mate-desktop.org/">
+   Mate Desktop
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://www.ubuntu.com">
+   Ubuntu
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://www.intel.com/content/www/us/en/developer/tools/neural-compute-stick/overview.html">
+   Intel Neural Compute Stick 2
   </a>
  </li>
 </ul>
@@ -529,6 +539,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">inspect</span>
 <span class="kn">import</span> <span class="nn">rospy</span>
+<span class="kn">from</span> <span class="nn">viper_toolkit</span> <span class="k">import</span> <span class="n">Dissect</span>
 <span class="kn">from</span> <span class="nn">std_msgs.msg</span> <span class="k">import</span> <span class="n">String</span>
 </pre></div>
 </div>
@@ -586,60 +597,15 @@ if __name__ == &#39;__main__&#39;:
 </div>
 </div>
 </div>
-<p>Each of my class definitions will look similar, although will greatly vary in complexity.</p>
-<p>Lets take a look at the different parts of this node.</p>
+<p>This is what the basic barebones subscriber looks like… to better understand what is happening lets look at each of the parts.</p>
 </div>
 <div class="section" id="detailed-look-at-class-attributes-properties-and-methods">
 <h2><span class="section-number">4.3.2. </span>Detailed Look at Class Attributes, Properties, and Methods<a class="headerlink" href="#detailed-look-at-class-attributes-properties-and-methods" title="Permalink to this headline">¶</a></h2>
+<p>Each of my class definitions will look similar, although will greatly vary in complexity.</p>
+<p>Lets take a look at the different parts of this node. To do this I have created a dissection tool <strong>Dissect()</strong> which you can find in my Viper Toolbox. It allows us to look at the different methods and properties within our class.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scripts.subscriber</span> <span class="k">import</span> <span class="n">SubscriberNode</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instance</span> <span class="o">=</span> <span class="n">SubscriberNode</span>
-<span class="n">instance</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="n">String</span><span class="p">(</span><span class="s2">&quot;The time is now 1638136508.7424648&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dissect</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="n">SubscriberNode</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    Dissect() takes a method and a class, and returns the contents of the function.</span>
-<span class="sd">    </span>
-<span class="sd">    Keyword Arguments:</span>
-<span class="sd">    </span>
-<span class="sd">    method -- the name of the method being invoked</span>
-<span class="sd">    class_ -- the name of the class object dissected</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    <span class="n">instance_</span> <span class="o">=</span> <span class="n">class_</span>
-    <span class="n">i</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;instance_.</span><span class="si">{method}</span><span class="s1">&#39;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;class </span><span class="si">{SubscriberNode.__name__}</span><span class="s1">(object):&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-    <span class="n">e</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dissect</span><span class="p">(</span><span class="s1">&#39;__init__&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>class SubscriberNode(object):
-
-    def __init__(self):
-        self.setup_ros()
-        self.setup_subscriber()
-        self.main_loop()
 </pre></div>
 </div>
 </div>
@@ -649,7 +615,7 @@ if __name__ == &#39;__main__&#39;:
 <p>The <strong>init</strong> class function executes at the time that the class in instantiated. We are telling the interpreter to first run the setup_ros() function, then run the setup_publisher() function, and finally to execute the main_loop() function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dissect</span><span class="p">(</span><span class="s1">&#39;__init__&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Dissect</span><span class="p">(</span><span class="s1">&#39;__init__&#39;</span><span class="p">,</span> <span class="n">SubscriberNode</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -671,7 +637,7 @@ if __name__ == &#39;__main__&#39;:
 <p>During this step we will also set the class “message” attribute using the class String.This allows us to retrieve the previous message upon failure so that we do not disrupt the system loop in the event of a dropped message. Note that the message types between the subscribers and the publishers must be the same.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dissect</span><span class="p">(</span><span class="s1">&#39;setup_ros&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Dissect</span><span class="p">(</span><span class="s1">&#39;setup_ros&#39;</span><span class="p">,</span> <span class="n">SubscriberNode</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -692,7 +658,7 @@ if __name__ == &#39;__main__&#39;:
 <p>When it receives a new message it will execute its class callback() function</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dissect</span><span class="p">(</span><span class="s1">&#39;setup_subscriber&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Dissect</span><span class="p">(</span><span class="s1">&#39;setup_subscriber&#39;</span><span class="p">,</span> <span class="n">SubscriberNode</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -716,7 +682,7 @@ if __name__ == &#39;__main__&#39;:
 <p>Thoughout my modules I use a variety of types of messages and callbacks to not only pass on data such as images and inference results, but to also publish “flags” or indicators that a node wants something.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dissect</span><span class="p">(</span><span class="s1">&#39;callback&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Dissect</span><span class="p">(</span><span class="s1">&#39;callback&#39;</span><span class="p">,</span> <span class="n">SubscriberNode</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -740,7 +706,15 @@ if __name__ == &#39;__main__&#39;:
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sample Message Received
-data: &quot;The time is now 1638136508.7424648&quot;
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_25647</span><span class="o">/</span><span class="mf">3098139531.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;Sample Message Received&quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="k">print</span> <span class="p">(</span><span class="n">instance</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;instance&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -751,7 +725,7 @@ data: &quot;The time is now 1638136508.7424648&quot;
 <p>In our example action loop we will take the most recent message and transform its case into capital letters. We access the data in the message through it message.data class property. We then output the results to the terminal, as well as return the results when this function is called.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dissect</span><span class="p">(</span><span class="s1">&#39;action_loop&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Dissect</span><span class="p">(</span><span class="s1">&#39;action_loop&#39;</span><span class="p">,</span> <span class="n">SubscriberNode</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -771,7 +745,7 @@ data: &quot;The time is now 1638136508.7424648&quot;
 <p>Like the publisher node, the main loop is the loop which will continually run while the node is online. Since all of our actions are occuring within the callback loop we do not have much in our main loop, other than the rospy.spin() function which keeps the kernal alive in the case that it is not actively processing data (but still waiting for messages).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dissect</span><span class="p">(</span><span class="s1">&#39;main_loop&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Dissect</span><span class="p">(</span><span class="s1">&#39;main_loop&#39;</span><span class="p">,</span> <span class="n">SubscriberNode</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

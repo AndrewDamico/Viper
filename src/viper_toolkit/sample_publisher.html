@@ -352,8 +352,18 @@ commentsRunWhenDOMLoaded(addUtterances);
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference external" href="https://www.linux.com">
-   Linux Website
+  <a class="reference external" href="https://mate-desktop.org/">
+   Mate Desktop
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://www.ubuntu.com">
+   Ubuntu
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://www.intel.com/content/www/us/en/developer/tools/neural-compute-stick/overview.html">
+   Intel Neural Compute Stick 2
   </a>
  </li>
 </ul>
@@ -526,6 +536,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">inspect</span>
 <span class="kn">import</span> <span class="nn">rospy</span>
+<span class="kn">from</span> <span class="nn">viper_toolkit</span> <span class="k">import</span> <span class="n">Dissect</span>
 </pre></div>
 </div>
 </div>
@@ -591,54 +602,12 @@ if __name__ == &#39;__main__&#39;:
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instance</span> <span class="o">=</span> <span class="n">PublisherNode</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dissect</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="n">SubscriberNode</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    Dissect() takes a method and a class, and returns the contents of the function.</span>
-<span class="sd">    </span>
-<span class="sd">    Keyword Arguments:</span>
-<span class="sd">    </span>
-<span class="sd">    method -- the name of the method being invoked</span>
-<span class="sd">    class_ -- the name of the class object dissected</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    <span class="n">instance_</span> <span class="o">=</span> <span class="n">class_</span>
-    <span class="n">i</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;instance_.</span><span class="si">{method}</span><span class="s1">&#39;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;class </span><span class="si">{SubscriberNode.__name__}</span><span class="s1">(object):&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-    <span class="n">e</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_25008</span><span class="o">/</span><span class="mf">2435067016.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">dissect</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="n">SubscriberNode</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="s1">&#39;&#39;&#39;</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="s1">     Dissect() takes a method and a class, and returns the contents of the function.</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span><span class="s1"> </span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span><span class="s1">     Keyword Arguments:</span>
-
-<span class="ne">NameError</span>: name &#39;SubscriberNode&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
 <div class="section" id="initialize-the-class-object">
 <h3><span class="section-number">4.2.2.1. </span>Initialize the Class Object<a class="headerlink" href="#initialize-the-class-object" title="Permalink to this headline">¶</a></h3>
 <p>The <strong>init</strong> class function executes at the time that the class in instantiated. We are telling the interpreter to first run the setup_ros() function, then run the setup_publisher() function, and finally to execute the main_loop() function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dissect</span><span class="p">(</span><span class="s1">&#39;__init__&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Dissect</span><span class="p">(</span><span class="s1">&#39;__init__&#39;</span><span class="p">,</span> <span class="n">PublisherNode</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -659,7 +628,7 @@ if __name__ == &#39;__main__&#39;:
 <p>We need to tell ROS that we would like to bring this node online; we are registering this kernel as “sample_publisher”. While multiple nodes of the same class can run at once, each node must have a unique name. If a node comes online which has the same name, it will replace the current node and this kernel will be shut down.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dissect</span><span class="p">(</span><span class="s1">&#39;setup_ros&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Dissect</span><span class="p">(</span><span class="s1">&#39;setup_ros&#39;</span><span class="p">,</span> <span class="n">PublisherNode</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -678,7 +647,7 @@ if __name__ == &#39;__main__&#39;:
 <p>Next we will setup the publisher API which allows a node to publish a “Topic”, or a broadcasted message. This node will be publishing the topic “topic” a  message type of “String.” It will only hold on to the last message (queue_size=1).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dissect</span><span class="p">(</span><span class="s1">&#39;setup_publisher&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Dissect</span><span class="p">(</span><span class="s1">&#39;setup_publisher&#39;</span><span class="p">,</span> <span class="n">PublisherNode</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -722,7 +691,7 @@ The class type is: &lt;class &#39;str&#39;&gt;
 <p>The Action Loop is where the processing of the node occures. In many of my nodes you will see multiple loops chained together, depending on the desired action to be performed. In this example our action loop is getting the time from the rospy module.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dissect</span><span class="p">(</span><span class="s1">&#39;action_loop&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Dissect</span><span class="p">(</span><span class="s1">&#39;action_loop&#39;</span><span class="p">,</span> <span class="n">PublisherNode</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -742,7 +711,7 @@ The class type is: &lt;class &#39;str&#39;&gt;
 <p>The main loop is the loop which will continually run while the node is online. First, we set the rospy.rate() which is the minimum hz we wish the node to run. In this example, we are asking the node to retrieve the result of the action loop (the time), converting our desired message into the ‘String’ message format, and then publishing our message. After printing a log entry indicating that it published a message it will then wait wait for the Hz timer to finish before it performs this loop again.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dissect</span><span class="p">(</span><span class="s1">&#39;main_loop&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Dissect</span><span class="p">(</span><span class="s1">&#39;main_loop&#39;</span><span class="p">,</span> <span class="n">PublisherNode</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

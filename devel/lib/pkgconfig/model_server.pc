@@ -1,8 +1,0 @@
-prefix=/home/andrew/viper/devel
-
-Name: model_server
-Description: Description of model_server
-Version: 0.0.0
-Cflags: -I/home/andrew/viper/devel/include
-Libs: -L${prefix}/lib 
-Requires: roscpp rospy sensor_msgs std_msgs geometry_msgs message_runtime

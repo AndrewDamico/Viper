@@ -1,7 +1,0 @@
-set(image_server_SETUP_PY_SETUP_MODULE "distutils.core")
-set(image_server_SETUP_PY_VERSION "0.5.0")
-set(image_server_SETUP_PY_SCRIPTS "")
-set(image_server_SETUP_PY_PACKAGES "image_server")
-set(image_server_SETUP_PY_PACKAGE_DIRS "src/image_server")
-set(image_server_SETUP_PY_MODULES "")
-set(image_server_SETUP_PY_MODULE_DIRS "")

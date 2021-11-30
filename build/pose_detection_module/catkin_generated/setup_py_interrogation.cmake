@@ -1,7 +1,0 @@
-set(pose_detection_module_SETUP_PY_SETUP_MODULE "distutils.core")
-set(pose_detection_module_SETUP_PY_VERSION "0.5.0")
-set(pose_detection_module_SETUP_PY_SCRIPTS "")
-set(pose_detection_module_SETUP_PY_PACKAGES "pose_detection_module")
-set(pose_detection_module_SETUP_PY_PACKAGE_DIRS "src/pose_detection_module")
-set(pose_detection_module_SETUP_PY_MODULES "")
-set(pose_detection_module_SETUP_PY_MODULE_DIRS "")

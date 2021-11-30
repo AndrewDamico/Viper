@@ -1,7 +1,0 @@
-set(viper_toolkit_SETUP_PY_SETUP_MODULE "distutils.core")
-set(viper_toolkit_SETUP_PY_VERSION "0.1.0")
-set(viper_toolkit_SETUP_PY_SCRIPTS "")
-set(viper_toolkit_SETUP_PY_PACKAGES "viper_toolkit")
-set(viper_toolkit_SETUP_PY_PACKAGE_DIRS "src/viper_toolkit")
-set(viper_toolkit_SETUP_PY_MODULES "")
-set(viper_toolkit_SETUP_PY_MODULE_DIRS "")

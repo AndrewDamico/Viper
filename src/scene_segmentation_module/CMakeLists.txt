@@ -21,7 +21,7 @@ catkin_package(
 )
 
 catkin_install_python(PROGRAMS
-   scripts/scene_segmentation_module
+   scripts/scene_segmentation_module_node.py
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

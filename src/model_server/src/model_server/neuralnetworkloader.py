@@ -97,7 +97,7 @@ class NeuralNetworkLoader(object):
         self.timer = ProcessTimer(logger=self.logger)
         
         # Creates a parameter manager
-        self.NeuralNetworkParams = Parameters(logger=self.logger)
+        self.NeuralNetworkParams = ParameterManager(logger=self.logger)
         
     def setup_inference_engine(self, ie: IECore, viper_model: ViperModel, device: str):
 

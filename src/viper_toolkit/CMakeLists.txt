@@ -18,8 +18,8 @@ catkin_package(
 )
 
 catkin_install_python(PROGRAMS
-   script/subscriber.py
-   script/publisher.py
+   scripts/subscriber.py
+   scripts/publisher.py
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
  )
 

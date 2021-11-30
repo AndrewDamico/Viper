@@ -8,4 +8,5 @@
 
 # modified environment variables
 export LD_LIBRARY_PATH='/home/andrew/viper/devel/lib:/opt/ros/noetic/lib:/usr/local/lib:/usr/local/tools/compile_tool:/usr/local/runtime/3rdparty/tbb/lib:/usr/local/runtime/3rdparty/hddl/lib:/usr/local/runtime/lib/aarch64:/~/openvino/openvino/bin/aarch64/Release/lib/'
+export PKG_CONFIG_PATH='/opt/ros/noetic/lib/pkgconfig'
 export PWD='/home/andrew/viper/build'

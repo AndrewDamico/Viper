@@ -69,7 +69,7 @@ include_directories(
 ## Install ##
 #############
 
- catkin_install_python(PROGRAMS
-   scripts/model_server
+catkin_install_python(PROGRAMS
+   scripts/modelserver.py
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )

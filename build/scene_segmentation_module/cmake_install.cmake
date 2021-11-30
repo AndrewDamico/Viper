@@ -57,7 +57,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/scene_segmentation_module" TYPE PROGRAM FILES "/home/andrew/viper/build/scene_segmentation_module/catkin_generated/installspace/scene_segmentation_module")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/scene_segmentation_module" TYPE PROGRAM FILES "/home/andrew/viper/build/scene_segmentation_module/catkin_generated/installspace/scene_segmentation_module_node.py")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)

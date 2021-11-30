@@ -14,6 +14,6 @@ catkin_python_setup()
 catkin_package()
 
 catkin_install_python(PROGRAMS
-   scripts/augmented_vr
+   scripts/augmented_vr.py
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )

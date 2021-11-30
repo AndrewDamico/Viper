@@ -24,12 +24,12 @@ add_custom_target(_model_server_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/andrew/viper/src/model_server/srv/ImageRequest.srv" NAME_WE)
 add_custom_target(_model_server_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "model_server" "/home/andrew/viper/src/model_server/srv/ImageRequest.srv" "std_msgs/Header:sensor_msgs/Image:std_msgs/Bool"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "model_server" "/home/andrew/viper/src/model_server/srv/ImageRequest.srv" "std_msgs/Bool:std_msgs/Header:sensor_msgs/Image"
 )
 
 get_filename_component(_filename "/home/andrew/viper/src/model_server/srv/ModelRequest.srv" NAME_WE)
 add_custom_target(_model_server_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "model_server" "/home/andrew/viper/src/model_server/srv/ModelRequest.srv" "std_msgs/String:model_server/InferenceResults"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "model_server" "/home/andrew/viper/src/model_server/srv/ModelRequest.srv" "model_server/InferenceResults:std_msgs/String"
 )
 
 #
@@ -49,13 +49,13 @@ _generate_msg_cpp(model_server
 _generate_srv_cpp(model_server
   "/home/andrew/viper/src/model_server/srv/ImageRequest.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Bool.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Bool.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/model_server
 )
 _generate_srv_cpp(model_server
   "/home/andrew/viper/src/model_server/srv/ModelRequest.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/home/andrew/viper/src/model_server/msg/InferenceResults.msg"
+  "/home/andrew/viper/src/model_server/msg/InferenceResults.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/model_server
 )
 
@@ -98,13 +98,13 @@ _generate_msg_eus(model_server
 _generate_srv_eus(model_server
   "/home/andrew/viper/src/model_server/srv/ImageRequest.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Bool.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Bool.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/model_server
 )
 _generate_srv_eus(model_server
   "/home/andrew/viper/src/model_server/srv/ModelRequest.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/home/andrew/viper/src/model_server/msg/InferenceResults.msg"
+  "/home/andrew/viper/src/model_server/msg/InferenceResults.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/model_server
 )
 
@@ -147,13 +147,13 @@ _generate_msg_lisp(model_server
 _generate_srv_lisp(model_server
   "/home/andrew/viper/src/model_server/srv/ImageRequest.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Bool.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Bool.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/model_server
 )
 _generate_srv_lisp(model_server
   "/home/andrew/viper/src/model_server/srv/ModelRequest.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/home/andrew/viper/src/model_server/msg/InferenceResults.msg"
+  "/home/andrew/viper/src/model_server/msg/InferenceResults.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/model_server
 )
 
@@ -196,13 +196,13 @@ _generate_msg_nodejs(model_server
 _generate_srv_nodejs(model_server
   "/home/andrew/viper/src/model_server/srv/ImageRequest.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Bool.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Bool.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/model_server
 )
 _generate_srv_nodejs(model_server
   "/home/andrew/viper/src/model_server/srv/ModelRequest.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/home/andrew/viper/src/model_server/msg/InferenceResults.msg"
+  "/home/andrew/viper/src/model_server/msg/InferenceResults.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/model_server
 )
 
@@ -245,13 +245,13 @@ _generate_msg_py(model_server
 _generate_srv_py(model_server
   "/home/andrew/viper/src/model_server/srv/ImageRequest.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Bool.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Bool.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/model_server
 )
 _generate_srv_py(model_server
   "/home/andrew/viper/src/model_server/srv/ModelRequest.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/home/andrew/viper/src/model_server/msg/InferenceResults.msg"
+  "/home/andrew/viper/src/model_server/msg/InferenceResults.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/model_server
 )
 

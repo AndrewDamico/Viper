@@ -20,7 +20,7 @@ catkin_package(
 )
 
  catkin_install_python(PROGRAMS
-   scripts/pose_detection_module
+   scripts/pose_detection_module.py
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
  )
 

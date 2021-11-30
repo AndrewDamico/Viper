@@ -6,9 +6,9 @@
 # Northwestern University
 # Copyright (c) 2021, Andrew D'Amico. All rights reserved.
 # Licenced under BSD Licence.
+import inspect
 
-
-ef Dissect(method, class_):
+def Dissect(method, class_):
     '''
     Dissect() takes a method and a class, and returns the contents of the function.
     
@@ -19,7 +19,7 @@ ef Dissect(method, class_):
     '''
     instance_ = class_
     i = f'instance_.{method}'
-    print(f'class {SubscriberNode.__name__}(object):')
+    print(f'class {class_.__name__}(object):')
     print("")
     e = eval(i)
     print(inspect.getsource(e))

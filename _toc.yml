@@ -10,39 +10,54 @@ parts:
   numbered: True
   chapters:
   - file: readme
-  - file: markdown
-  - file: notebooks
+  - file: objective
     sections:
+    - file: docs/ros_structure
     - file: src/viper_toolkit/sample_publisher
     - file: src/viper_toolkit/sample_subscriber
-    - file: docs/ros_structure
-    - file: docs/Hardware
-    - url: https://www.linux.com
-      title: Linux Website
+- caption: Packages
+  numbered: True
+  chapters:
+  - file: src/model_server/readme
+    sections:
+    - file: src/model_server/model_server
+    - file: src/model_server/neural_network_loader
+  - file: src/image_server/readme
+    sections:
+    - file: src/image_server/image_server
+  - file: src/scene_segmentation_module/readme
+    sections:
+    - file: src/scene_segmentation_module/scene_segmentation_module
+    - file: src/scene_segmentation_module/scene_segmentation_model
+    - file: src/scene_segmentation_module/example
+  - file: src/pose_detection_module/readme
+    sections:
+    - file: src/pose_detection_module/pose_detection_module
+    - file: src/pose_detection_module/pose_detection_model
+    - file: src/pose_detection_module/example
+  - file: src/augmented_vr_module/readme
+    sections:
+    - file: src/augmented_vr_module/augmented_vr_module
+  - file: src/viper_toolkit/readme
+    sections:
+    - file: src/viper_toolkit/viper_toolkit_python_modules
+    - file: src/viper_toolkit/logger
+    - file: src/viper_toolkit/name_manager
+    - file: src/viper_toolkit/parameter_manager
+    - file: src/viper_toolkit/process_timer
 - caption: Hardware
   chapters:
+  - file: docs/Hardware
   - url: https://www.raspberrypi.com/
     title: Raspberry Pi
 - caption: Software
   chapters:
+  - file: mate_desktop
+  - url: https://www.linux.com
+    title: Linux Website
   - url: https://github.com/openvinotoolkit/openvino/wiki/BuildingCode#building-for-different-oses
     title: OpenVino Toolkit
-- caption: Packages
-  numbered: True
-  chapters:
-  - file: src/viper_toolkit/readme
-    sections:
-    - file: src/viper_toolkit/viper_toolkit_python_modules
-  - file: src/augmented_vr_module/readme
-  - file: src/image_server/readme
-  - file: src/inland_ir_cam/readme
-  - file: src/model_server/readme
-    sections:
-    - file: src/model_server/model_server_modules
-  - file: src/pose_detection_module/readme
-    sections:
-    - file: src/pose_detection_module/pose_detecton_modules
-  - file: src/scene_segmentation_module/readme
-    sections:
-    - file: src/scene_segmentation_module/scene_segmentation_modules
-  - glob: devel/*
+
+    
+    
+    

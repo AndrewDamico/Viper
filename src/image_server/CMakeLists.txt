@@ -22,6 +22,6 @@ catkin_package(
 )
 
 catkin_install_python(PROGRAMS
-   scripts/image_server
+   scripts/image_server.py
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )

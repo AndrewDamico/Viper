@@ -71,8 +71,7 @@ class SceneSegmentationModel(NeuralNetworkLoader):
             #self.logger.e(f"Cannot resize image to shape ({self.w}, {self.h})") 
             #return
             
-        if self.export_state: 
-            self.export_parameters(resized_shape = input_img.shape)
+       # if self.export_state: self.export_parameters(resized_shape = input_img.shape)
 
         # We need to wrangle the image from into the NCHW format.
         #try:    
@@ -85,14 +84,13 @@ class SceneSegmentationModel(NeuralNetworkLoader):
         #    self.logger.e("Error converting to NCHW format")
         #    return
         
-        if self.export_state: 
-                self.export_parameters(transposed_shape=transposed_img.shape)
+        #if self.export_state: self.export_parameters(transposed_shape=transposed_img.shape)
         
 
         # We will now perform inference on the input object using the
         # inference engine we loaded to the Visual Processing Unit
         results = self._exec_net.infer(
-            inputs = {self._input_layer: transposed_img}
+            inputs = {self._input_key: transposed_img}
             )
         rospy.loginfo("infered")
         # Extract the inference blob from the results array
@@ -106,9 +104,8 @@ class SceneSegmentationModel(NeuralNetworkLoader):
             axis=1)
         
         # We export the successful shape and then turn off exporting.
-        if self.export_state:
-            self.export_parameters(mask_shape=mask.shape, export_state=False)
+        #if self.export_state:self.export_parameters(mask_shape=mask.shape, export_state=False)
             
-        self.logger.i(f"Returning shape: {mask.shape}")
+        #self.logger.i(f"Returning shape: {mask.shape}")
 
         return mask

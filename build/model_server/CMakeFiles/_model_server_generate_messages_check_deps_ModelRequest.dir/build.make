@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/andrew/viper/build
 include model_server/CMakeFiles/_model_server_generate_messages_check_deps_ModelRequest.dir/progress.make
 
 model_server/CMakeFiles/_model_server_generate_messages_check_deps_ModelRequest:
-	cd /home/andrew/viper/build/model_server && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py model_server /home/andrew/viper/src/model_server/srv/ModelRequest.srv std_msgs/String:model_server/InferenceResults
+	cd /home/andrew/viper/build/model_server && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py model_server /home/andrew/viper/src/model_server/srv/ModelRequest.srv model_server/InferenceResults:std_msgs/String
 
 _model_server_generate_messages_check_deps_ModelRequest: model_server/CMakeFiles/_model_server_generate_messages_check_deps_ModelRequest
 _model_server_generate_messages_check_deps_ModelRequest: model_server/CMakeFiles/_model_server_generate_messages_check_deps_ModelRequest.dir/build.make

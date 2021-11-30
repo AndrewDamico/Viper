@@ -104,6 +104,6 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/model_server" TYPE PROGRAM FILES "/home/andrew/viper/build/model_server/catkin_generated/installspace/model_server")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/model_server" TYPE PROGRAM FILES "/home/andrew/viper/build/model_server/catkin_generated/installspace/modelserver.py")
 endif()
 

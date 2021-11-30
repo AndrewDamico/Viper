@@ -166,12 +166,12 @@ commentsRunWhenDOMLoaded(addUtterances);
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../docs/ros_structure.html">
-     3.7. Robot OS (ROS)
+     3.6. Robot OS (ROS)
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../docs/Hardware.html">
-     3.8. Hardware Configuration
+     3.7. Hardware Configuration
     </a>
    </li>
    <li class="toctree-l2">
@@ -458,60 +458,23 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>class NameManager(object):
-    &quot;&quot;&quot;Creates a NameManager class object which is used to standardize
-    the names for a node or a process, and is linked to other 
-    Viper toolkit modules, such as the logger. It includes rules for 
-    automatically setting the name if a name isn&#39;t provided in order
-    to standardize log messages, parameters, etc.
-    
-    Keyword arguments:
-    abv -- the abreviated name for the object
-    name -- the full name for the object
-    &quot;&quot;&quot;
-    def __init__(self, name: str = None, abv: str = None):
-        # Sets the name of this module for the sake of logging.
-        self._code = &quot;NMG&quot;
-        # Retrieves the name of the module and sets to self._pkg_name
-        self._name = name
-        self._abv = abv
-    @property
-    def name(self):
-        return self._name
-    @name.setter
-    def name(self, name: str = None):
-        if name == None:
-            try:
-                self._name = f&#39;{rospy.get_name()}&#39;[1:]
-            except:
-                self._name = &quot;ERROR&quot;
-        else:
-            self._name = name
-        rospy.logdebug(f&#39;[{self._code}] Name set to %s&#39;, self.name)
-        #setattr(self, name, self._name)
-    @property
-    def abv(self):
-        return self._abv
-    @abv.setter
-    def abv(self, code = None):
-        if code == None:
-            self._abv = self._autoabv()
-        else:
-            self._abv = self.codeformatter(code)
-        rospy.set_param(f&#39;/{self.name}/abv&#39;, self.abv)
-        rospy.logdebug(f&#39;[{self._code}] ABV set&#39;)
-    @classmethod
-    def codeformatter(self, code: str):
-        abv = code[:3].upper()
-        abv = abv.ljust(3)
-        return abv
-    @classmethod
-    def _autoabv(self):
-        if rospy.has_param(f&#39;{self.name}/abv&#39;):
-            abv = rospy.get_param(f&#39;/{self.name}/abv&#39;)
-            return self.codeformatter(abv)
-        else:
-            return self.codeformatter(f&#39;{self.name}&#39;)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+
+  <span class="n">File</span> <span class="s2">&quot;/home/andrew/.local/lib/python3.8/site-packages/IPython/core/interactiveshell.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">3444</span><span class="p">,</span> <span class="ow">in</span> <span class="n">run_code</span>
+    <span class="k">exec</span><span class="p">(</span><span class="n">code_obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">user_global_ns</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">user_ns</span><span class="p">)</span>
+
+  <span class="n">File</span> <span class="s2">&quot;/tmp/ipykernel_4707/1849542711.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="kn">from</span> <span class="nn">viper_toolkit</span> <span class="kn">import</span> <span class="n">NameManager</span>
+
+  <span class="n">File</span> <span class="s2">&quot;/home/andrew/viper/devel/lib/python3/dist-packages/viper_toolkit/__init__.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">34</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="k">exec</span><span class="p">(</span><span class="n">__fh</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+
+  <span class="n">File</span> <span class="s2">&quot;&lt;string&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">10</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+
+<span class="gt">  File</span><span class="nn"> &quot;/home/andrew/viper/src/viper_toolkit/src/viper_toolkit/dissector.py&quot;</span><span class="gt">, line </span><span class="mi">11</span>
+    <span class="n">ef</span> <span class="n">Dissect</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">class_</span><span class="p">):</span>
+       <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
 </pre></div>
 </div>
 </div>

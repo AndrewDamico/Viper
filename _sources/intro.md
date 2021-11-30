@@ -1,13 +1,22 @@
 # Vision Inference Processing Endogenous Robot
 
-This book provides all of the documentation for my Northwestern
-Computer Vision MSDS 462 Class Project.
+Andrew D'Amico  
+MSDS 462: Computer Vision  
+Northwestern University
+
+This book provides all of the documentation for my Northwestern Computer Vision MSDS 462 Class Project.
 
 
+```{image} viper_device.png
+:alt: Viper Device
+:class: bg-primary mb-1
+:width: 600px
+:align: center
+```
 
 :::{note}
-Development on this book is ongoing! The most up to date code can be
-found on my github repository: 
+
+Development on this book is ongoing! The most up to date code can be found on my github repository:
 
 https://github.com/AndrewDamico/viper
 

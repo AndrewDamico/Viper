@@ -18,7 +18,7 @@ This book provides all of the documentation for my Northwestern Computer Vision 
 
 Development on this book is ongoing! The most up to date code can be found on my github repository:
 
-<a>https://github.com/AndrewDamico/viper</a>
+https://github.com/AndrewDamico/viper
 
 :::
 

@@ -181,7 +181,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../model_server/readme.html">
+  <a class="reference internal" href="../model_server/model_server.html">
    5. Model Server
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -190,11 +190,6 @@ commentsRunWhenDOMLoaded(addUtterances);
    </i>
   </label>
   <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../model_server/model_server.html">
-     5.1. Model Server
-    </a>
-   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../model_server/neural_network_loader.html">
      5.2. Neural Network Loader
@@ -214,7 +209,12 @@ commentsRunWhenDOMLoaded(addUtterances);
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../image_server/image_server.html">
-     6.1. Image Server
+     6.1. Image Server Node
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../image_server/image_server_client.html">
+     6.2. Image Server Client
     </a>
    </li>
   </ul>
@@ -301,28 +301,28 @@ commentsRunWhenDOMLoaded(addUtterances);
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../viper_toolkit/viper_toolkit_python_modules.html">
-     10.1. NameManager
+    <a class="reference internal" href="../viper_toolkit/dissector.html">
+     10.1. Class Dissector
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../viper_toolkit/logger.html">
-     10.5. Logger Module
+     10.2. Logger Module
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../viper_toolkit/name_manager.html">
-     10.6. Name Manager
+     10.3. Name Manager
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../viper_toolkit/parameter_manager.html">
-     10.7. Parameter Manager
+     10.4. Parameter Manager
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../viper_toolkit/process_timer.html">
-     10.8. Process Timer
+     10.5. Process Timer
     </a>
    </li>
   </ul>
@@ -352,8 +352,18 @@ commentsRunWhenDOMLoaded(addUtterances);
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference external" href="https://www.linux.com">
-   Linux Website
+  <a class="reference external" href="https://mate-desktop.org/">
+   Mate Desktop
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://www.ubuntu.com">
+   Ubuntu
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://www.intel.com/content/www/us/en/developer/tools/neural-compute-stick/overview.html">
+   Intel Neural Compute Stick 2
   </a>
  </li>
 </ul>
@@ -473,155 +483,6 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="kn">from</span> <span class="nn">viper_toolkit</span> <span class="k">import</span> <span class="n">Dissect</span>
 <span class="kn">from</span> <span class="nn">pose_detection_module</span> <span class="k">import</span> <span class="n">PoseDetectionModel</span>
 <span class="n">lines</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">PoseDetectionModel</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>class PoseDetectionModel(NeuralNetworkLoader):
-    &quot;&quot;&quot;
-    A PoseDetectionModel is a class object of the type NeuralNetworkLoader
-    which connects this model to the parent inference engine, communicates
-    the neural network shape, and sets up logging.
-    &quot;&quot;&quot;
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.load_decoder()
-        
-    def load_decoder (self):
-        # Load the model decoder which will decode the results of our 
-        # ANN into nodes and edges representing a human being.
-        self.decoder = OpenPoseDecoder()
-        #self.logger.i(&quot;Decoder loaded&quot;)
-        
-    def process_results(self, frame, results):
-        # the process_results function takes an image, the results inference
-        # the output_keys of the model, the inference engine, 
-        # and a decoder which contains the shape of the entity (i.e., human)
-        # and gets poses from results
-        #self.timer.lap(&quot;Processing Results&quot;)
-        rospy.loginfo(&quot;process results&quot;)
-        pafs = results[self._output_keys[0]]
-        #print (&quot;PAFS&quot;)
-        #print(pafs)
-        heatmaps = results[self._output_keys[1]]
-        #print(&quot;HEATMAPS&quot;)
-        #print(heatmaps)
-        
-        # The heatmaps are generated from the image by using Max pooling,
-        # which takes the maximum value of the pixels contained within 
-        # the shape of the kernel.
-        # https://github.com/openvinotoolkit/open_model_zoo/blob/master/demos/common/python/models/open_pose.py
-        rospy.loginfo(&quot;pool heatmaps&quot;)
-        pooled_heatmaps = np.array(
-            [[pool2d(h, 
-                    kernel_size=3, 
-                    stride=1, 
-                    padding=1, 
-                    pool_mode=&quot;max&quot;
-                    ) for h in heatmaps[0]]]
-                    )
-        print (pooled_heatmaps)
-        nms_heatmaps = heatmap_nms(heatmaps, pooled_heatmaps)
-        print(&quot;NMS HEATMAPS ===========================&quot;)
-        print(nms_heatmaps)
-        #self.timer.time(&quot;Processing Results&quot;)
-        #self.timer.lap(&quot;Decoding Poses&quot;)
-        rospy.loginfo(&quot;decode&quot;)
-        # The generated heatmaps are then sent to the decoder
-        
-        poses, scores = self.decoder(
-            heatmaps, 
-            nms_heatmaps, 
-            pafs
-        )
-        print(&quot;post decode&quot;)
-        print(poses)
-        print(scores)
-        
-        output_shape = self._exec_net.outputs[self._output_keys[0]].shape
-        print(&quot;-------------outputshape&quot;)
-        print (output_shape)
-        
-        output_scale = frame.shape[1] / output_shape[3], frame.shape[0] / output_shape[2]
-        print(&quot;---------output scale&quot;)
-        print(output_scale)
-        #rospy.loginfo(f&quot;Frame width, height: ({frame.shape[0]}, {frame.shape[1]})&quot;)
-        #self.logger.i(f&quot;Output width, height: ({output_shape[2]}, {output_shape[3]})&quot;)
-        #self.logger.i(f&quot;Output_scale: {output_scale}&quot;)
-        
-        # multiply coordinates by scaling factor
-        poses[:, :, :2] *= output_scale
-        #self.timer(&quot;Decoding Poses&quot;)
-        return poses, scores
-
-
-    def run_pose_estimation(self, frame):
-        # Model Preperation
-        # Initializing my timer module which will calcualtes the processing time
-        # between any two &#39;tags&#39;
-        #self.timer =  ProcessTimer(logger = self.logger)
-        #self.timer.lap(&quot;Image Processing&quot;)
-        
-        # Scaling the model
-        scale = 1280 / max(frame.shape)
-        #rospy.loginfo(&quot;scale: %s&quot;, scale)
-        rospy.loginfo(&quot;init&quot;)
-        if scale &lt; 1:
-            frame = cv2.resize(
-                frame, 
-                None, 
-                fx=scale, 
-                fy=scale, 
-                interpolation=cv2.INTER_AREA
-                )
-        
-        # resize image and change dims to fit neural network input
-        # (see https://github.com/openvinotoolkit/open_model_zoo/
-        #  tree/master/models/intel/human-pose-estimation-0001)
-        input_img = cv2.resize(
-            frame, 
-            (self.w, self.h), 
-            interpolation=cv2.INTER_AREA
-            )
-        rospy.loginfo(&quot;resized&quot;)
-        #self.logger.i(f&quot;Input Shape: {input_img.shape}&quot;)
-        
-        # create batch of images (size = 1)
-        input_img = input_img.transpose(2, 0, 1)[np.newaxis, ...]
-        rospy.loginfo(&quot;transposed&quot;)
-        #self.logger.i(f&quot;Transposed Shape: {input_img.shape}&quot;)
-        
-        # Printing Image Processing Time
-        #self.timer.time(&quot;Image Processing&quot;)
-        
-        # Performing Model Inference
-        # Performing inference and receiving the results.
-        #self.timer.lap(&quot;Inference&quot;)
-        results = self._exec_net.infer(
-            inputs={self._input_key: input_img})
-        rospy.loginfo(&quot;infer&quot;)
-        #self.logger.i(f&quot;Results Shape: {results.shape}&quot;)
-        #self.timer.time(&quot;Inference&quot;)
-        print(results)
-        # get poses from network results
-        poses, scores = self.process_results(frame=frame, results=results)
-        #self.logger.i(f&quot;Returned Shape: {poses.shape}&quot;)
-        print (&quot;------------------------------------&quot;)
-        print (scores)
-        print (poses)
-        # Outputing time of tag &#39;total_runtime&#39; which was created upon
-        # timer initialization.)
-        #self.timer.time(total_runtime)
-        
-        return poses #, scores
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lines</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">PoseDetectionModel</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
 </pre></div>
 </div>

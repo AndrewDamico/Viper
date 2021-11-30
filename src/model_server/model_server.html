@@ -209,7 +209,12 @@ commentsRunWhenDOMLoaded(addUtterances);
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../image_server/image_server.html">
-     6.1. Image Server
+     6.1. Image Server Node
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../image_server/image_server_client.html">
+     6.2. Image Server Client
     </a>
    </li>
   </ul>
@@ -296,28 +301,28 @@ commentsRunWhenDOMLoaded(addUtterances);
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../viper_toolkit/viper_toolkit_python_modules.html">
-     10.1. NameManager
+    <a class="reference internal" href="../viper_toolkit/dissector.html">
+     10.1. Class Dissector
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../viper_toolkit/logger.html">
-     10.5. Logger Module
+     10.2. Logger Module
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../viper_toolkit/name_manager.html">
-     10.6. Name Manager
+     10.3. Name Manager
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../viper_toolkit/parameter_manager.html">
-     10.7. Parameter Manager
+     10.4. Parameter Manager
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../viper_toolkit/process_timer.html">
-     10.8. Process Timer
+     10.5. Process Timer
     </a>
    </li>
   </ul>
@@ -502,220 +507,317 @@ commentsRunWhenDOMLoaded(addUtterances);
 <h2><span class="section-number">5.1. </span>The Model Server Module<a class="headerlink" href="#the-model-server-module" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scripts</span> <span class="k">import</span> <span class="n">model_server</span>
-<span class="kn">from</span> <span class="nn">model_server</span> <span class="k">import</span> <span class="n">ModelServer</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scripts</span> <span class="k">import</span> <span class="n">modelserver</span>
+<span class="kn">from</span> <span class="nn">scripts.modelserver</span> <span class="k">import</span> <span class="n">ModelServer</span>
 <span class="n">source</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">ModelServer</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">source</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_25728</span><span class="o">/</span><span class="mf">79211271.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">scripts</span> <span class="kn">import</span> <span class="n">model_server</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">model_server</span> <span class="kn">import</span> <span class="n">ModelServer</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">source</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">ModelServer</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">print</span> <span class="p">(</span><span class="n">source</span><span class="p">)</span>
-
-<span class="ne">ImportError</span>: cannot import name &#39;model_server&#39; from &#39;scripts&#39; (unknown location)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">model_server</span> <span class="k">import</span> <span class="n">NeuralNetworkLoader</span>
-<span class="n">source</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">NeuralNetworkLoader</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">source</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>class NeuralNetworkLoader(object):
-    &quot;&quot;&quot;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>class ModelServer(object):
     
-    A NeuralNetworkLoader is a class object which loads a pretrained
-    model (architecture and weights) onto a initialized OpenVino
-    inference engine.
+    def __init__(self):
+        self.setup_ros()
+        self.image = Image()
+        self.setup_inference_engine()
+        self.setup_models()
+        self.loop()
+        
+    def setup_ros(self):
+        rospy.init_node(&#39;model_server&#39;, log_level=rospy.DEBUG)
+        self.setup_parameters()
+        self.logger.i(&#39;Model Server Initialized&#39;)
     
-    Keyword Arguments:
-    
-    ie -- an Inference Engine instance set up in the parent node which 
-    we will load this model to.
-    
-    ViperModel -- a instance of class ViperModel which contains the 
-    models weights and the structure of the neural network.
-    
-    device -- the inference device to be used to predict on (i.e., 
-    &quot;MYRIAD&quot;, CPU, GPU, etc.)
-    
-    model_tag -- a three letter abbreviation used by the VIPER Logger
-    module which identifies log messages as originating from within this
-    modules code.
-    
-    model_name -- a logger attribute which identifies this model.
-    
-    &quot;&quot;&quot;
-    
-    def __init__(self, 
-                ie: IECore, 
-                viper_model: ViperModel,
-                device: str,
-                model_tag: str = &quot;M..&quot;,
-                model_name: str = &quot;Model&quot;,
-                *args,
-                **kwargs):
+    def setup_parameters(self):
+        # Instantiates the Name Manager and Logger to standardize the 
+        # nodes name and abreviation throughout the addon modules
+        self.name = NameManager()
+        self.logger = Logger(self.name)
         
-        # Creates our helper tools from our Viper Toolkkit such as 
-        # the parameter manager, our log manager, and our timer.
-        self.setup_parameters(
-            model_name = model_name, 
-            model_tag = model_tag)
+        # Creates an instance of the organizer I will be using for 
+        # my parameters. This allows for dynamic updatign accross nodes
+        self.parameters = ParameterManager()
         
-        # Prepare this model for loading
-        self.setup_inference_engine(
-            ie = ie, 
-            viper_model = viper_model, 
-            device = device)
-
-        # Load the read network onto the initialized device.
-        self.load_inference_engine(device=device, ie = ie)
-        
-        # Retrieve the architecture of the model to load, including 
-        # inputs and outputs and stores these on the parameter server
-        self.get_network_info()
-        
-        # Retrieves the image shapes for the input and output from the
-        # now loaded model and stores these on the parameter server
-        self.get_model_info()
-
-
-    def setup_parameters(self, model_name: str, model_tag: str):
-    
-        # Instantiate our logger tool naming these processes and
-        # setting the tag. The (&quot;XX.&quot;) convention indicates this is a 
-        # model and log messages are coming from within the 
-        # model processing script and not the main node.
-        self.logger = Logger(
-            name = model_name, 
-            tag = model_tag)
-        
-        # Instantiate our timer tool which will output the times of
-        # the processes within the model, and indicate that the 
-        # process originated from within the model, and not the module.
-        self.timer = ProcessTimer(logger=self.logger)
-        
-        # Creates a parameter manager
-        self.NeuralNetworkParams = Parameters(logger=self.logger)
-        
-    def setup_inference_engine(self, ie: IECore, viper_model: ViperModel, device: str):
-
-        # Link the internal inference engine with the initialized engine
-        # and read the network architecture.
-        self._ie = ie
-        
-        # Load the Viper Model class object, which contains the address
-        # for the neural network architecture and well as the weights
-        # of the trained model.
-        self._net = ie.read_network(
-            model=viper_model.location,
-            weights=viper_model.weights
-            )
-
-    def load_inference_engine(self, device, ie):
-        
-        # Load the network architecture and weights into the initialized
-        # inference engine. We must indicate the device name which 
-        # is passed through the main node.
-        self._exec_net = ie.load_network(
-            network = self._net,
-            device_name = device
-            )
-            
-    def get_network_info(self):
-        
-        # Set the input and output blobs
-        self._input_blob = next(iter(self._exec_net.input_info))
-        self._output_blob = next(iter(self._exec_net.outputs))
-
-        # Get the input shape
-        #self._input_shape = self._net.inputs[self._input_blob].shape
-        #self.logger.i(f&#39;Input shape: {self._input_shape}&#39;)
-        
-        # Save these parameters to the parameter server
-        #self.NeuralNetworkParams.add(
-        #    Parameter(
-        #        name = &quot;Input_shape&quot;,
-        #        value = self._input_shape,
-        #        dynamic = False))
-            
-        # Get the output shape
-        self._output_shape = self._net.outputs[self._output_blob].shape
-        self.logger.i(f&#39;Output shape: {self._output_shape}&#39;)
-        
-        # Save these parameters to the parameter server
-        self.NeuralNetworkParams.add(
+        # Sets this module to allow for dynamic updating
+        self.parameters.add(
             Parameter(
-                name=&quot;Output_shape&quot;,
-                value=self._output_shape,
-                dynamic=False))
+                name=&quot;updates&quot;, 
+                target=f&quot;{self.name.name}/dynamic&quot;,
+                default=True, 
+                dynamic=True))
                 
-    def get_model_info(self):
-        
-        # Accesses the shape of the input layer and the output layer
-        self._input_key = list(self._exec_net.input_info)[0]
-        self._output_keys = list(self._exec_net.outputs.keys())
-        self._tensors = self._exec_net.input_info[self._input_key].tensor_desc
-        
-        # Saves the shapes to variables representing
-        self.n, self.c, self.h, self.w = self._tensors.dims
-        self.logger.i(f&#39;Tensor shape (NCHW): ({self.n}, {self.c}, {self.h}, {self.w})&#39;)
-        
-        self.NeuralNetworkParams.add(
+        # Searches for the code of the Pode Detection Module. If the 
+        # the module cannot be found, the default of PDM will be used
+        # and will be updated if the modules code changes when it comes
+        # online. This code is used to tell the inference engine which
+        # neural network to use for inference.
+        self.parameters.add(
             Parameter(
-                name=&quot;Input_height&quot;,
-                value=self.h,
-                dynamic=False))
+                name=&quot;PoseDetection_abv&quot;, 
+                target=rospy.search_param(
+                    &#39;pose_detection_module/abv&#39;), 
+                default=&quot;PDM&quot;, 
+                dynamic=True))
+        
+        # Searches for the code of the Scene Segmentation module. Will
+        # use default value if not found, and will update dynamically 
+        # if the code later becomes available.
+        self.parameters.add(
+            Parameter(
+                name = &quot;SceneSegmentation_abv&quot;, 
+                target = rospy.search_param(
+                    &#39;scene_segmentation_module/abv&#39;), 
+                default = &quot;SEG&quot;, 
+                dynamic = True))
 
-        self.NeuralNetworkParams.add(
-            Parameter(
-                name=&quot;Input_width&quot;,
-                value=self.w,
-                dynamic=False))
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">model_server</span> <span class="k">import</span> <span class="n">ViperModel</span>
-<span class="n">source</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">ViperModel</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">source</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>class ViperModel(object):
-    # A ViperModel contains the location of the model architecture
-    # and the model weights which are stored in the node package.
-    
-    def __init__(self, package_name, model_xml, weights_bin):
-        self.pkg = package_name
-        self.model = model_xml
-        self.weights = weights_bin
-        self.setup_model()
+    def setup_inference_engine(self):
         
-    def setup_model(self):
-        self.dir = roslib.packages.get_pkg_dir(self.pkg)
-        self.location = os.path.join(
-            self.dir, 
-            self.model
+        # Sets up the OpenVino Inference Engine core to handle
+        # multiple models
+        self.ie = IECore()
+        self.logger.i(&quot;IECore Online&quot;)
+
+    def setup_models(self):
+        
+        # Create a dictionary of models. The specific model will be
+        # be identified at the time of inference.
+        self.models = {}
+        
+        # Initializes the models. All models will be loaded to the 
+        # Neural Compute Stick Vision Processing Unit.
+        self.setup_pose_detector(device=&quot;MYRIAD&quot;)
+        self.setup_scene_segmentor(device=&quot;MYRIAD&quot;)
+
+    def setup_pose_detector(self, device):
+        
+        # Initializes a viper model pointing to the Artificial Neural
+        # Network Architecture and the weights.
+        pose_detector = ViperModel(
+            package_name = &#39;pose_detection_module&#39;,
+            model_xml = &#39;model/human-pose-estimation-0001.xml&#39;,
+            weights_bin = &#39;model/human-pose-estimation-0001.bin&#39;
             )
-        self.weights = os.path.join(
-            self.dir, 
-            self.weights
+        
+        # These model paramters are then loaded into the Intel
+        # Nerual Compute Stick inference engine. 
+        self.pose_engine = PoseDetectionModel(
+            ie = self.ie,
+            viper_model = pose_detector,
+            device = device,
+            model_tag = &quot;PD.&quot;,
+            model_name = &quot;PoseDetectionModel&quot;
             )
+        
+        # The path to the inference function of the model is 
+        # saved in the model dictionary. This will be called when
+        # a node makes a service API request via its access point.
+        
+        #self.models[f&#39;{self.parameters.PoseDetection_abv}&#39;] \
+        #    = self.pose_engine.run_pose_estimation
+            
+        self.models[&quot;POS&quot;] = self.pose_engine.run_pose_estimation
+        self.logger.i(&#39;Pose Detection Model Loaded&#39;)
+
+    def setup_scene_segmentor(self, device):
+        
+        # Here we set up the Scene Segmentation model.
+        scene_segmentor = ViperModel(
+            package_name = &quot;scene_segmentation_module&quot;,
+            model_xml = &#39;model/road-segmentation-adas-0001.xml&#39;,
+            weights_bin = &#39;model/road-segmentation-adas-0001.bin&#39;
+            )
+            
+        # We load the model to the same device, which had been 
+        # already been initialized at the server startup. This allows
+        # us to add and remove models as needed, without shutting
+        # the VPU down, while also sharing the device.
+        self.scene_segmentor = SceneSegmentationModel(
+            ie = self.ie,
+            viper_model = scene_segmentor,
+            device = device,
+            model_tag = &quot;SD.&quot;,
+            model_name = &quot;SceneSegmentationModel&quot;
+            )
+        
+        # We load the Scene Segmentation model to the model dictionary.
+        
+        #self.models[f&#39;{self.parameters.SceneSegmentation_abv}&#39;] \
+        #    = self.scene_segmentor.run_scene_segmentation
+        
+        self.models[&quot;SEG&quot;] = self.scene_segmentor.run_scene_segmentation
+        self.logger.i(&quot;Scene Segmentor Loaded&quot;)
+
+    def handle_model_rqst(self, request):
+        
+        # This function is the API callback. Upon receiving a proper
+        # request via the service endpoint, the requested model
+        # is saved as &#39;model&#39;
+        
+        self.process_timer.lap(&quot;Modeling Service&quot;)
+        self.logger.i(&quot;Modeling Request Received&quot;)
+        model = request.model.data
+        print(model)
+        # The image which we will be performing inference on is 
+        # is converted from a ROS message to a  numpy image array.
+        try:
+            bridge = CvBridge()
+            image = bridge.imgmsg_to_cv2(
+                self.image,
+                desired_encoding=&quot;rgb8&quot;
+                )
+                
+            #self.logger.i(f&#39;Image reshaped to: {np.shape(image)}&#39;)
+            
+        except CvBridgeError as cv_error:
+            print(&quot;ERRRRRRERERRROROR&quot;)
+            self.logger.e(f&#39;&quot;CvBridge Error: {cv_error}&#39;)
+            
+            print(cv_error)
+            
+            #If this process fails we will need to return to try 
+            # on the next loop. This sometimes happens due to 
+            # packet loss.
+            
+            return
+            
+        # We use the resulting image to perform inference.
+        self.process_timer.lap(model)
+        
+        try:
+            results = self.models[model](frame=image)
+            print(results)
+        except:
+            self.logger.e(f&quot;Error modeling {model}&quot;)
+            return
+            
+        self.process_timer.time(model)
+        self.process_timer.lap(f&#39;Flatten {model}&#39;)
+        
+        # We need to serialize all of the inferences accross models and
+        # accross results in order to format them in a standard
+        # and consistent message packet.
+        try:
+            packet = self.flatten_inference(results)
+        except:
+            self.logger.e(f&quot;Error flattening {model}&quot;)
+            
+            return
+            
+        self.process_timer.time(f&#39;Flatten {model}&#39;)
+        self.process_timer.time(&quot;Modeling Service&quot;)
+        
+        # Upon success we will return the message packet to the API for
+        # delivery to the client.
+        
+        return packet
+
+    def handle_fetch_rqst(self, request):
+        
+        # This is the Service API callback for the Image Server Service.
+        # Upon receiving a request from the model server to deliver
+        # an image, this process saves that image message (self.image).
+        #self.process_timer.lap(&quot;Image Service&quot;)
+        #self.logger.i(&quot;Image request received&quot;)
+        
+        try:
+            self.image = request.image
+            receipt = True
+        except:
+            receipt = False
+            
+        #self.process_timer.time(&quot;Image Service&quot;)
+        # We then respond with a message indicating the outcome of the
+        # request.
+        
+        return ImageRequestResponse(Bool(receipt))
+
+    def flatten_inference(self, results_array):
+        
+        # This function converts our results array into a 
+        # [std_msgs.msg/int32] array containing the ndarry shape and 
+        # a [std_msgs.msg/float32] array containing the flattened array.
+        
+        # Load the InferenceResults Template
+        packet = InferenceResults()
+        print(results_array)
+        try:
+            structure = results_array.shape
+            rospy.logdebug(&quot;[MOD] mask structure: %s&quot;,structure)
+            structure = list(structure) 
+            structure = np.array(structure).astype(np.int32)
+            structure = list(structure)
+            rospy.logdebug(&quot;[MOD] Converted params: %s&quot;, structure)
+            packet.structure = structure # [Int32]
+            rospy.logdebug(&quot;[MOD] Structure sent: %s&quot;,packet.structure)
+            
+        except:
+            rospy.logerr(&quot;[MOD] Cannot save mask structure.&quot;)
+            
+        try:
+            inferences = np.array(list(results_array.flatten()))
+            packet.inferences = inferences # [float32]
+            
+        except:
+            rospy.logerr(&quot;[MOD] Cannot save Inference shape.&quot;)
+            rospy.logerr(&quot;[MOD] Inference shape is: %s&quot;, inferences.shape)
+        print(packet)
+        return packet
+
+    def loop(self):
+        
+        while not rospy.is_shutdown(): 
+            
+            # This function will keep our parameters dynamically updated
+            # in case that they change as other nodes come online
+            # or offile. Parameters marked as &quot;updates = True&quot; will
+            # update accordingly. 
+            
+            if self.parameters.updates == True:
+                    self.parameters.update()
+            
+            # This function Initializes my custom process timer module, 
+            # which computes the time between any two proceses by name.
+            # It also connects with my custom &quot;Logger&quot; module, the 
+            # &quot;Parameter&quot; module, and my &quot;NameManager&quot; module to help me
+            # track information accross Nodes.
+            
+            self.process_timer = ProcessTimer(logger = self.logger)
+            
+            # This is the API access point for the Image Server. The
+            # client submits an Image Request message, which contains
+            # an ROS Image message. In return they will receive a Bool
+            # indicating the outcome of the request.
+            
+            self.image_fetching_service = rospy.Service(
+                &#39;model_server/image_fetching_service&#39;, 
+                ImageRequest, 
+                self.handle_fetch_rqst
+                )
+            #self.logger.i(&quot;Image Fetching Service Online&quot;)
+            
+            # This is the API access point for the Modeling Service. The
+            # client submits a three letter model code, and the service
+            # will use the most recent image to perform inference. It
+            # then returns two arrays; one array &#39;Structure&#39; contains 
+            # the shape of the original inference output, and a second
+            # array &quot;Inferences&quot; contains the flattened 1-Dimnesional 
+            # array.
+            
+            self.modeling_service = rospy.Service(
+                &#39;model_server/modeling_service&#39;, 
+                ModelRequest, 
+                self.handle_model_rqst
+                )
+                
+            #self.logger.i(&quot;Modeling Service Online&quot;)
+
+            #self.logger.i(&quot;Model Server Online&quot;)
+            
+            # Rospy.spin() keeps our kernal active during times of 
+            # inactivity.
+            
+            rospy.spin()
 </pre></div>
 </div>
 </div>

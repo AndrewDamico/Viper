@@ -1,0 +1,3 @@
+[submodule "src/inland_ir_cam"]
+	path = src/inland_ir_cam
+	url = https://github.com/AndrewDamico/inland_ir_cam

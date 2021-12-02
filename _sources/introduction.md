@@ -23,8 +23,8 @@ an issue via the "open issue" button in the right hand corner.
 
 * This book is under active development and will be updated daily.
 
-```{image} ./docs/viper_demo.png
-:alt: Viper Device
+```{image} /docs/viper_demo.png
+:alt: Viper Demonstration
 :class: bg-primary mb-1
 :width: 600px
 :align: center

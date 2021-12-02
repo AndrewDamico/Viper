@@ -6,13 +6,13 @@ Northwestern University
 
 This book provides all of the documentation for my Northwestern Computer Vision MSDS 462 Class Project.
 
-
-```{image} viper_device.png
-:alt: Viper Device
+```{image} /docs/viper_demo.png
+:alt: Viper Demonstration
 :class: bg-primary mb-1
 :width: 600px
 :align: center
 ```
+
 A few introductory notes:
 
 * Whereever possible the reference code has been dynamically imported 
@@ -23,8 +23,8 @@ an issue via the "open issue" button in the right hand corner.
 
 * This book is under active development and will be updated daily.
 
-```{image} /docs/viper_demo.png
-:alt: Viper Demonstration
+```{image} viper_device.png
+:alt: Viper Device
 :class: bg-primary mb-1
 :width: 600px
 :align: center

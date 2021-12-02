@@ -23,6 +23,13 @@ an issue via the "open issue" button in the right hand corner.
 
 * This book is under active development and will be updated daily.
 
+```{image} docs/viper_demo.png
+:alt: Viper Device
+:class: bg-primary mb-1
+:width: 600px
+:align: center
+```
+
 ```{note}
 Development on this book is ongoing! The most up to date code can be found on my github repository:
 

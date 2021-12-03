@@ -483,31 +483,19 @@ commentsRunWhenDOMLoaded(addUtterances);
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="the-ros-viper-library">
 <h1><span class="section-number">1. </span>The ROS VIPER Library<a class="headerlink" href="#the-ros-viper-library" title="Permalink to this headline">¶</a></h1>
-<p>The VIPER Library is a Robot OS (ROS) Network consisting of 6 Nodes and
-a Python Utilities package. It has been built using ROS Noetic.</p>
-<p>The Catkin Workspace contains the following packages:</p>
+<p>The VIPER Vision Inferencing Processing Endogenous Robot operates on Ubuntu 20.04 and utilizes Python and C++ programming languages. At its core it runs on the Robotic OS platform (ROS: ‘Noetic’ Release), and implements the Intel Neural Compute Stick 2, showcasing the OpenVino model optimization toolkit.</p>
+<p>The VIPER network Network consisting of 6 Nodes and
+a Python Utilities package. One of the many reasons I chose ROS was due to the scalability of the Nodes and the network structure. Currently, all nodes are operated on the Viper “Parmenides” Device, however multiple devices could support multiple nodes within the same private network connected via WiFi or bluetooth, creating a mobile computing cluster and enabling multidimensional modeling. (One of the use cases I will be creating demonstrates how two devices can use their independent inferences to create additional network inferences).</p>
+<p>The Viper Workspace contains the following packages:</p>
 <ul class="simple">
 <li><p>augmented_vr_module Aggregates the model outputs into a single
-output which can contain the original image (Augmented Reality)
-or only contain model output (Virtual Reality)</p></li>
-<li><p>image_server Manages the delivery of the video input to throttle
-for just-in-time delivery. The image_server tracks when nodes
-require new images to minimize waste (images which are delivered
-but dropped.</p></li>
-<li><p>inland_ir_cam Adapts the Raspicam module for use with the Inland IR Camera
-on the 64 Bit Linux Ubuntu System, running on the Raspberry Pi 4+</p></li>
-<li><p>model_server Manages the neural networks on the Intel Neural Compute
-Stick 2 Visual Processing Unit (VPU) by running the main instance
-of the OpenVino Inference Engine, and managing service requests to
-perform inference.</p></li>
-<li><p>pose_detection_module Uses the Pose_detection_model to infer the
-presence of humans and predict their posture</p></li>
-<li><p>scene_segmentation_model Takes an input and classifies the image blobs
-as one of four seperate classes.</p></li>
-<li><p>viper_toolkit A python module which contains multiple utilities
-build to help manage subsystems accross the different nodes, including
-log management, name management, parameter management, and process
-timer management.</p></li>
+output which can contain the original image (Augmented Reality) or only contain model output (Virtual Reality)</p></li>
+<li><p>image_server Manages the delivery of the video input to throttle for just-in-time delivery. The image_server tracks when nodes require new images to minimize waste (images which are deliveredbut dropped.</p></li>
+<li><p>inland_ir_cam Adapts the Raspicam module for use with the Inland IR Camera on the 64 Bit Linux Ubuntu System, running on the Raspberry Pi 4+</p></li>
+<li><p>model_server Manages the neural networks on the Intel Neural Compute Stick 2 Visual Processing Unit (VPU) by running the main instance of the OpenVino Inference Engine, and managing service requests to perform inference.</p></li>
+<li><p>pose_detection_module Uses the Pose_detection_model to infer the presence of humans and predict their posture</p></li>
+<li><p>scene_segmentation_model Takes an input and classifies the image blobs as one of four seperate classes.</p></li>
+<li><p>viper_toolkit A python module which contains multiple utilities build to help manage subsystems accross the different nodes, including log management, name management, parameter management, and process timer management.</p></li>
 </ul>
 <div class="section" id="installation">
 <h2><span class="section-number">1.1. </span>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>

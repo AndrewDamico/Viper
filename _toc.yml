@@ -12,7 +12,7 @@ parts:
   - file: readme
   - file: docs/communication_diagram
   - file: docs/process_diagram
-  - file: docs/ros_structure
+  - file: src/readme
     sections:
     - file: src/viper_toolkit/sample_publisher
     - file: src/viper_toolkit/sample_subscriber

@@ -5,41 +5,41 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vision Inference Processing Endogenous Robot &#8212; Viper Vision Inference Processing Endogenous (Edge) Robot</title>
+    <title>4. Robot OS (ROS) &#8212; Viper Vision Inference Processing Endogenous (Edge) Robot</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     
       
 
     
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -75,17 +75,18 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. The ROS VIPER Library" href="readme.html" />
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4.2. Sample Publisher Nodes" href="viper_toolkit/sample_publisher.html" />
+    <link rel="prev" title="3. Viper Data Process Diagram" href="../docs/process_diagram.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -105,26 +106,26 @@ commentsRunWhenDOMLoaded(addUtterances);
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+    <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
       
       
-      <img src="_static/viper_device.png" class="logo" alt="logo">
+      <img src="../_static/viper_device.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Viper Vision Inference Processing Endogenous (Edge) Robot</h1>
       
     </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
- <li class="toctree-l1 current">
-  <a class="reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction.html">
    Vision Inference Processing Endogenous Robot
   </a>
  </li>
@@ -134,39 +135,39 @@ commentsRunWhenDOMLoaded(addUtterances);
   Introduction
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="readme.html">
+  <a class="reference internal" href="../readme.html">
    1. The ROS VIPER Library
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="docs/communication_diagram.html">
+  <a class="reference internal" href="../docs/communication_diagram.html">
    2. Viper Communication Diagram
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="docs/process_diagram.html">
+  <a class="reference internal" href="../docs/process_diagram.html">
    3. Viper Data Process Diagram
   </a>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="src/readme.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
    4. Robot OS (ROS)
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="src/viper_toolkit/sample_publisher.html">
+    <a class="reference internal" href="viper_toolkit/sample_publisher.html">
      4.2. Sample Publisher Nodes
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="src/viper_toolkit/sample_subscriber.html">
+    <a class="reference internal" href="viper_toolkit/sample_subscriber.html">
      4.3. Sample Subscriber Nodes
     </a>
    </li>
@@ -180,7 +181,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="src/model_server/model_server.html">
+  <a class="reference internal" href="model_server/model_server.html">
    5. Model Server
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -190,14 +191,14 @@ commentsRunWhenDOMLoaded(addUtterances);
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="src/model_server/neural_network_loader.html">
+    <a class="reference internal" href="model_server/neural_network_loader.html">
      5.2. Neural Network Loader
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="src/image_server/readme.html">
+  <a class="reference internal" href="image_server/readme.html">
    6. Image Server
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -207,19 +208,19 @@ commentsRunWhenDOMLoaded(addUtterances);
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="src/image_server/image_server.html">
+    <a class="reference internal" href="image_server/image_server.html">
      6.1. Image Server Node
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="src/image_server/image_server_client.html">
+    <a class="reference internal" href="image_server/image_server_client.html">
      6.2. Image Server Client
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="src/scene_segmentation_module/readme.html">
+  <a class="reference internal" href="scene_segmentation_module/readme.html">
    7. Scene Segmentation Module
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
@@ -229,24 +230,24 @@ commentsRunWhenDOMLoaded(addUtterances);
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="src/scene_segmentation_module/scene_segmentation_module.html">
+    <a class="reference internal" href="scene_segmentation_module/scene_segmentation_module.html">
      7.5. Scene Segmentation Module Process
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="src/scene_segmentation_module/scene_segmentation_model.html">
+    <a class="reference internal" href="scene_segmentation_module/scene_segmentation_model.html">
      7.6. Scene Segmentation Model
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="src/scene_segmentation_module/example.html">
+    <a class="reference internal" href="scene_segmentation_module/example.html">
      7.7. Scene Segmentation Example
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="src/pose_detection_module/readme.html">
+  <a class="reference internal" href="pose_detection_module/readme.html">
    8. Pose Detection Module
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
@@ -256,24 +257,24 @@ commentsRunWhenDOMLoaded(addUtterances);
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="src/pose_detection_module/pose_detection_module.html">
+    <a class="reference internal" href="pose_detection_module/pose_detection_module.html">
      8.1. Pose Detection Module
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="src/pose_detection_module/pose_detection_model.html">
+    <a class="reference internal" href="pose_detection_module/pose_detection_model.html">
      8.2. Pose Detection Model
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="src/pose_detection_module/example.html">
+    <a class="reference internal" href="pose_detection_module/example.html">
      8.3. Pose Detection Example
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="src/augmented_vr_module/readme.html">
+  <a class="reference internal" href="augmented_vr_module/readme.html">
    9. Augmented VR Module
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
@@ -283,14 +284,14 @@ commentsRunWhenDOMLoaded(addUtterances);
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="src/augmented_vr_module/augmented_vr_module.html">
+    <a class="reference internal" href="augmented_vr_module/augmented_vr_module.html">
      9.1. Augmented VR Module
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="src/viper_toolkit/readme.html">
+  <a class="reference internal" href="viper_toolkit/readme.html">
    10. Viper Toolkit
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -300,27 +301,27 @@ commentsRunWhenDOMLoaded(addUtterances);
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="src/viper_toolkit/dissector.html">
+    <a class="reference internal" href="viper_toolkit/dissector.html">
      10.1. Class Dissector
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="src/viper_toolkit/logger.html">
+    <a class="reference internal" href="viper_toolkit/logger.html">
      10.2. Logger Module
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="src/viper_toolkit/name_manager.html">
+    <a class="reference internal" href="viper_toolkit/name_manager.html">
      10.3. Name Manager
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="src/viper_toolkit/parameter_manager.html">
+    <a class="reference internal" href="viper_toolkit/parameter_manager.html">
      10.4. Parameter Manager
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="src/viper_toolkit/process_timer.html">
+    <a class="reference internal" href="viper_toolkit/process_timer.html">
      10.5. Process Timer
     </a>
    </li>
@@ -334,7 +335,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="docs/Hardware.html">
+  <a class="reference internal" href="../docs/Hardware.html">
    Hardware Configuration
   </a>
  </li>
@@ -351,7 +352,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="docs/Software.html">
+  <a class="reference internal" href="../docs/Software.html">
    Software Configuration
   </a>
  </li>
@@ -411,7 +412,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/introduction.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/src/readme.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -431,10 +432,10 @@ commentsRunWhenDOMLoaded(addUtterances);
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/AndrewDamico/viper/issues/new?title=Issue%20on%20page%20%2Fintroduction.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/AndrewDamico/viper/issues/new?title=Issue%20on%20page%20%2Fsrc/readme.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/AndrewDamico/viper/edit/main/https://andrewdamico.github.io/viper/introduction.md"><button
+        <a class="edit-button" href="https://github.com/AndrewDamico/viper/edit/main/https://andrewdamico.github.io/viper/src/readme.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -454,6 +455,36 @@ commentsRunWhenDOMLoaded(addUtterances);
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ros-basics">
+   4.1. ROS basics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ros-infrastructure">
+     4.1.1. ROS Infrastructure
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ros-messages-and-topics">
+     4.1.2. ROS Messages and Topics:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ros-services-and-actions">
+     4.1.3. ROS Services and Actions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -462,33 +493,58 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="vision-inference-processing-endogenous-robot">
-<h1>Vision Inference Processing Endogenous Robot<a class="headerlink" href="#vision-inference-processing-endogenous-robot" title="Permalink to this headline">¶</a></h1>
-<p>Andrew D’Amico<br />
-MSDS 462: Computer Vision<br />
-Northwestern University</p>
-<p>This book provides all of the documentation for my Northwestern Computer Vision MSDS 462 Class Project.</p>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/viper_demo.png"><img alt="Viper Demonstration" class="bg-primary mb-1 align-center" src="_images/viper_demo.png" style="width: 600px;" /></a>
-<p>A few introductory notes:</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="robot-os-ros">
+<h1><span class="section-number">4. </span>Robot OS (ROS)<a class="headerlink" href="#robot-os-ros" title="Permalink to this headline">¶</a></h1>
+<p>Robot OS (ROS) is an open source set of C++ and Python libraries which
+facilitate the delivery of messages, actions, and services for creating robotic and
+autonomous process flows.</p>
+<div class="section" id="ros-basics">
+<h2><span class="section-number">4.1. </span>ROS basics<a class="headerlink" href="#ros-basics" title="Permalink to this headline">¶</a></h2>
+<p>The ROS set of tools provides the basic foundation for creating autonomous
+systems.</p>
+<div class="section" id="ros-infrastructure">
+<h3><span class="section-number">4.1.1. </span>ROS Infrastructure<a class="headerlink" href="#ros-infrastructure" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Whereever possible the reference code has been dynamically imported
-and is up to date.</p></li>
-<li><p>Please feel free to contact me with suggestions or changes. You may open
-an issue via the “open issue” button in the right hand corner.</p></li>
-<li><p>This book is under active development and will be updated daily.</p></li>
+<li><p>The <strong>ROS Core</strong> or ROS Master is a server node which keeps the registration
+information of all active nodes and their addresses on the XML-RPC server
+used for communication between nodes.</p></li>
+<li><p>The <strong>ROS Parameter Server</strong> is an API of the ROS Master which manages the
+parameters and the configuration of the nodes, and can communicate the
+current parameters to other nodes.</p></li>
+<li><p><strong>Nodes</strong> are servant APIs written in Python or C++, which generate and
+receive messages, perform actions, and execute commands on the ROS network.</p></li>
 </ul>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/viper_device.png"><img alt="Viper Device" class="bg-primary mb-1 align-center" src="_images/viper_device.png" style="width: 600px;" /></a>
-<p><em>Viper Parmenides Alpha Prototype with serial touchscreen and Inland NoIF Camera</em></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Development on this book is ongoing! The most up to date code can be found on my github repository:</p>
-<p>https://github.com/AndrewDamico/viper</p>
 </div>
-<div class="toctree-wrapper compound">
+<div class="section" id="ros-messages-and-topics">
+<h3><span class="section-number">4.1.2. </span>ROS Messages and Topics:<a class="headerlink" href="#ros-messages-and-topics" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>ROS Messages</strong> are a specific predefined format for messages exchanged
+between nodes. Messages are serialized, and need to be compatible with
+both C++ and Python. Message formats contain the list of variables and
+variable classes which comprise the message.</p></li>
+<li><p><strong>ROS Topics</strong> are published message streams generated by a <strong>Publisher</strong><br />
+which <strong>subscriber</strong> nodes can subscribe to using the TCP protcol. Note
+that a node can have none, one, or multiple Publisher and a Subscriber APIs of one or both
+types, and publishers/subscribers operate independently of eachother. <em>Note:
+The relationship between publishers and subscribers is
+one to
+many.</em></p></li>
+</ul>
 </div>
-<div class="toctree-wrapper compound">
+<div class="section" id="ros-services-and-actions">
+<h3><span class="section-number">4.1.3. </span>ROS Services and Actions<a class="headerlink" href="#ros-services-and-actions" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>ROS Services</strong> are special synconous APIs which allow for a node to
+request an
+action to be performed by another node as part of its operating loop.
+Unlike topics, nodes and service APIs cannot execute additional processes
+until the API service call has been closed.</p></li>
+<li><p><strong>ROS Actions</strong> are special kinds of Asyncronous services which do not
+occupy the requesting node. Actions are given an objective to be perfomed
+and which can be modified; they also provide incrementatl status on actions.
+git c</p></li>
+</ul>
 </div>
-<div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
 </div>
@@ -507,7 +563,7 @@ an issue via the “open issue” button in the right hand corner.</p></li>
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./."
+            path: "./src"
         },
         predefinedOutput: true
     }
@@ -518,11 +574,18 @@ an issue via the “open issue” button in the right hand corner.</p></li>
               
         
             <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="readme.html" title="next page">
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../docs/process_diagram.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">3. </span>Viper Data Process Diagram</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="viper_toolkit/sample_publisher.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>The ROS VIPER Library</p>
+        <p class="prev-next-title"><span class="section-number">4.2. </span>Sample Publisher Nodes</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -546,7 +609,7 @@ an issue via the “open issue” button in the right hand corner.</p></li>
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

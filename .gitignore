@@ -6,7 +6,6 @@ viper.sh
 *.ipynb_checkpoints
 **/__pycache__
 *_build
-src/inland_ir_cam
 build
 devel
-
+.catkin_workspace

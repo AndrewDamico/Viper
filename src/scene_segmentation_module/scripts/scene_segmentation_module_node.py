@@ -82,24 +82,6 @@ class SceneSegmentationModule(object):
             queue_size=1
             )
 
-    def image_server_backup(self):
-        self.waiting = Bool
-        self._image_server_Status = Bool
-        #Sends out if it is waiting for images
-        self.wait_status.pub = rospy.Publisher(
-            'image_request/SEG',
-            Bool,
-            queue_size=1
-            )
-        rospy.Subscriber('image_server/status',
-            Bool, 
-            self.image_server.callback, 
-            queue_size=1
-            )
-        
-        def callback(self, msg):
-            self._image_server_Status = msg
-
     def action_loop(self):
         self.timer.lap("Wait for Service")
         rospy.wait_for_service(
@@ -158,16 +140,17 @@ class SceneSegmentationModule(object):
                     self.pub.publish(mask)
                     rospy.logdebug(f"[{self.name.abv}] Mask Published")
                 except:
+                    rospy.logerr(f'Cannot publish inference mask.')
                     pass
-                print (mask)
+                    
             # Update the image server to let it know we need a new image
-            
             self.image_server.update(True)
 
             rospy.logdebug(
                 "[SEG] Waiting Status: %s", 
                 self.image_server.status("me")
                 )
+
             self.timer.time("total_runtime")
             rate.sleep()
             

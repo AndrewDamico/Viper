@@ -8,7 +8,7 @@
 # Licenced under BSD Licence.
 import inspect
 
-def Dissect(method, class_):
+def Dissect(method=None, class_=None, package=None, ros=True, directory='./scripts'):
     '''
     Dissect() takes a method and a class, and returns the contents of the function.
     
@@ -16,7 +16,11 @@ def Dissect(method, class_):
     
     method -- the name of the method being invoked
     class_ -- the name of the class object dissected
+    package -- the name of the package we are getting the script from
+    ros -- indicates if this is a ROS node package (without the .py extension)
+    directory -- sets the package directory, if different from './scripts'
     '''
+    
     instance_ = class_
     i = f'instance_.{method}'
     print(f'class {class_.__name__}(object):')
@@ -26,3 +30,4 @@ def Dissect(method, class_):
     
 if __name__ == "__main__":
     Dissect()
+

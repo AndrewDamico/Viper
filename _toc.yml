@@ -53,6 +53,7 @@ parts:
     title: Raspberry Pi
 - caption: Software
   chapters:
+  - file: docs/Software
   - url: https://mate-desktop.org/
     title: Mate Desktop
   - url: https://www.ubuntu.com

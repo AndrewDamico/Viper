@@ -29,6 +29,7 @@ an issue via the "open issue" button in the right hand corner.
 :width: 600px
 :align: center
 ```
+*Viper Parmenides Alpha Prototype with serial touchscreen and Inland NoIF Camera*
 
 ```{note}
 Development on this book is ongoing! The most up to date code can be found on my github repository:

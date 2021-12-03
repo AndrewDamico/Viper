@@ -6,7 +6,7 @@
 :width: 600px
 :align: center
 ```
-*the VIPER Parmenides showing its screen and camera image at night*
+*the VIPER Parmenides II Prototype showing its screen and camera image at night (Neural Compute Stick not pictured*
 
 The VIPER (Parmenides) consists of:
 * the Raspberry Pi 4+ single board computer with 8 GB of onboard memory.
@@ -25,4 +25,4 @@ The VIPER (Parmenides) consists of:
 :width: 600px
 :align: center
 ```
-*the Viper Parmenides Infared Diodes at night*
+*the Viper Parmenides II Prototype Infared Diodes at night*

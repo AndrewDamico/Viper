@@ -8,7 +8,7 @@
 ```
 *the VIPER Parmenides II Prototype showing its screen and camera image at night (Neural Compute Stick not pictured*
 
-The VIPER (Parmenides) consists of:
+The VIPER Parmenides II Prototype:
 * the Raspberry Pi 4+ single board computer with 8 GB of onboard memory.
 * a full board aluminum heatsink
 * a 256 MB Micro SD Card with read/write speeds optimized for running applications 
@@ -26,3 +26,13 @@ The VIPER (Parmenides) consists of:
 :align: center
 ```
 *the Viper Parmenides II Prototype Infared Diodes at night*
+
+Previous Builds:
+
+VIPER Parmenides I Prototype:
+* Raspberry Pi 3+ single board computer with 2GB onboard Memory
+* Aluminum Heatsink
+* 56 MB Micro SD Card
+* Inland noIR Camera
+* MakerFocus TFmini-s Micro 1000HZ 12m LiDAR Sensor
+* ROHS 3.5 Inch Serial Touchscreen Display
